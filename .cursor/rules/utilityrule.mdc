@@ -1,0 +1,178 @@
+---
+alwaysApply: true
+---
+
+# ==========================================
+# GLOBAL PROJECT RULES FOR CURSOR AI
+# Utility Library + Documentation Website
+# ==========================================
+
+# ===========================
+# GENERAL ENGINEERING RULES
+# ===========================
+- Always write clean, human-readable code.
+- Follow TypeScript best practices and strict typing at all times.
+- Prefer immutability. Do not mutate function arguments or shared state.
+- Avoid unnecessary abstractions. Prefer simple + predictable code.
+- Never write duplicated code. Extract helpers when repetition occurs.
+- Write functions that are pure and side-effect free wherever possible.
+- Follow functional programming patterns for utilities (no classes, no OOP).
+- All functions must be 100% type-safe and include JSDoc comments.
+- All code must pass `eslint` and `prettier` formatting rules.
+- Use descriptive, meaningful variable and function names.
+- Do not write extremely clever code at the expense of readability.
+
+# ===========================
+# REPOSITORY STRUCTURE
+# ===========================
+Monorepo layout:
+- /packages/utils     → Utility function library
+- /apps/docs           → Next.js documentation site
+- /packages/config     → Shared TS/ESLint configs
+
+Behavior rules:
+- Utilities must never import from website code.
+- Website can import utilities, but utilities must stay standalone.
+- Do not introduce cross-dependencies that break package boundaries.
+
+# ===========================
+# UTILITY PACKAGE RULES
+# ===========================
+For `/packages/utils`:
+- Always use pure functions.
+- No external dependencies (unless absolutely necessary).
+- Each function must:
+  - Be fully typed with TypeScript.
+  - Have JSDoc with: description, parameters, returns, examples.
+  - Include at least one unit test.
+  - Have a named file matching the function name (e.g., chunk.ts).
+- Category structure:
+  - arrays/
+  - strings/
+  - numbers/
+  - objects/
+  - async/
+  - index.ts only exports clean categories.
+- Do not create deep folder nesting.
+- All public exports must be stable and documented.
+- Never expose internal helpers in the public API.
+
+# ===========================
+# TEST RULES
+# ===========================
+Testing framework: Vitest.
+Rules:
+- Every function in utils must have a test file.
+- Use descriptive test names.
+- Include edge cases (null, undefined, empty arrays, etc.).
+- Ensure deterministic behavior — no random outputs unless mocked.
+- Minimum coverage target: 90%.
+
+# ===========================
+# NEXT.JS (DOCS WEBSITE) RULES
+# ===========================
+For `/apps/docs`:
+- Use Next.js App Router.
+- Use TypeScript everywhere.
+- Use modern React patterns: server components by default.
+- Keep components small and composable.
+- Use TailwindCSS + shadcn/ui exclusively for styling.
+- No inline styles unless necessary.
+- Use a clean folder structure:
+  - /app
+  - /components
+  - /lib
+  - /styles
+- All pages must be fast and SEO-friendly.
+- Use MDX for documentation pages.
+- No unnecessary client components. Only client when interactive.
+- Playground/editor must be isolated and sandboxed.
+
+# ===========================
+# PLAYGROUND EDITOR RULES
+# ===========================
+- Use Monaco Editor.
+- Keep execution sandboxed (no eval in main window).
+- Never run arbitrary user code without protection.
+- Use iframe sandbox or safe VM environment.
+- Clear error messages and always guard against runtime errors.
+
+# ===========================
+# CODING STYLE RULES
+# ===========================
+TypeScript:
+- `"strict": true` must always be enabled.
+- Avoid `any`. If required, comment WHY.
+- Prefer generics over unions when appropriate.
+- Prefer unknown instead of any for unsafe inputs.
+
+Functions:
+- Keep functions small (max 30–50 lines).
+- Single responsibility per function.
+- Pure function unless explicitly intended otherwise.
+
+Imports:
+- Use absolute imports in Next.js (`@/components/...`).
+- Use relative imports in utilities.
+- Do not use default exports for utilities. Named exports only.
+
+Errors:
+- Throw actual Error objects.
+- Provide helpful error messages.
+
+# ===========================
+# DOCUMENTATION RULES
+# ===========================
+- Every utility must have JSDoc.
+- Every utility must have documentation page in MDX.
+- Each MDX must include:
+  - Function summary
+  - Type definition
+  - Code example
+  - "Try It" link to playground
+  - Category tags
+
+# ===========================
+# GIT RULES
+# ===========================
+- Commit messages must follow Conventional Commits:
+  - feat: new utility or website feature
+  - fix: bug fix
+  - docs: documentation
+  - refactor: internal improvements
+  - test: test-related
+  - chore: build, CI, configs
+- No large PRs. Max 300–400 lines. Split into multiple PRs.
+- Every PR must have description and checklist.
+
+# ===========================
+# PERFORMANCE RULES
+# ===========================
+- Utilities must be optimized for performance.
+- Avoid unnecessary loops.
+- Prefer native ES methods first.
+- No heavy operations on large objects without need.
+
+# ===========================
+# SECURITY RULES
+# ===========================
+- Never run user code outside a sandbox.
+- Website must sanitize all inputs.
+- Prevent XSS, CSP issues in playground.
+- Never expose secrets in client environment.
+
+# ===========================
+# AI-USAGE RULES
+# ===========================
+- Cursor AI suggestions must always follow this rule file.
+- When generating code, AI must:
+  - Match project structure.
+  - Use consistent naming.
+  - Use TypeScript everywhere.
+  - Avoid hacks and shortcuts.
+- If AI writes unclear code, it must refactor automatically.
+- Always follow best modern JS/TS/React practices.
+
+# ==========================================
+# END OF PROJECT RULES
+# ==========================================

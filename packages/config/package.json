@@ -1,0 +1,19 @@
+{
+  "name": "@utilify/config",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared TypeScript and ESLint configurations",
+  "main": "index.js",
+  "files": [
+    "eslint",
+    "typescript"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
+
