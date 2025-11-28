@@ -1,0 +1,4 @@
+# Compiled JavaScript files from TypeScript
+eslint/**/*.js
+eslint/**/*.js.map
+

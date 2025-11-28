@@ -1,21 +1,35 @@
 {
-  "extends": "@utilify/config/typescript/base.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../packages/config/typescript/base.json",
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "jsx": "preserve",
     "incremental": true,
+    "composite": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@utilify/utils": ["../../packages/utils/src"],
+      "@utilify/utils/*": ["../../packages/utils/src/*"],
+      "@utilify/config": ["../../packages/config"],
+      "@utilify/config/*": ["../../packages/config/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "../../packages/utils"
+    },
+    {
+      "path": "../../packages/config"
+    }
+  ]
 }
 

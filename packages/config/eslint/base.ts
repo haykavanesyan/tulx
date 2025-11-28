@@ -1,9 +1,10 @@
+import type { Linter } from 'eslint';
+
 /**
  * Base ESLint configuration for TypeScript projects
  * Shared across all packages in the monorepo
  */
-
-module.exports = {
+const config: Linter.Config = {
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -111,4 +112,9 @@ module.exports = {
     '*.config.ts',
   ],
 };
+
+// ESLint requires CommonJS export for config files
+// eslint-disable-next-line import/no-default-export
+export default config;
+module.exports = config;
 
