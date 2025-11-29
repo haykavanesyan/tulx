@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { toUpper } from './toUpper';
+
+import { toUpper } from './to-LUpper';
 
 describe('toUpper', () => {
   it('should convert to upper case', () => {

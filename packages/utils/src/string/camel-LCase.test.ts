@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { camelCase } from './camel-LCase';
 
 describe('camelCase', () => {

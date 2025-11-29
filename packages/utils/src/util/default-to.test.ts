@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { defaultTo } from './defaultTo';
+
+import { defaultTo } from './default-to';
 
 describe('defaultTo', () => {
   it('should return value if not null/undefined', () => {

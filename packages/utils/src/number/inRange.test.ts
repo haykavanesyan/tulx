@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { inRange } from './inRange';
 
 describe('inRange', () => {

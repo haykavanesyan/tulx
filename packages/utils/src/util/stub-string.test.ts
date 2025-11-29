@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { stubString } from './stubString';
+
+import { stubString } from './stub-string';
 
 describe('stubString', () => {
   it('should return empty string', () => {

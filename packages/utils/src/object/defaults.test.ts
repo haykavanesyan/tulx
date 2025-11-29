@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { defaults } from './defaults';
 
 describe('defaults', () => {

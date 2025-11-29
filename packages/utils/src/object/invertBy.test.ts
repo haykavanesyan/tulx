@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { invertBy } from './invertBy';
 
 describe('invertBy', () => {
@@ -9,7 +10,7 @@ describe('invertBy', () => {
 
   it('should use custom iteratee', () => {
     const object = { a: 1, b: 2, c: 1 };
-    expect(invertBy(object, (value) => 'group' + value)).toEqual({
+    expect(invertBy(object, (value) => `group${value}`)).toEqual({
       group1: ['a', 'c'],
       group2: ['b'],
     });

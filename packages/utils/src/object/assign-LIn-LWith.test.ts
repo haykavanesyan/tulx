@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { assignInWith } from './assignInWith';
+
+import { assignInWith } from './assign-LIn-LWith';
 
 describe('assignInWith', () => {
   it('should assign with customizer', () => {

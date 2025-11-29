@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { overEvery } from './overEvery';
-import { isFinite } from '../lang/isFinite';
+
+import { isFinite } from '../lang/is-LFinite';
+
+import { overEvery } from './over-every';
 
 describe('overEvery', () => {
   it('should check if all predicates return truthy', () => {

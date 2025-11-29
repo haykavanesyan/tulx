@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { isFunction } from './isFunction';
+
+import { isFunction } from './is-LFunction';
 
 describe('isFunction', () => {
   it('should return true for functions', () => {
     expect(isFunction(() => {})).toBe(true);
-    expect(isFunction(function () {})).toBe(true);
+    expect(isFunction(() => {})).toBe(true);
     expect(isFunction(async () => {})).toBe(true);
   });
 

@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { bind } from './bind';
 
 describe('bind', () => {
@@ -8,7 +9,7 @@ describe('bind', () => {
       greeting: string,
       punctuation: string
     ) {
-      return greeting + ' ' + this.user + punctuation;
+      return `${greeting} ${this.user}${punctuation}`;
     };
     const object = { user: 'fred' };
     const bound = bind(greet, object, 'hi');

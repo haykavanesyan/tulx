@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isRegExp } from './isRegExp';
+
+import { isRegExp } from './is-LReg-LExp';
 
 describe('isRegExp', () => {
   it('should return true for RegExp objects', () => {

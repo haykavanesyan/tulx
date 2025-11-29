@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { meanBy } from './meanBy';
+
+import { meanBy } from './mean-LBy';
 
 describe('meanBy', () => {
   it('should compute mean using iteratee function', () => {

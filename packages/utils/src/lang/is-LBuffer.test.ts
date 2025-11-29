@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isBuffer } from './isBuffer';
+
+import { isBuffer } from './is-LBuffer';
 
 describe('isBuffer', () => {
   it('should return false in browser environments', () => {

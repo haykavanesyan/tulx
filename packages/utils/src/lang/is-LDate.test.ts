@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isDate } from './isDate';
+
+import { isDate } from './is-LDate';
 
 describe('isDate', () => {
   it('should return true for Date objects', () => {

@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { max } from './max';
 
 describe('max', () => {

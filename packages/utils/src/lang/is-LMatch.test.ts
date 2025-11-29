@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isMatch } from './isMatch';
+
+import { isMatch } from './is-LMatch';
 
 describe('isMatch', () => {
   it('should return true when object matches source', () => {

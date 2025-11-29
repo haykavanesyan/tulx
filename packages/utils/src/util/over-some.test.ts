@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { overSome } from './overSome';
-import { isFinite } from '../lang/isFinite';
+
+import { isFinite } from '../lang/is-LFinite';
+
+import { overSome } from './over-some';
 
 describe('overSome', () => {
   it('should check if any predicate returns truthy', () => {

@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { mapKeys } from './mapKeys';
+
+import { mapKeys } from './map-LKeys';
 
 describe('mapKeys', () => {
   it('should map keys with iteratee', () => {

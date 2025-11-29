@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { cloneDeep } from './cloneDeep';
+
+import { cloneDeep } from './clone-LDeep';
 
 describe('cloneDeep', () => {
   it('should return same value for primitives', () => {

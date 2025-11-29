@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { trimEnd } from './trimEnd';
+
+import { trimEnd } from './trim-LEnd';
 
 describe('trimEnd', () => {
   it('should trim trailing whitespace', () => {

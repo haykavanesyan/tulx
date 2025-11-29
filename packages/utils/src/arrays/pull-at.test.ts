@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { pullAt } from './pull-at';
 
 describe('pullAt', () => {

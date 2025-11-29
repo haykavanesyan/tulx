@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isTypedArray } from './isTypedArray';
+
+import { isTypedArray } from './is-LTyped-LArray';
 
 describe('isTypedArray', () => {
   it('should return true for typed arrays', () => {

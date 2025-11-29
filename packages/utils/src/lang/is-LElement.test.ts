@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isElement } from './isElement';
+
+import { isElement } from './is-LElement';
 
 describe('isElement', () => {
   it('should return true for DOM elements', () => {

@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { sortedUniqBy } from './sorted-uniq-by';
 
 describe('sortedUniqBy', () => {

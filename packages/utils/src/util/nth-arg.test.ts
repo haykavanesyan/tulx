@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { nthArg } from './nthArg';
+
+import { nthArg } from './nth-arg';
 
 describe('nthArg', () => {
   it('should return argument at index', () => {

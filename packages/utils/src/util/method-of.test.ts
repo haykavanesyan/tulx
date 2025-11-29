@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { methodOf } from './methodOf';
+
+import { methodOf } from './method-of';
 
 describe('methodOf', () => {
   it('should invoke method at path of object', () => {

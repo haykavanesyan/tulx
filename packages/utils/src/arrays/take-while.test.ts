@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+
 import { takeWhile } from './take-while';
 
 describe('takeWhile', () => {
@@ -28,7 +29,7 @@ describe('takeWhile', () => {
   });
 
   it('should pass index and array to predicate', () => {
-    const predicate = vi.fn((value, index, array) => value < 3);
+    const predicate = vi.fn((value, _index, _array) => value < 3);
     takeWhile([1, 2, 3, 4], predicate);
     expect(predicate).toHaveBeenCalledWith(1, 0, [1, 2, 3, 4]);
     expect(predicate).toHaveBeenCalledWith(2, 1, [1, 2, 3, 4]);

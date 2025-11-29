@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { toPairsIn } from './toPairsIn';
+
+import { toPairsIn } from './to-LPairs-LIn';
 
 describe('toPairsIn', () => {
   it('should return own and inherited pairs', () => {
@@ -7,7 +8,8 @@ describe('toPairsIn', () => {
       this.a = 1;
       this.b = 2;
     }
-    (Foo.prototype as any).c = 3;
+    Foo.prototype.c = 3;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(toPairsIn(new (Foo as any)())).toEqual([
       ['a', 1],
       ['b', 2],

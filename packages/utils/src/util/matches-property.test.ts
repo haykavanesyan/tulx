@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { matchesProperty } from './matchesProperty';
+
+import { matchesProperty } from './matches-property';
 
 describe('matchesProperty', () => {
   it('should create property matcher', () => {

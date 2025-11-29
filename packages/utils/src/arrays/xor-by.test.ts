@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { xorBy } from './xor-by';
 
 describe('xorBy', () => {

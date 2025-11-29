@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+
 import { filter } from './filter';
 
 describe('filter', () => {
@@ -18,7 +19,7 @@ describe('filter', () => {
   });
 
   it('should pass index and collection to predicate', () => {
-    const predicate = vi.fn((value, index) => value > 1);
+    const predicate = vi.fn((value, _index) => value > 1);
     filter([1, 2, 3], predicate);
     expect(predicate).toHaveBeenCalledWith(1, 0, [1, 2, 3]);
     expect(predicate).toHaveBeenCalledWith(2, 1, [1, 2, 3]);

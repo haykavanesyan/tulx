@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isBoolean } from './isBoolean';
+
+import { isBoolean } from './is-LBoolean';
 
 describe('isBoolean', () => {
   it('should return true for boolean primitives', () => {

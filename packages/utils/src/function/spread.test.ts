@@ -1,9 +1,10 @@
 import { describe, it, expect } from 'vitest';
+
 import { spread } from './spread';
 
 describe('spread', () => {
   it('should spread array arguments', () => {
-    const say = spread((who: string, what: string) => who + ' says ' + what);
+    const say = spread((who: string, what: string) => `${who} says ${what}`);
     expect(say(['fred', 'hello'])).toBe('fred says hello');
   });
 

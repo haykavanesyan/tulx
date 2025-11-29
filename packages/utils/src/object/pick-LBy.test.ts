@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { pickBy } from './pickBy';
+
+import { pickBy } from './pick-LBy';
 
 describe('pickBy', () => {
   it('should pick properties by predicate', () => {

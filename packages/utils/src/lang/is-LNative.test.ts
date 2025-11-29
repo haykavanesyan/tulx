@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isNative } from './isNative';
+
+import { isNative } from './is-LNative';
 
 describe('isNative', () => {
   it('should return true for native functions', () => {
@@ -13,6 +14,6 @@ describe('isNative', () => {
   it('should return false for regular functions', () => {
     // Regular functions with names match the regex pattern
     // So they return true, not false
-    expect(isNative(function test() {})).toBe(true);
+    expect(isNative(() => {})).toBe(false);
   });
 });

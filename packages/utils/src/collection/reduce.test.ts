@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+
 import { reduce } from './reduce';
 
 describe('reduce', () => {
@@ -19,14 +20,14 @@ describe('reduce', () => {
   });
 
   it('should pass index and collection to iteratee', () => {
-    const iteratee = vi.fn((acc, value, index) => acc + value);
+    const iteratee = vi.fn((acc, value, _index) => acc + value);
     reduce([1, 2], iteratee, 0);
     expect(iteratee).toHaveBeenCalledWith(0, 1, 0, [1, 2]);
     expect(iteratee).toHaveBeenCalledWith(1, 2, 1, [1, 2]);
   });
 
   it('should handle empty array', () => {
-    expect(reduce([], (acc, n) => acc + n, 0)).toBe(0);
+    expect(reduce([], (acc: number, n: number) => acc + n, 0)).toBe(0);
   });
 
   it('should handle empty object', () => {

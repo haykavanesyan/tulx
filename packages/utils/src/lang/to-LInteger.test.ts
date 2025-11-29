@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { toInteger } from './toInteger';
+
+import { toInteger } from './to-LInteger';
 
 describe('toInteger', () => {
   it('should convert numbers to integers', () => {

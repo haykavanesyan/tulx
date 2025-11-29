@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { conformsTo } from './conformsTo';
+
+import { conformsTo } from './conforms-LTo';
 
 describe('conformsTo', () => {
   it('should return true when object conforms', () => {

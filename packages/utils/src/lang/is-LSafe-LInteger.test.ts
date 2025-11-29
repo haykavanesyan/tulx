@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isSafeInteger } from './isSafeInteger';
+
+import { isSafeInteger } from './is-LSafe-LInteger';
 
 describe('isSafeInteger', () => {
   it('should return true for safe integers', () => {

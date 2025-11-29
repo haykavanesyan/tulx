@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { sortedLastIndexOf } from './sorted-last-index-of';
 
 describe('sortedLastIndexOf', () => {

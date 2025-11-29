@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isNumber } from './isNumber';
+
+import { isNumber } from './is-LNumber';
 
 describe('isNumber', () => {
   it('should return true for number primitives', () => {

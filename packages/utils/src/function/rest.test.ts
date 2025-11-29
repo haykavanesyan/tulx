@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
+
 import { rest } from './rest';
 
 describe('rest', () => {
   it('should create function with rest parameter', () => {
     const say = rest(
-      (what: string, names: string[]) => what + ' ' + names.join(', ')
+      (what: string, names: string[]) => `${what} ${names.join(', ')}`
     );
     expect(say('hello', 'fred', 'barney', 'pebbles')).toBe(
       'hello fred, barney, pebbles'

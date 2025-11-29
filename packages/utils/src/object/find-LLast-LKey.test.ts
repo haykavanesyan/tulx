@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { findLastKey } from './findLastKey';
+
+import { findLastKey } from './find-LLast-LKey';
 
 describe('findLastKey', () => {
   it('should find last key matching predicate', () => {

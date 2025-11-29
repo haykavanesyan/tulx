@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { stubTrue } from './stubTrue';
+
+import { stubTrue } from './stub-true';
 
 describe('stubTrue', () => {
   it('should return true', () => {

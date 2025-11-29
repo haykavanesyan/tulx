@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isSet } from './isSet';
+
+import { isSet } from './is-LSet';
 
 describe('isSet', () => {
   it('should return true for Set objects', () => {

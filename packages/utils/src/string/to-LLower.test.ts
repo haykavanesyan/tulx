@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { toLower } from './toLower';
+
+import { toLower } from './to-LLower';
 
 describe('toLower', () => {
   it('should convert to lower case', () => {

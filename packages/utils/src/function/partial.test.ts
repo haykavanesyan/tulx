@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
+
 import { partial } from './partial';
 
 describe('partial', () => {
   it('should partially apply arguments', () => {
     function greet(greeting: string, name: string) {
-      return greeting + ' ' + name;
+      return `${greeting} ${name}`;
     }
     const sayHelloTo = partial(greet, 'hello');
     expect(sayHelloTo('fred')).toBe('hello fred');
@@ -19,7 +20,7 @@ describe('partial', () => {
   it('should preserve this context', () => {
     const obj = {
       value: 10,
-      add: function (this: typeof obj, a: number, b: number) {
+      add(this: typeof obj, a: number, b: number) {
         return this.value + a + b;
       },
     };

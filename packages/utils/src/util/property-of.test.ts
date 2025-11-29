@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { propertyOf } from './propertyOf';
+
+import { propertyOf } from './property-of';
 
 describe('propertyOf', () => {
   it('should get value at path of object', () => {

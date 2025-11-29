@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { property } from './property';
 
 describe('property', () => {

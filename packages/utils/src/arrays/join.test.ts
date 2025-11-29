@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { join } from './join';
 
 describe('join', () => {

@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isPlainObject } from './isPlainObject';
+
+import { isPlainObject } from './is-LPlain-LObject';
 
 describe('isPlainObject', () => {
   it('should return true for plain objects', () => {
@@ -12,9 +13,10 @@ describe('isPlainObject', () => {
   });
 
   it('should return false for class instances', () => {
-    function Foo() {
+    function Foo(this: { a: number }) {
       this.a = 1;
     }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(isPlainObject(new (Foo as any)())).toBe(false);
   });
 

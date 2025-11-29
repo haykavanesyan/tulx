@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
+
 import { partialRight } from './partial-right';
 
 describe('partialRight', () => {
   it('should partially apply arguments from right', () => {
     function greet(greeting: string, name: string) {
-      return greeting + ' ' + name;
+      return `${greeting} ${name}`;
     }
     const greetFred = partialRight(greet, 'fred');
     expect(greetFred('hi')).toBe('hi fred');
@@ -19,7 +20,7 @@ describe('partialRight', () => {
   it('should preserve this context', () => {
     const obj = {
       value: 10,
-      add: function (this: typeof obj, a: number, b: number) {
+      add(this: typeof obj, a: number, b: number) {
         return this.value + a + b;
       },
     };

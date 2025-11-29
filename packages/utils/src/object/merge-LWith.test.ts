@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { mergeWith } from './mergeWith';
+
+import { mergeWith } from './merge-LWith';
 
 describe('mergeWith', () => {
   it('should merge with customizer', () => {

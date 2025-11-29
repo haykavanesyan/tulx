@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { trimStart } from './trimStart';
+
+import { trimStart } from './trim-LStart';
 
 describe('trimStart', () => {
   it('should trim leading whitespace', () => {

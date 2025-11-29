@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { zipObjectDeep } from './zip-object-deep';
 
 describe('zipObjectDeep', () => {

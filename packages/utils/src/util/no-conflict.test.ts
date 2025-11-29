@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { noConflict } from './noConflict';
+
+import { noConflict } from './no-conflict';
 
 describe('noConflict', () => {
   it('should return globalThis', () => {

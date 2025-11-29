@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { invokeMap } from './invoke-map';
 
 describe('invokeMap', () => {
@@ -17,7 +18,14 @@ describe('invokeMap', () => {
   });
 
   it('should invoke function with args', () => {
-    const result = invokeMap(['123', '456'], (str) => str.split, '');
+    const result = invokeMap(
+      ['123', '456'],
+      (str: string) => {
+        // eslint-disable-next-line @typescript-eslint/unbound-method
+        return str.split.bind(str);
+      },
+      ''
+    );
     expect(result).toEqual([
       ['1', '2', '3'],
       ['4', '5', '6'],

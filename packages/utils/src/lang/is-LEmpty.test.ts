@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isEmpty } from './isEmpty';
+
+import { isEmpty } from './is-LEmpty';
 
 describe('isEmpty', () => {
   it('should return true for null and undefined', () => {

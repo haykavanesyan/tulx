@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isSymbol } from './isSymbol';
+
+import { isSymbol } from './is-LSymbol';
 
 describe('isSymbol', () => {
   it('should return true for symbols', () => {

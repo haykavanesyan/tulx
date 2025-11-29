@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+
 import { findIndex } from './find-index';
 
 describe('findIndex', () => {
@@ -29,7 +30,7 @@ describe('findIndex', () => {
   });
 
   it('should pass index and array to predicate', () => {
-    const predicate = vi.fn((value, index, array) => value === 2);
+    const predicate = vi.fn((value, _index, _array) => value === 2);
     findIndex([1, 2, 3], predicate);
     expect(predicate).toHaveBeenCalledWith(1, 0, [1, 2, 3]);
     expect(predicate).toHaveBeenCalledWith(2, 1, [1, 2, 3]);

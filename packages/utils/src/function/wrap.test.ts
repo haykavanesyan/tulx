@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { wrap } from './wrap';
 
 describe('wrap', () => {
@@ -6,7 +7,7 @@ describe('wrap', () => {
     const escape = (text: string) => text.replace('&', '&amp;');
     const p = wrap(
       escape,
-      (func: typeof escape, text: string) => '<p>' + func(text) + '</p>'
+      (func: typeof escape, text: string) => `<p>${func(text)}</p>`
     );
     expect(p('fred, barney, & pebbles')).toBe(
       '<p>fred, barney, &amp; pebbles</p>'

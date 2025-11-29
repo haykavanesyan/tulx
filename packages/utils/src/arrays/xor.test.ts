@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { xor } from './xor';
 
 describe('xor', () => {

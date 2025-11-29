@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { startsWith } from './startsWith';
+
+import { startsWith } from './starts-LWith';
 
 describe('startsWith', () => {
   it('should check if string starts with target', () => {

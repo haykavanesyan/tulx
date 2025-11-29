@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { cloneWith } from './cloneWith';
+
+import { cloneWith } from './clone-LWith';
 
 describe('cloneWith', () => {
   it('should use customizer when provided', () => {

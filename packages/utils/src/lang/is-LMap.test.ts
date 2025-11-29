@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isMap } from './isMap';
+
+import { isMap } from './is-LMap';
 
 describe('isMap', () => {
   it('should return true for Map objects', () => {

@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isEqualWith } from './isEqualWith';
+
+import { isEqualWith } from './is-LEqual-LWith';
 
 describe('isEqualWith', () => {
   it('should use customizer when provided', () => {

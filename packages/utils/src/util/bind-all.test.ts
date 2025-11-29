@@ -1,12 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { bindAll } from './bindAll';
+
+import { bindAll } from './bind-all';
 
 describe('bindAll', () => {
   it('should bind methods to object', () => {
     const view = {
       label: 'docs',
-      onClick: function (this: typeof view) {
-        return 'clicked ' + this.label;
+      onClick(this: typeof view) {
+        return `clicked ${this.label}`;
       },
     };
     bindAll(view, ['onClick']);

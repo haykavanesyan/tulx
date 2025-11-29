@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isString } from './isString';
+
+import { isString } from './is-LString';
 
 describe('isString', () => {
   it('should return true for string primitives', () => {

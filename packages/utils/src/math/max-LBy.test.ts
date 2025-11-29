@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { maxBy } from './maxBy';
+
+import { maxBy } from './max-LBy';
 
 describe('maxBy', () => {
   it('should return maximum value using iteratee function', () => {

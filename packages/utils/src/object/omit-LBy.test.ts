@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { omitBy } from './omitBy';
+
+import { omitBy } from './omit-LBy';
 
 describe('omitBy', () => {
   it('should omit properties by predicate', () => {

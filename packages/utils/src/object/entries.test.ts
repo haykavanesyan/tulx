@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { entries } from './entries';
 
 describe('entries', () => {
@@ -7,7 +8,8 @@ describe('entries', () => {
       this.a = 1;
       this.b = 2;
     }
-    (Foo.prototype as any).c = 3;
+    Foo.prototype.c = 3;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(entries(new (Foo as any)())).toEqual([
       ['a', 1],
       ['b', 2],

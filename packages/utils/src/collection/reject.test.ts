@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { reject } from './reject';
 
 describe('reject', () => {

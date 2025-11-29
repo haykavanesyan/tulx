@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { slice } from './slice';
 
 describe('slice', () => {

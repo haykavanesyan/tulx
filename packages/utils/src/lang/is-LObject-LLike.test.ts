@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isObjectLike } from './isObjectLike';
+
+import { isObjectLike } from './is-LObject-LLike';
 
 describe('isObjectLike', () => {
   it('should return true for objects', () => {

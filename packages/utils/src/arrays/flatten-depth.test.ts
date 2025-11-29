@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { flattenDepth } from './flatten-depth';
 
 describe('flattenDepth', () => {

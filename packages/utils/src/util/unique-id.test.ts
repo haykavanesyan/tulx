@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
+
 import { uniqueId } from './unique-id';
 
 describe('uniqueId', () => {

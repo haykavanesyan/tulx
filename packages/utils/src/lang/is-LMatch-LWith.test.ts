@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isMatchWith } from './isMatchWith';
+
+import { isMatchWith } from './is-LMatch-LWith';
 
 describe('isMatchWith', () => {
   it('should use customizer when provided', () => {

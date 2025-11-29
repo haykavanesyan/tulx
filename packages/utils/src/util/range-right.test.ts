@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { rangeRight } from './rangeRight';
+
+import { rangeRight } from './range-right';
 
 describe('rangeRight', () => {
   it('should create range in descending order', () => {

@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { partition } from './partition';
 
 describe('partition', () => {

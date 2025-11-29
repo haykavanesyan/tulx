@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { hasIn } from './hasIn';
+
+import { hasIn } from './has-LIn';
 
 describe('hasIn', () => {
   it('should check if path exists (own or inherited)', () => {

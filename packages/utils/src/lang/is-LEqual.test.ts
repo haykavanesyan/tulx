@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isEqual } from './isEqual';
+
+import { isEqual } from './is-LEqual';
 
 describe('isEqual', () => {
   it('should return true for same references', () => {

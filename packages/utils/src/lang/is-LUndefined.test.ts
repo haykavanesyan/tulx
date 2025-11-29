@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isUndefined } from './isUndefined';
+
+import { isUndefined } from './is-LUndefined';
 
 describe('isUndefined', () => {
   it('should return true for undefined', () => {

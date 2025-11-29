@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isWeakSet } from './isWeakSet';
+
+import { isWeakSet } from './is-LWeak-LSet';
 
 describe('isWeakSet', () => {
   it('should return true for WeakSet', () => {

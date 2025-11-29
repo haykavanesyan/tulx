@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { upperFirst } from './upperFirst';
+
+import { upperFirst } from './upper-LFirst';
 
 describe('upperFirst', () => {
   it('should upper first character', () => {

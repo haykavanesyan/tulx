@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isFinite } from './isFinite';
+
+import { isFinite } from './is-LFinite';
 
 describe('isFinite', () => {
   it('should return true for finite numbers', () => {

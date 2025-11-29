@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { stubArray } from './stubArray';
+
+import { stubArray } from './stub-array';
 
 describe('stubArray', () => {
   it('should return new empty array', () => {

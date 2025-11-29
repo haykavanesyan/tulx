@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { isArguments } from './isArguments';
+
+import { isArguments } from './is-LArguments';
 
 describe('isArguments', () => {
   it('should return true for arguments object', () => {
     // Create a mock arguments object
-    const args = { 0: 1, 1: 2, length: 2, callee: function () {} };
+    const args = { 0: 1, 1: 2, length: 2, callee() {} };
     expect(isArguments(args)).toBe(true);
   });
 

@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+
 import { findLastIndex } from './find-last-index';
 
 describe('findLastIndex', () => {
@@ -33,7 +34,7 @@ describe('findLastIndex', () => {
   });
 
   it('should pass index and array to predicate', () => {
-    const predicate = vi.fn((value, index, array) => value === 2);
+    const predicate = vi.fn((value, _index, _array) => value === 2);
     findLastIndex([1, 2, 3], predicate);
     expect(predicate).toHaveBeenCalledWith(3, 2, [1, 2, 3]);
     expect(predicate).toHaveBeenCalledWith(2, 1, [1, 2, 3]);

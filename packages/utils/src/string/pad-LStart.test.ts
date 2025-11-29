@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { padStart } from './padStart';
+
+import { padStart } from './pad-LStart';
 
 describe('padStart', () => {
   it('should pad string on left side', () => {

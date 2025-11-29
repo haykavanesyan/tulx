@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { findLast } from './find-last';
 
 describe('findLast', () => {

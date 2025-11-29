@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { ary } from './ary';
 
 describe('ary', () => {
@@ -22,7 +23,7 @@ describe('ary', () => {
   it('should preserve this context', () => {
     const obj = {
       value: 10,
-      add: function (this: typeof obj, a: number) {
+      add(this: typeof obj, a: number) {
         return this.value + a;
       },
     };

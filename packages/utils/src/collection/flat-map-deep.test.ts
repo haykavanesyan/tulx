@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { flatMapDeep } from './flat-map-deep';
 
 describe('flatMapDeep', () => {

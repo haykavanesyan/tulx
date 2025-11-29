@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { pullAllWith } from './pull-all-with';
 
 describe('pullAllWith', () => {

@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { toFinite } from './toFinite';
+
+import { toFinite } from './to-LFinite';
 
 describe('toFinite', () => {
   it('should convert numbers to finite', () => {

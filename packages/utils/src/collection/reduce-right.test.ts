@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+
 import { reduceRight } from './reduce-right';
 
 describe('reduceRight', () => {
@@ -23,11 +24,11 @@ describe('reduceRight', () => {
   });
 
   it('should handle empty array', () => {
-    expect(reduceRight([], (acc, n) => acc + n, 0)).toBe(0);
+    expect(reduceRight([], (acc: number, n: number) => acc + n, 0)).toBe(0);
   });
 
   it('should pass index and collection to iteratee', () => {
-    const iteratee = vi.fn((acc, value, index) => acc + value);
+    const iteratee = vi.fn((acc, value, _index) => acc + value);
     reduceRight([1, 2], iteratee, 0);
     expect(iteratee).toHaveBeenCalledWith(0, 2, 1, [1, 2]);
     expect(iteratee).toHaveBeenCalledWith(2, 1, 0, [1, 2]);

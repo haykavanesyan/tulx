@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+
 import { zipWith } from './zip-with';
 
 describe('zipWith', () => {

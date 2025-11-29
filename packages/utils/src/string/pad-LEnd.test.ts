@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { padEnd } from './padEnd';
+
+import { padEnd } from './pad-LEnd';
 
 describe('padEnd', () => {
   it('should pad string on right side', () => {

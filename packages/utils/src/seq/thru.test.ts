@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { thru } from './thru';
 
 describe('thru', () => {
@@ -49,13 +50,13 @@ describe('thru', () => {
   });
 
   it('should work with null', () => {
-    const interceptor = (val: null) => 'null value';
+    const interceptor = (_val: null) => 'null value';
     const result = thru(null, interceptor);
     expect(result).toBe('null value');
   });
 
   it('should work with undefined', () => {
-    const interceptor = (val: undefined) => 'undefined value';
+    const interceptor = (_val: undefined) => 'undefined value';
     const result = thru(undefined, interceptor);
     expect(result).toBe('undefined value');
   });

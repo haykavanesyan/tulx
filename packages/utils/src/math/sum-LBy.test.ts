@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { sumBy } from './sumBy';
+
+import { sumBy } from './sum-LBy';
 
 describe('sumBy', () => {
   it('should sum values using iteratee function', () => {

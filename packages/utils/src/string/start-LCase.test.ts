@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { startCase } from './startCase';
+
+import { startCase } from './start-LCase';
 
 describe('startCase', () => {
   it('should convert to start case', () => {

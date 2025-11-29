@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { orderBy } from './order-by';
 
 describe('orderBy', () => {

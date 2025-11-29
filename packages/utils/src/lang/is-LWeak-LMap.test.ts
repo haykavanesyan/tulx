@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isWeakMap } from './isWeakMap';
+
+import { isWeakMap } from './is-LWeak-LMap';
 
 describe('isWeakMap', () => {
   it('should return true for WeakMap', () => {

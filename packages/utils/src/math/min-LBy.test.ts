@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { minBy } from './minBy';
+
+import { minBy } from './min-LBy';
 
 describe('minBy', () => {
   it('should return minimum value using iteratee function', () => {

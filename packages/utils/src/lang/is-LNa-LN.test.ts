@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isNaN } from './isNaN';
+
+import { isNaN } from './is-LNa-LN';
 
 describe('isNaN', () => {
   it('should return true for NaN', () => {

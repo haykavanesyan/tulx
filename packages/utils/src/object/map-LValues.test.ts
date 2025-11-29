@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { mapValues } from './mapValues';
+
+import { mapValues } from './map-LValues';
 
 describe('mapValues', () => {
   it('should map values with iteratee', () => {

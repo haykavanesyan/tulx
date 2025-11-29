@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { flowRight } from './flowRight';
+
+import { flowRight } from './flow-LRight';
 
 describe('flowRight', () => {
   it('should compose functions right to left', () => {

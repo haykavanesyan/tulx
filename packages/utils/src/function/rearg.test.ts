@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { rearg } from './rearg';
 
 describe('rearg', () => {
@@ -25,7 +26,7 @@ describe('rearg', () => {
   it('should preserve this context', () => {
     const obj = {
       value: 10,
-      subtract: function (this: typeof obj, a: number, b: number) {
+      subtract(this: typeof obj, a: number, b: number) {
         return this.value - a - b;
       },
     };

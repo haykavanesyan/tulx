@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { eq } from './eq';
 
 describe('eq', () => {

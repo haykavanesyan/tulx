@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isNil } from './isNil';
+
+import { isNil } from './is-LNil';
 
 describe('isNil', () => {
   it('should return true for null', () => {

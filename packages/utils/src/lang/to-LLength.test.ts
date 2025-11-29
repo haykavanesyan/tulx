@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { toLength } from './toLength';
+
+import { toLength } from './to-LLength';
 
 describe('toLength', () => {
   it('should convert numbers to length', () => {

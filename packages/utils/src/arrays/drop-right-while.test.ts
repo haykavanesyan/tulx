@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+
 import { dropRightWhile } from './drop-right-while';
 
 describe('dropRightWhile', () => {
@@ -26,7 +27,7 @@ describe('dropRightWhile', () => {
   });
 
   it('should pass index and array to predicate', () => {
-    const predicate = vi.fn((value, index, array) => value < 3);
+    const predicate = vi.fn((value, _index, _array) => value < 3);
     dropRightWhile([1, 2, 3, 4], predicate);
     // Function iterates from end, so first call is with last element (index 3)
     expect(predicate).toHaveBeenCalledWith(4, 3, [1, 2, 3, 4]);

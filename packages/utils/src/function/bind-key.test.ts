@@ -1,16 +1,13 @@
 import { describe, it, expect } from 'vitest';
+
 import { bindKey } from './bind-key';
 
 describe('bindKey', () => {
   it('should bind method with partials', () => {
     const object = {
       user: 'fred',
-      greet: function (
-        this: typeof object,
-        greeting: string,
-        punctuation: string
-      ) {
-        return greeting + ' ' + this.user + punctuation;
+      greet(this: typeof object, greeting: string, punctuation: string) {
+        return `${greeting} ${this.user}${punctuation}`;
       },
     };
     const bound = bindKey(object, 'greet', 'hi');
@@ -25,7 +22,7 @@ describe('bindKey', () => {
 
   it('should prepend partials to arguments', () => {
     const object = {
-      add: function (a: number, b: number, c: number) {
+      add(a: number, b: number, c: number) {
         return a + b + c;
       },
     };

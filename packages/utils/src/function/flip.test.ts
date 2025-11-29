@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { flip } from './flip';
 
 describe('flip', () => {
@@ -16,7 +17,7 @@ describe('flip', () => {
   it('should preserve this context', () => {
     const obj = {
       value: 10,
-      subtract: function (this: typeof obj, a: number, b: number) {
+      subtract(this: typeof obj, a: number, b: number) {
         return this.value - a - b;
       },
     };

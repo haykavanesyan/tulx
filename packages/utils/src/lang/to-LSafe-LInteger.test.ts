@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { toSafeInteger } from './toSafeInteger';
+
+import { toSafeInteger } from './to-LSafe-LInteger';
 
 describe('toSafeInteger', () => {
   it('should convert numbers to safe integers', () => {

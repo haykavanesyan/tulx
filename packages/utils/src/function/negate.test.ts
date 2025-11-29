@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { negate } from './negate';
 
 describe('negate', () => {
@@ -19,7 +20,7 @@ describe('negate', () => {
   it('should preserve this context', () => {
     const obj = {
       threshold: 10,
-      isGreater: function (this: typeof obj, n: number) {
+      isGreater(this: typeof obj, n: number) {
         return n > this.threshold;
       },
     };

@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { lowerFirst } from './lowerFirst';
+
+import { lowerFirst } from './lower-LFirst';
 
 describe('lowerFirst', () => {
   it('should lower first character', () => {

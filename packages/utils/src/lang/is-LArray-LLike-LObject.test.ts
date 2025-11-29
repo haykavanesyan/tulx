@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isArrayLikeObject } from './isArrayLikeObject';
+
+import { isArrayLikeObject } from './is-LArray-LLike-LObject';
 
 describe('isArrayLikeObject', () => {
   it('should return true for arrays', () => {

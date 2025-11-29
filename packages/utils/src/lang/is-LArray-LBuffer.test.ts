@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isArrayBuffer } from './isArrayBuffer';
+
+import { isArrayBuffer } from './is-LArray-LBuffer';
 
 describe('isArrayBuffer', () => {
   it('should return true for ArrayBuffer', () => {

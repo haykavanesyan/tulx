@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { stubObject } from './stubObject';
+
+import { stubObject } from './stub-LObject';
 
 describe('stubObject', () => {
   it('should return new empty object', () => {

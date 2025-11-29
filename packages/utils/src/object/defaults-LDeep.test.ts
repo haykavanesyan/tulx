@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { defaultsDeep } from './defaultsDeep';
+
+import { defaultsDeep } from './defaults-LDeep';
 
 describe('defaultsDeep', () => {
   it('should recursively assign defaults', () => {
