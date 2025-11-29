@@ -30,25 +30,6 @@ pnpm add utilkit
 yarn add utilkit
 ```
 
-## Usage
-
-```typescript
-import { chunk, debounce, groupBy } from 'utilkit';
-
-// Arrays
-const chunks = chunk([1, 2, 3, 4, 5], 2);
-// [[1, 2], [3, 4], [5]]
-
-// Functions
-const debounced = debounce(() => {
-  console.log('Debounced!');
-}, 300);
-
-// Collections
-const grouped = groupBy(['one', 'two', 'three'], 'length');
-// { 3: ['one', 'two'], 5: ['three'] }
-```
-
 ## Categories
 
 Utilkit provides 300+ utility functions organized into logical categories:
@@ -80,25 +61,7 @@ Modern bundlers like Webpack, Rollup, and Vite will automatically remove unused 
 
 ## TypeScript Support
 
-Utilkit is written in TypeScript and provides excellent type inference:
-
-```typescript
-import { groupBy } from 'utilkit';
-
-interface User {
-  name: string;
-  age: number;
-}
-
-const users: User[] = [
-  { name: 'Alice', age: 25 },
-  { name: 'Bob', age: 30 },
-];
-
-// TypeScript knows the return type
-const grouped = groupBy(users, 'age');
-// Type: Record<number, User[]>
-```
+Utilkit is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
 
 ## Comparison with Other Libraries
 

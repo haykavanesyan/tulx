@@ -1,92 +1,133 @@
-# Utilkit
+<div align="center">
 
-Utility library with documentation website - Monorepo powered by Turborepo and pnpm.
+# 🛠️ Utilkit
 
-## Structure
+**A modern, type-safe utility library for JavaScript and TypeScript**
 
-```
-.
-├── apps/
-│   └── docs/          # Next.js documentation website
-├── packages/
-│   ├── utils/         # Utility function library
-│   └── config/        # Shared TS/ESLint configs
-└── package.json       # Root package.json
-```
+[![npm version](https://img.shields.io/npm/v/utilkit)](https://www.npmjs.com/package/utilkit)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](https://www.typescriptlang.org/)
 
-## Getting Started
+*Zero dependencies • Tree-shakeable • Fully typed • Well documented*
 
-### Prerequisites
+</div>
 
-- Node.js >= 18.0.0
-- pnpm >= 9.0.0
+---
 
-### Installation
+## 📖 About
 
-```bash
-pnpm install
-```
+**Utilkit** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. With 300+ utility functions, it provides everything you need for working with arrays, objects, strings, functions, and more.
 
-### Development
+### ✨ Why Utilkit?
 
-```bash
-# Run all apps and packages in development mode
-pnpm dev
+- 🚀 **Zero Dependencies** - No external dependencies means smaller bundle sizes and faster installs
+- 📦 **Tree-Shakeable** - Import only what you need with ES modules support
+- 🔒 **Type-Safe** - Built with TypeScript strict mode for complete type safety
+- ✨ **Pure Functions** - All functions are pure and side-effect free
+- 📚 **Well Documented** - Every function includes JSDoc with examples
+- 🎯 **Modern Build** - Supports both ESM and CommonJS
+- 🔧 **Developer Friendly** - Clean, readable code without unnecessary abstractions
 
-# Build all packages
-pnpm build
-
-# Run linting
-pnpm lint
-
-# Run tests
-pnpm test
-
-# Type check
-pnpm type-check
-```
-
-## Versioning
-
-Этот проект использует [Changesets](https://github.com/changesets/changesets) для управления версиями и автоматического создания changelog.
-
-### Создание changeset
-
-При внесении изменений, требующих обновления версии:
+## 📦 Installation
 
 ```bash
-pnpm changeset
+npm install utilkit
+# or
+pnpm add utilkit
+# or
+yarn add utilkit
 ```
 
-Выберите пакеты и тип изменения (major/minor/patch), затем опишите изменения.
+## 📚 Categories
 
-### Обновление версий
+Utilkit provides utility functions organized into logical categories:
 
-После создания changesets обновите версии:
+### Arrays
+Manipulation, transformation, and querying of arrays.
 
-```bash
-pnpm version
+### Collections
+Iteration, filtering, and transformation of collections.
+
+### Objects
+Object manipulation, property access, and merging.
+
+### Strings
+String transformation, formatting, and parsing.
+
+### Functions
+Function composition, debouncing, throttling, and more.
+
+### Numbers & Math
+Mathematical operations and aggregations.
+
+### Language Utilities
+Type checking, type conversion, and equality checks.
+
+## 🌳 Tree-Shaking
+
+Utilkit is fully tree-shakeable. Import only the functions you need:
+
+```typescript
+// ✅ Good - only imports what you need
+import { chunk, debounce } from 'utilkit';
+
+// ❌ Avoid - imports entire library
+import * as utilkit from 'utilkit';
 ```
 
-Эта команда обновит версии пакетов, создаст changelog и обновит зависимости.
+Modern bundlers like Webpack, Rollup, and Vite will automatically remove unused code.
 
-### Проверка статуса
+## 🔒 TypeScript Support
 
-Проверьте незавершенные changesets:
+Utilkit is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
 
-```bash
-pnpm changeset:status
-```
+## 📊 Comparison
 
-Подробнее см. [.changeset/README.md](.changeset/README.md)
+### vs Lodash
 
-## Tech Stack
+| Feature | Utilkit | Lodash |
+|---------|---------|--------|
+| Bundle Size | Smaller (tree-shakeable) | Larger |
+| Dependencies | Zero | Has dependencies |
+| TypeScript | Modern, strict mode | Good, but legacy patterns |
+| Code Style | Clean, modern | Some legacy patterns |
 
-- **Monorepo**: Turborepo
-- **Package Manager**: pnpm workspaces
-- **TypeScript**: Strict mode enabled
-- **Documentation**: Next.js App Router
+### vs Ramda
 
-## License
+| Feature | Utilkit | Ramda |
+|---------|---------|-------|
+| API Style | Familiar (Lodash-like) | Functional, curried by default |
+| Performance | Optimized | Good |
+| Coverage | 300+ functions | Comprehensive |
+| Learning Curve | Easy | Steeper |
 
-MIT
+### vs Native JavaScript
+
+| Feature | Utilkit | Native JS |
+|---------|---------|-----------|
+| Consistency | Same API across functions | Varies |
+| Edge Cases | Handled properly | May need manual handling |
+| Type Safety | Full TypeScript support | Limited |
+| Documentation | Every function documented | MDN docs |
+
+## 🌐 Browser Support
+
+Utilkit supports all modern browsers that support ES2015+. For older browsers, use a transpiler like Babel.
+
+## 📖 Documentation
+
+For detailed documentation, examples, and interactive playground, visit our [documentation website](#) (coming soon).
+
+## 📄 License
+
+MIT © [Your Name]
+
+---
+
+<div align="center">
+
+**Made with ❤️ by the Utilkit team**
+
+[Documentation](#) • [npm Package](https://www.npmjs.com/package/utilkit) • [GitHub](https://github.com/your-username/utilify)
+
+</div>
