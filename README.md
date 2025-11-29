@@ -120,7 +120,7 @@ For detailed documentation, examples, and interactive playground, visit our [doc
 
 ## 📄 License
 
-MIT © [Your Name]
+MIT © Utilkit Contributors
 
 ---
 
