@@ -19,17 +19,14 @@
       "@utilify/utils/*": ["../../packages/utils/src/*"],
       "@utilify/config": ["../../packages/config"],
       "@utilify/config/*": ["../../packages/config/*"]
-    }
+    },
+    "noEmit": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"],
   "references": [
     {
       "path": "../../packages/utils"
-    },
-    {
-      "path": "../../packages/config"
     }
   ]
 }
-

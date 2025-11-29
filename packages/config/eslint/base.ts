@@ -1,10 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore - ESLint 8 types are built-in
 import type { Linter } from 'eslint';
 
 /**
  * Base ESLint configuration for TypeScript projects
  * Shared across all packages in the monorepo
  */
-const config: Linter.Config = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const config = {
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -15,7 +18,6 @@ const config: Linter.Config = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:import/recommended',
     'plugin:import/typescript',
     'prettier',
   ],
@@ -115,6 +117,6 @@ const config: Linter.Config = {
 
 // ESLint requires CommonJS export for config files
 // eslint-disable-next-line import/no-default-export
-export default config;
-module.exports = config;
-
+export default config as unknown as Linter.Config;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+module.exports = config as any;

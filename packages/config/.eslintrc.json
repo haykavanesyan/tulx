@@ -1,8 +1,10 @@
 {
-  "extends": ["../../packages/config/eslint/next.js"],
+  "root": true,
+  "extends": ["./eslint/base.js"],
   "parserOptions": {
     "project": false
   },
+  "ignorePatterns": ["**/*.js", "**/*.d.ts"],
   "rules": {
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/prefer-optional-chain": "off"

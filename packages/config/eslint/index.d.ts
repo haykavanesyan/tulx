@@ -1,28 +1,15 @@
 /**
  * ESLint configuration exports
  */
-
 import base from './base';
 import baseTypeChecked from './base-type-checked';
 import next from './next';
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore - ESLint 8 types are built-in
 import type { Linter } from 'eslint';
-
 export { base, baseTypeChecked, next };
-
-const config: {
+declare const config: {
   base: Linter.Config;
   'base-type-checked': Linter.Config;
   next: Linter.Config;
-} = {
-  base,
-  'base-type-checked': baseTypeChecked,
-  next,
 };
-
-// ESLint requires CommonJS export for config files
-// eslint-disable-next-line import/no-default-export
 export default config;
-module.exports = config;
+//# sourceMappingURL=index.d.ts.map

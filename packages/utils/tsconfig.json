@@ -14,4 +14,3 @@
   "include": ["src/**/*", "vitest.d.ts"],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
 }
-

@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf .next out"
   },
@@ -17,13 +18,14 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@utilify/config": "workspace:*",
     "@types/node": "^20.11.5",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
+    "@utilify/config": "workspace:*",
     "eslint": "^8.57.0",
+    "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
@@ -34,4 +36,3 @@
     "typescript-eslint": "^7.0.0"
   }
 }
-

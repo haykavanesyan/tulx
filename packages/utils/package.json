@@ -21,6 +21,7 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui",

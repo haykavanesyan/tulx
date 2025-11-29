@@ -2,7 +2,6 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./typescript/base.json",
   "compilerOptions": {
-    "composite": true,
     "allowJs": true,
     "checkJs": false,
     "declaration": false,
@@ -16,4 +15,3 @@
   "include": ["eslint/**/*.ts"],
   "exclude": ["node_modules", "dist", "typescript"]
 }
-

@@ -21,4 +21,3 @@ export default defineConfig({
     options.target = 'es2020';
   },
 });
-
