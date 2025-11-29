@@ -14,4 +14,3 @@
 export function parseInt(string: string, radix: number = 10): number {
   return Number.parseInt(string, radix);
 }
-

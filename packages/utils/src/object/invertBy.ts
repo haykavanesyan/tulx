@@ -31,4 +31,3 @@ export function invertBy<T>(
 
   return result;
 }
-

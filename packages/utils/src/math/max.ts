@@ -16,4 +16,3 @@ export function max(array: readonly number[]): number | undefined {
   }
   return Math.max(...array);
 }
-

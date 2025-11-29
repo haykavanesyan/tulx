@@ -16,4 +16,3 @@ export function nth<T>(array: readonly T[], n: number): T | undefined {
   const index = n < 0 ? array.length + n : n;
   return index >= 0 && index < array.length ? array[index] : undefined;
 }
-

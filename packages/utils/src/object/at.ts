@@ -20,7 +20,11 @@ export function at<T = unknown>(
     let current: unknown = object;
 
     for (const key of pathArray) {
-      if (current === null || current === undefined || typeof current !== 'object') {
+      if (
+        current === null ||
+        current === undefined ||
+        typeof current !== 'object'
+      ) {
         return undefined;
       }
       current = (current as Record<string, unknown>)[String(key)];
@@ -65,4 +69,3 @@ function parsePath(path: string): string[] {
 
   return keys;
 }
-

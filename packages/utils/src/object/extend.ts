@@ -23,4 +23,3 @@ export function extend<T extends Record<string, unknown>>(
   }
   return object;
 }
-

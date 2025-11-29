@@ -23,8 +23,8 @@ export function throttle<T extends (...args: unknown[]) => unknown>(
 ): (...args: Parameters<T>) => void {
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
   let lastInvokeTime = 0;
-  let leading = options?.leading !== false;
-  let trailing = options?.trailing !== false;
+  const leading = options?.leading !== false;
+  const trailing = options?.trailing !== false;
 
   function invokeFunc(this: unknown, args: Parameters<T>, time: number): void {
     lastInvokeTime = time;
@@ -72,11 +72,13 @@ export function throttle<T extends (...args: unknown[]) => unknown>(
       }
       timeoutId = setTimeout(() => timerExpired.apply(this, [args]), wait);
     } else if (timeoutId === undefined && trailing) {
-      timeoutId = setTimeout(() => timerExpired.apply(this, [args]), remainingWait(time));
+      timeoutId = setTimeout(
+        () => timerExpired.apply(this, [args]),
+        remainingWait(time)
+      );
     }
   }
 
   throttled.cancel = cancel;
   return throttled;
 }
-

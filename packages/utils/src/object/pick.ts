@@ -15,7 +15,9 @@ export function pick<T extends Record<string, unknown>>(
   object: T,
   paths: readonly (string | readonly (string | number)[])[]
 ): Partial<T> {
-  const pathSet = new Set(paths.map((path) => (Array.isArray(path) ? path.join('.') : String(path))));
+  const pathSet = new Set(
+    paths.map((path) => (Array.isArray(path) ? path.join('.') : String(path)))
+  );
   const result: Partial<T> = {};
 
   for (const key in object) {
@@ -26,4 +28,3 @@ export function pick<T extends Record<string, unknown>>(
 
   return result;
 }
-

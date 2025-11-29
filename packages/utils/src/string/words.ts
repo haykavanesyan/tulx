@@ -17,4 +17,3 @@ export function words(string: string, pattern?: string | RegExp): string[] {
   const matches = string.match(regex);
   return matches || [];
 }
-

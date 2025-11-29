@@ -17,7 +17,12 @@
  */
 export function reduce<T, TResult>(
   collection: readonly T[] | Record<string, T>,
-  iteratee: (accumulator: TResult, value: T, index: number | string, collection: readonly T[] | Record<string, T>) => TResult,
+  iteratee: (
+    accumulator: TResult,
+    value: T,
+    index: number | string,
+    collection: readonly T[] | Record<string, T>
+  ) => TResult,
   accumulator: TResult
 ): TResult {
   if (Array.isArray(collection)) {
@@ -35,4 +40,3 @@ export function reduce<T, TResult>(
 
   return accumulator;
 }
-

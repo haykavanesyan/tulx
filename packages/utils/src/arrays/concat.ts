@@ -24,4 +24,3 @@ export function concat<T>(array: readonly T[], ...values: unknown[]): T[] {
 
   return result;
 }
-

@@ -20,4 +20,3 @@ export function flatten<T>(array: readonly (T | readonly T[])[]): T[] {
   }
   return result;
 }
-

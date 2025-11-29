@@ -23,4 +23,3 @@ export function pull<T>(array: T[], ...values: readonly T[]): T[] {
   array.length = writeIndex;
   return array;
 }
-

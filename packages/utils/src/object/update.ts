@@ -18,16 +18,26 @@ export function update<T extends Record<string, unknown>>(
   path: string | readonly (string | number)[],
   updater: (value: unknown) => unknown
 ): T {
-  const pathArray = Array.isArray(path) ? path.map(String) : parsePath(String(path));
+  const pathArray = Array.isArray(path)
+    ? path.map(String)
+    : parsePath(String(path));
   let current: unknown = object;
 
   for (let i = 0; i < pathArray.length - 1; i++) {
     const key = pathArray[i];
-    if (current === null || current === undefined || typeof current !== 'object') {
+    if (
+      current === null ||
+      current === undefined ||
+      typeof current !== 'object'
+    ) {
       return object;
     }
     const currentObj = current as Record<string, unknown>;
-    if (!(key in currentObj) || typeof currentObj[key] !== 'object' || currentObj[key] === null) {
+    if (
+      !(key in currentObj) ||
+      typeof currentObj[key] !== 'object' ||
+      currentObj[key] === null
+    ) {
       currentObj[key] = {};
     }
     current = currentObj[key];
@@ -76,4 +86,3 @@ function parsePath(path: string): string[] {
 
   return keys;
 }
-

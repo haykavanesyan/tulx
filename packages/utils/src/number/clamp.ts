@@ -22,4 +22,3 @@ export function clamp(number: number, lower: number, upper: number): number {
   }
   return number;
 }
-

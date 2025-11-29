@@ -19,4 +19,3 @@ export function spread<T extends (...args: unknown[]) => unknown>(
     return func.apply(this, args.slice(start)) as ReturnType<T>;
   };
 }
-

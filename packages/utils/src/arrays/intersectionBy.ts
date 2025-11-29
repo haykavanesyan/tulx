@@ -11,9 +11,7 @@
  * intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [2.1]
  * ```
  */
-export function intersectionBy<T>(
-  ...args: readonly unknown[]
-): T[] {
+export function intersectionBy<T>(...args: readonly unknown[]): T[] {
   if (args.length < 2) {
     return [];
   }
@@ -25,9 +23,10 @@ export function intersectionBy<T>(
     return [];
   }
 
-  const getValue = typeof iteratee === 'string'
-    ? (item: T) => (item as Record<string, unknown>)[iteratee]
-    : iteratee;
+  const getValue =
+    typeof iteratee === 'string'
+      ? (item: T) => (item as Record<string, unknown>)[iteratee]
+      : iteratee;
 
   const firstArray = arrays[0];
   const otherArrays = arrays.slice(1);
@@ -41,14 +40,15 @@ export function intersectionBy<T>(
     }
     seen.add(key);
 
-    if (otherArrays.some((arr) => {
-      const arrKeys = arr.map(getValue);
-      return arrKeys.includes(key);
-    })) {
+    if (
+      otherArrays.some((arr) => {
+        const arrKeys = arr.map((item) => getValue(item));
+        return arrKeys.includes(key);
+      })
+    ) {
       result.push(value);
     }
   }
 
   return result;
 }
-

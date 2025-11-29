@@ -16,7 +16,11 @@
  */
 export function filter<T>(
   collection: readonly T[] | Record<string, T>,
-  predicate: (value: T, index: number | string, collection: readonly T[] | Record<string, T>) => boolean
+  predicate: (
+    value: T,
+    index: number | string,
+    collection: readonly T[] | Record<string, T>
+  ) => boolean
 ): T[] {
   const result: T[] = [];
 
@@ -39,4 +43,3 @@ export function filter<T>(
 
   return result;
 }
-

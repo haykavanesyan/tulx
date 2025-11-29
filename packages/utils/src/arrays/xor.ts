@@ -17,7 +17,7 @@ export function xor<T>(...arrays: readonly T[][]): T[] {
     for (const value of array) {
       if (!seenInArray.has(value)) {
         seenInArray.add(value);
-        countMap.set(value, (countMap.get(value) || 0) + 1);
+        countMap.set(value, (countMap.get(value) ?? 0) + 1);
       }
     }
   }
@@ -31,4 +31,3 @@ export function xor<T>(...arrays: readonly T[][]): T[] {
 
   return result;
 }
-

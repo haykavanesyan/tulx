@@ -11,7 +11,10 @@
  * difference([2, 1], [2, 3]); // [1]
  * ```
  */
-export function difference<T>(array: readonly T[], ...values: readonly T[][]): T[] {
+export function difference<T>(
+  array: readonly T[],
+  ...values: readonly T[][]
+): T[] {
   const excludeSet = new Set<T>();
   for (const valueArray of values) {
     for (const value of valueArray) {
@@ -21,4 +24,3 @@ export function difference<T>(array: readonly T[], ...values: readonly T[][]): T
 
   return array.filter((item) => !excludeSet.has(item));
 }
-

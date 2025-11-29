@@ -9,4 +9,3 @@
   "updateInternalDependencies": "patch",
   "ignore": ["@utilify/docs", "@utilify/config", "utilify"]
 }
-

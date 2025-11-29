@@ -17,7 +17,13 @@
 export function extendWith<T extends Record<string, unknown>>(
   object: T,
   sources: readonly Record<string, unknown>[],
-  customizer: (objValue: unknown, srcValue: unknown, key: string, object: T, source: Record<string, unknown>) => unknown
+  customizer: (
+    objValue: unknown,
+    srcValue: unknown,
+    key: string,
+    object: T,
+    source: Record<string, unknown>
+  ) => unknown
 ): T {
   const result = object as Record<string, unknown>;
   for (const source of sources) {
@@ -29,4 +35,3 @@ export function extendWith<T extends Record<string, unknown>>(
   }
   return object;
 }
-

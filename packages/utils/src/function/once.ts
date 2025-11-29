@@ -25,4 +25,3 @@ export function once<T extends (...args: unknown[]) => unknown>(
     return result!;
   };
 }
-

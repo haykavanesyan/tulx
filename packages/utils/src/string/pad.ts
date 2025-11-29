@@ -14,7 +14,11 @@
  * pad('abc', 3); // 'abc'
  * ```
  */
-export function pad(string: string, length: number, chars: string = ' '): string {
+export function pad(
+  string: string,
+  length: number,
+  chars: string = ' '
+): string {
   const strLength = string.length;
   if (strLength >= length) {
     return string;
@@ -24,9 +28,12 @@ export function pad(string: string, length: number, chars: string = ' '): string
   const leftPad = Math.floor(padLength / 2);
   const rightPad = padLength - leftPad;
 
-  const leftChars = chars.repeat(Math.ceil(leftPad / chars.length)).slice(0, leftPad);
-  const rightChars = chars.repeat(Math.ceil(rightPad / chars.length)).slice(0, rightPad);
+  const leftChars = chars
+    .repeat(Math.ceil(leftPad / chars.length))
+    .slice(0, leftPad);
+  const rightChars = chars
+    .repeat(Math.ceil(rightPad / chars.length))
+    .slice(0, rightPad);
 
   return leftChars + string + rightChars;
 }
-

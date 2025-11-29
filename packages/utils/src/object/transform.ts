@@ -19,7 +19,12 @@
  */
 export function transform<T, TResult>(
   object: Record<string, T> | readonly T[],
-  iteratee: (accumulator: TResult, value: T, key: string | number, object: Record<string, T> | readonly T[]) => TResult | false,
+  iteratee: (
+    accumulator: TResult,
+    value: T,
+    key: string | number,
+    object: Record<string, T> | readonly T[]
+  ) => TResult | false,
   accumulator: TResult
 ): TResult {
   if (Array.isArray(object)) {
@@ -44,4 +49,3 @@ export function transform<T, TResult>(
   }
   return accumulator;
 }
-

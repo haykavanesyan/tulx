@@ -19,4 +19,3 @@ export function wrap<T, TArgs extends unknown[], TResult>(
     return wrapper(value, ...args);
   };
 }
-

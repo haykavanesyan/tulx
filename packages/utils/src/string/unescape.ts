@@ -18,6 +18,8 @@ export function unescape(string: string): string {
     '&#39;': "'",
   };
 
-  return string.replace(/&amp;|&lt;|&gt;|&quot;|&#39;/g, (entity) => map[entity] || entity);
+  return string.replace(
+    /&amp;|&lt;|&gt;|&quot;|&#39;/g,
+    (entity) => map[entity] || entity
+  );
 }
-

@@ -22,7 +22,11 @@ export function has(
   let current: unknown = object;
 
   for (const key of pathArray) {
-    if (current === null || current === undefined || typeof current !== 'object') {
+    if (
+      current === null ||
+      current === undefined ||
+      typeof current !== 'object'
+    ) {
       return false;
     }
     const keyStr = String(key);
@@ -70,4 +74,3 @@ function parsePath(path: string): string[] {
 
   return keys;
 }
-

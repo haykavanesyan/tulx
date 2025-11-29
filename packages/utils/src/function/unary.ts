@@ -16,4 +16,3 @@ export function unary<T extends (...args: unknown[]) => unknown>(
     return func.call(this, arg) as ReturnType<T>;
   };
 }
-

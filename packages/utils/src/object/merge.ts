@@ -34,7 +34,10 @@ export function merge<T extends Record<string, unknown>>(
         sourceValue !== null &&
         !Array.isArray(sourceValue)
       ) {
-        merge(objectValue as Record<string, unknown>, sourceValue as Record<string, unknown>);
+        merge(
+          objectValue as Record<string, unknown>,
+          sourceValue as Record<string, unknown>
+        );
       } else {
         result[key] = sourceValue;
       }
@@ -42,4 +45,3 @@ export function merge<T extends Record<string, unknown>>(
   }
   return object;
 }
-

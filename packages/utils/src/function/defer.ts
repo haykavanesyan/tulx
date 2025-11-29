@@ -16,4 +16,3 @@ export function defer<T extends (...args: unknown[]) => unknown>(
 ): ReturnType<typeof setTimeout> {
   return setTimeout(() => func(...args), 1);
 }
-

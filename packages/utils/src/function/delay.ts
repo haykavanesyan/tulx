@@ -18,4 +18,3 @@ export function delay<T extends (...args: unknown[]) => unknown>(
 ): ReturnType<typeof setTimeout> {
   return setTimeout(() => func(...args), wait);
 }
-

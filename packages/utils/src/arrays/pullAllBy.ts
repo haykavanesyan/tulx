@@ -19,11 +19,12 @@ export function pullAllBy<T>(
   values: readonly T[],
   iteratee: ((value: T) => unknown) | string
 ): T[] {
-  const getValue = typeof iteratee === 'string'
-    ? (item: T) => (item as Record<string, unknown>)[iteratee]
-    : iteratee;
+  const getValue =
+    typeof iteratee === 'string'
+      ? (item: T) => (item as Record<string, unknown>)[iteratee]
+      : iteratee;
 
-  const valueKeys = new Set(values.map(getValue));
+  const valueKeys = new Set(values.map((value) => getValue(value)));
   let writeIndex = 0;
   for (let i = 0; i < array.length; i++) {
     if (!valueKeys.has(getValue(array[i]))) {
@@ -34,4 +35,3 @@ export function pullAllBy<T>(
   array.length = writeIndex;
   return array;
 }
-

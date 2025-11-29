@@ -20,4 +20,3 @@ export function escape(string: string): string {
 
   return string.replace(/[&<>"']/g, (char) => map[char]);
 }
-

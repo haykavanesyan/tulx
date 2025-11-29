@@ -25,4 +25,3 @@ export function bind<T extends (...args: unknown[]) => unknown>(
     return func.apply(thisArg, [...partials, ...args]) as ReturnType<T>;
   };
 }
-

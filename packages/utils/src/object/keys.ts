@@ -17,4 +17,3 @@
 export function keys(object: Record<string, unknown>): string[] {
   return Object.keys(object);
 }
-

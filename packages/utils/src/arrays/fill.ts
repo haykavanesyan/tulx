@@ -22,13 +22,14 @@ export function fill<T>(
   end?: number
 ): T[] {
   const length = array.length;
-  const endIndex = end === undefined ? length : end;
-  const startIndex = start < 0 ? Math.max(length + start, 0) : Math.min(start, length);
-  const finalEnd = endIndex < 0 ? Math.max(length + endIndex, 0) : Math.min(endIndex, length);
+  const endIndex = end ?? length;
+  const startIndex =
+    start < 0 ? Math.max(length + start, 0) : Math.min(start, length);
+  const finalEnd =
+    endIndex < 0 ? Math.max(length + endIndex, 0) : Math.min(endIndex, length);
 
   for (let i = startIndex; i < finalEnd; i++) {
     array[i] = value;
   }
   return array;
 }
-

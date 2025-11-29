@@ -13,4 +13,3 @@
 export function first<T>(array: readonly T[]): T | undefined {
   return array.length > 0 ? array[0] : undefined;
 }
-

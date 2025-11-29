@@ -32,4 +32,3 @@ export function remove<T>(
   array.length = writeIndex;
   return removed;
 }
-

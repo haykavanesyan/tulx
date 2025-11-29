@@ -24,4 +24,3 @@ export function assign<T extends Record<string, unknown>>(
 ): T {
   return Object.assign(object, ...sources);
 }
-

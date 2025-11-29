@@ -23,4 +23,3 @@ export function trim(string: string, chars?: string): string {
   const pattern = `[${escapeRegExpForTrim(chars)}]+`;
   return string.replace(new RegExp(`^${pattern}|${pattern}$`, 'g'), '');
 }
-

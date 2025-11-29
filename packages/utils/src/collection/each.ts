@@ -14,7 +14,11 @@
  */
 export function each<T>(
   collection: readonly T[] | Record<string, T>,
-  iteratee: (value: T, index: number | string, collection: readonly T[] | Record<string, T>) => void
+  iteratee: (
+    value: T,
+    index: number | string,
+    collection: readonly T[] | Record<string, T>
+  ) => void
 ): readonly T[] | Record<string, T> {
   if (Array.isArray(collection)) {
     for (let i = 0; i < collection.length; i++) {
@@ -30,4 +34,3 @@ export function each<T>(
   }
   return collection;
 }
-

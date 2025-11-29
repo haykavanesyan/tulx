@@ -13,7 +13,11 @@
  */
 export function every<T>(
   collection: readonly T[] | Record<string, T>,
-  predicate?: (value: T, index: number | string, collection: readonly T[] | Record<string, T>) => boolean
+  predicate?: (
+    value: T,
+    index: number | string,
+    collection: readonly T[] | Record<string, T>
+  ) => boolean
 ): boolean {
   if (!predicate) {
     predicate = (value) => Boolean(value);
@@ -38,4 +42,3 @@ export function every<T>(
 
   return true;
 }
-

@@ -25,14 +25,24 @@ export function invoke(
 
   let current: unknown = object;
   for (const key of pathArray) {
-    if (current === null || current === undefined || typeof current !== 'object') {
+    if (
+      current === null ||
+      current === undefined ||
+      typeof current !== 'object'
+    ) {
       return undefined;
     }
     current = (current as Record<string, unknown>)[String(key)];
   }
 
-  if (current && typeof (current as Record<string, unknown>)[String(methodName)] === 'function') {
-    const method = (current as Record<string, unknown>)[String(methodName)] as (...args: unknown[]) => unknown;
+  if (
+    current &&
+    typeof (current as Record<string, unknown>)[String(methodName)] ===
+      'function'
+  ) {
+    const method = (current as Record<string, unknown>)[String(methodName)] as (
+      ...args: unknown[]
+    ) => unknown;
     return method.apply(current, [...args]);
   }
 
@@ -74,4 +84,3 @@ function parsePath(path: string): string[] {
 
   return keys;
 }
-

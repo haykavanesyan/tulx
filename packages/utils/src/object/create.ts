@@ -29,4 +29,3 @@ export function create<T extends Record<string, unknown>>(
   }
   return obj as T;
 }
-

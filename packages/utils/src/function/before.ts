@@ -22,7 +22,10 @@ export function before<T extends (...args: unknown[]) => unknown>(
   let count = 0;
   let result: ReturnType<T>;
 
-  return function (this: unknown, ...args: Parameters<T>): ReturnType<T> | undefined {
+  return function (
+    this: unknown,
+    ...args: Parameters<T>
+  ): ReturnType<T> | undefined {
     if (count < n) {
       count++;
       result = func.apply(this, args) as ReturnType<T>;
@@ -31,4 +34,3 @@ export function before<T extends (...args: unknown[]) => unknown>(
     return result;
   };
 }
-

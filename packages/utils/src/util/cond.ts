@@ -28,4 +28,3 @@ export function cond<T, R>(
     return undefined;
   };
 }
-

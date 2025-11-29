@@ -17,4 +17,3 @@ export function over<T extends unknown[]>(
     return iteratees.map((iteratee) => iteratee(...args));
   };
 }
-

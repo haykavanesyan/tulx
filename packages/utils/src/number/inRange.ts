@@ -17,11 +17,7 @@
  * inRange(5.2, 4); // false
  * ```
  */
-export function inRange(
-  number: number,
-  start: number,
-  end?: number
-): boolean {
+export function inRange(number: number, start: number, end?: number): boolean {
   if (end === undefined) {
     end = start;
     start = 0;
@@ -31,4 +27,3 @@ export function inRange(
   }
   return number >= start && number < end;
 }
-

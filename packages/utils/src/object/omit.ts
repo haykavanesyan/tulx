@@ -15,15 +15,19 @@ export function omit<T extends Record<string, unknown>>(
   object: T,
   paths: readonly (string | readonly (string | number)[])[]
 ): Partial<T> {
-  const pathSet = new Set(paths.map((path) => (Array.isArray(path) ? path.join('.') : String(path))));
+  const pathSet = new Set(
+    paths.map((path) => (Array.isArray(path) ? path.join('.') : String(path)))
+  );
   const result: Partial<T> = {};
 
   for (const key in object) {
-    if (Object.prototype.hasOwnProperty.call(object, key) && !pathSet.has(key)) {
+    if (
+      Object.prototype.hasOwnProperty.call(object, key) &&
+      !pathSet.has(key)
+    ) {
       result[key] = object[key];
     }
   }
 
   return result;
 }
-

@@ -16,4 +16,3 @@
 export function take<T>(array: readonly T[], n: number = 1): T[] {
   return array.slice(0, n);
 }
-

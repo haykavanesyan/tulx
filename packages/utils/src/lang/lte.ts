@@ -15,4 +15,3 @@
 export function lte(value: number | string, other: number | string): boolean {
   return value <= other;
 }
-

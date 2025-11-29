@@ -13,4 +13,3 @@
 export function thru<T, R>(value: T, interceptor: (value: T) => R): R {
   return interceptor(value);
 }
-

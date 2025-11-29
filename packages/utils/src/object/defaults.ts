@@ -17,11 +17,13 @@ export function defaults<T extends Record<string, unknown>>(
   const result = object as Record<string, unknown>;
   for (const source of sources) {
     for (const key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key) && result[key] === undefined) {
+      if (
+        Object.prototype.hasOwnProperty.call(source, key) &&
+        result[key] === undefined
+      ) {
         result[key] = source[key];
       }
     }
   }
   return object;
 }
-

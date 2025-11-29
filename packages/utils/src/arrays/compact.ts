@@ -21,4 +21,3 @@ export function compact<T>(array: readonly T[]): Array<NonNullable<T>> {
       !Number.isNaN(item)
   );
 }
-

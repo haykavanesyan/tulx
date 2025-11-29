@@ -22,4 +22,3 @@ export function partial<T extends (...args: unknown[]) => unknown>(
     return func.apply(this, [...partials, ...args]) as ReturnType<T>;
   };
 }
-

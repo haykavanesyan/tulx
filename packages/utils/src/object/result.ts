@@ -23,7 +23,11 @@ export function result<T = unknown>(
   let current: unknown = object;
 
   for (const key of pathArray) {
-    if (current === null || current === undefined || typeof current !== 'object') {
+    if (
+      current === null ||
+      current === undefined ||
+      typeof current !== 'object'
+    ) {
       return defaultValue;
     }
     current = (current as Record<string, unknown>)[String(key)];
@@ -34,7 +38,7 @@ export function result<T = unknown>(
   }
 
   if (typeof current === 'function') {
-    return (current as () => T)() as T;
+    return (current as () => T)();
   }
 
   return current as T;
@@ -75,4 +79,3 @@ function parsePath(path: string): string[] {
 
   return keys;
 }
-

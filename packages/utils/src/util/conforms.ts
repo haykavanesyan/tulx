@@ -29,4 +29,3 @@ export function conforms<T extends Record<string, unknown>>(
     return true;
   };
 }
-

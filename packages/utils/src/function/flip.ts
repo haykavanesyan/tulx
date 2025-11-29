@@ -17,4 +17,3 @@ export function flip<T extends (...args: unknown[]) => unknown>(
     return func.apply(this, args.reverse()) as ReturnType<T>;
   };
 }
-

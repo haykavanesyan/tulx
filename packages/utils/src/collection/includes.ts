@@ -24,7 +24,8 @@ export function includes(
   }
 
   if (Array.isArray(collection)) {
-    const startIndex = fromIndex < 0 ? Math.max(collection.length + fromIndex, 0) : fromIndex;
+    const startIndex =
+      fromIndex < 0 ? Math.max(collection.length + fromIndex, 0) : fromIndex;
     for (let i = startIndex; i < collection.length; i++) {
       if (collection[i] === value) {
         return true;
@@ -44,4 +45,3 @@ export function includes(
 
   return false;
 }
-

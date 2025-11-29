@@ -10,7 +10,9 @@
  * join(['a', 'b', 'c'], '~'); // 'a~b~c'
  * ```
  */
-export function join(array: readonly unknown[], separator: string = ','): string {
+export function join(
+  array: readonly unknown[],
+  separator: string = ','
+): string {
   return array.join(separator);
 }
-

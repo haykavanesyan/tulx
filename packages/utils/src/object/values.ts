@@ -17,4 +17,3 @@
 export function values<T>(object: Record<string, T>): T[] {
   return Object.values(object);
 }
-

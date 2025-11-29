@@ -17,4 +17,3 @@
 export function entries<T>(object: Record<string, T>): Array<[string, T]> {
   return Object.entries(object);
 }
-

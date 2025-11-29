@@ -17,10 +17,12 @@
 export function functions(object: Record<string, unknown>): string[] {
   const result: string[] = [];
   for (const key in object) {
-    if (Object.prototype.hasOwnProperty.call(object, key) && typeof object[key] === 'function') {
+    if (
+      Object.prototype.hasOwnProperty.call(object, key) &&
+      typeof object[key] === 'function'
+    ) {
       result.push(key);
     }
   }
   return result;
 }
-

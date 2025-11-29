@@ -28,4 +28,3 @@ export function unzip<T>(array: readonly T[][]): T[][] {
 
   return result;
 }
-

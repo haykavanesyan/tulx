@@ -18,7 +18,11 @@
  */
 export function partition<T>(
   collection: readonly T[] | Record<string, T>,
-  predicate: (value: T, index: number | string, collection: readonly T[] | Record<string, T>) => boolean
+  predicate: (
+    value: T,
+    index: number | string,
+    collection: readonly T[] | Record<string, T>
+  ) => boolean
 ): [T[], T[]] {
   const truthy: T[] = [];
   const falsey: T[] = [];
@@ -46,4 +50,3 @@ export function partition<T>(
 
   return [truthy, falsey];
 }
-

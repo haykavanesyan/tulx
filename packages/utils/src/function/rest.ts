@@ -21,4 +21,3 @@ export function rest<T extends (...args: unknown[]) => unknown>(
     return func.apply(this, [...normalArgs, restArgs]) as ReturnType<T>;
   };
 }
-

@@ -14,4 +14,3 @@ export function without<T>(array: readonly T[], ...values: readonly T[]): T[] {
   const valueSet = new Set(values);
   return array.filter((item) => !valueSet.has(item));
 }
-

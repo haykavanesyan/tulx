@@ -23,4 +23,3 @@ export function chunk<T>(array: readonly T[], size: number): T[][] {
   }
   return result;
 }
-

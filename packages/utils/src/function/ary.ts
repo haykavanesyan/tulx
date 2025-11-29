@@ -18,4 +18,3 @@ export function ary<T extends (...args: unknown[]) => unknown>(
     return func.apply(this, args.slice(0, n)) as ReturnType<T>;
   };
 }
-

@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Utilify - Utility Library Documentation",
-  description: "Documentation for Utilify utility library",
+  title: 'Utilify - Utility Library Documentation',
+  description: 'Documentation for Utilify utility library',
 };
 
 export default function RootLayout({
@@ -17,4 +17,3 @@ export default function RootLayout({
     </html>
   );
 }
-

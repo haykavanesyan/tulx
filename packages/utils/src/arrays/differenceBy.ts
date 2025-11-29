@@ -18,12 +18,12 @@ export function differenceBy<T>(
   values: readonly T[],
   iteratee: ((value: T) => unknown) | string
 ): T[] {
-  const getValue = typeof iteratee === 'string' 
-    ? (item: T) => (item as Record<string, unknown>)[iteratee]
-    : iteratee;
+  const getValue =
+    typeof iteratee === 'string'
+      ? (item: T) => (item as Record<string, unknown>)[iteratee]
+      : iteratee;
 
-  const excludeSet = new Set(values.map(getValue));
+  const excludeSet = new Set(values.map((value) => getValue(value)));
 
   return array.filter((item) => !excludeSet.has(getValue(item)));
 }
-

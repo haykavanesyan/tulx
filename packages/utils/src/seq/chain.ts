@@ -18,9 +18,9 @@
  * // 'barney is 36'
  * ```
  */
-export interface ChainWrapper<T> {
+export type ChainWrapper<T> = {
   value(): T;
-}
+};
 
 export function chain<T>(value: T): ChainWrapper<T> {
   return {

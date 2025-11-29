@@ -16,4 +16,3 @@ export function min(array: readonly number[]): number | undefined {
   }
   return Math.min(...array);
 }
-

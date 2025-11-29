@@ -40,4 +40,3 @@ export function iteratee<T>(
 function identity<T>(value: T): T {
   return value;
 }
-

@@ -10,7 +10,9 @@
  * invert(object); // { '1': 'c', '2': 'b' }
  * ```
  */
-export function invert(object: Record<string, string | number>): Record<string, string> {
+export function invert(
+  object: Record<string, string | number>
+): Record<string, string> {
   const result: Record<string, string> = {};
   for (const key in object) {
     if (Object.prototype.hasOwnProperty.call(object, key)) {
@@ -20,4 +22,3 @@ export function invert(object: Record<string, string | number>): Record<string, 
   }
   return result;
 }
-

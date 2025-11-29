@@ -11,7 +11,9 @@
  * size('pebbles'); // 7
  * ```
  */
-export function size(collection: readonly unknown[] | Record<string, unknown> | string): number {
+export function size(
+  collection: readonly unknown[] | Record<string, unknown> | string
+): number {
   if (typeof collection === 'string' || Array.isArray(collection)) {
     return collection.length;
   }
@@ -24,4 +26,3 @@ export function size(collection: readonly unknown[] | Record<string, unknown> | 
   }
   return count;
 }
-

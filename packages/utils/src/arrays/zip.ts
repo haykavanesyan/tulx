@@ -27,4 +27,3 @@ export function zip<T extends unknown[]>(
 
   return result;
 }
-

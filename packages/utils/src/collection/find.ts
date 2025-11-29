@@ -17,11 +17,16 @@
  */
 export function find<T>(
   collection: readonly T[] | Record<string, T>,
-  predicate: (value: T, index: number | string, collection: readonly T[] | Record<string, T>) => boolean,
+  predicate: (
+    value: T,
+    index: number | string,
+    collection: readonly T[] | Record<string, T>
+  ) => boolean,
   fromIndex: number = 0
 ): T | undefined {
   if (Array.isArray(collection)) {
-    const startIndex = fromIndex < 0 ? Math.max(collection.length + fromIndex, 0) : fromIndex;
+    const startIndex =
+      fromIndex < 0 ? Math.max(collection.length + fromIndex, 0) : fromIndex;
     for (let i = startIndex; i < collection.length; i++) {
       if (predicate(collection[i], i, collection)) {
         return collection[i];
@@ -30,7 +35,8 @@ export function find<T>(
   } else {
     const record = collection as Record<string, T>;
     const keys = Object.keys(record);
-    const startIndex = fromIndex < 0 ? Math.max(keys.length + fromIndex, 0) : fromIndex;
+    const startIndex =
+      fromIndex < 0 ? Math.max(keys.length + fromIndex, 0) : fromIndex;
     for (let i = startIndex; i < keys.length; i++) {
       const key = keys[i];
       if (predicate(record[key], key, record)) {
@@ -41,4 +47,3 @@ export function find<T>(
 
   return undefined;
 }
-

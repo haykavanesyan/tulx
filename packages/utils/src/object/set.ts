@@ -18,12 +18,18 @@ export function set<T extends Record<string, unknown>>(
   path: string | readonly (string | number)[],
   value: unknown
 ): T {
-  const pathArray = Array.isArray(path) ? path.map(String) : parsePath(String(path));
+  const pathArray = Array.isArray(path)
+    ? path.map(String)
+    : parsePath(String(path));
   let current: Record<string, unknown> = object;
 
   for (let i = 0; i < pathArray.length - 1; i++) {
     const key = pathArray[i];
-    if (!(key in current) || typeof current[key] !== 'object' || current[key] === null) {
+    if (
+      !(key in current) ||
+      typeof current[key] !== 'object' ||
+      current[key] === null
+    ) {
       current[key] = {};
     }
     current = current[key] as Record<string, unknown>;
@@ -68,4 +74,3 @@ function parsePath(path: string): string[] {
 
   return keys;
 }
-

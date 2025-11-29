@@ -40,14 +40,17 @@ export function truncate(
   let result = string.slice(0, truncLength);
 
   if (separator) {
-    const escapeRegExpForTruncate = (str: string): string => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const separatorRegex = typeof separator === 'string' ? new RegExp(escapeRegExpForTruncate(separator)) : separator;
+    const escapeRegExpForTruncate = (str: string): string =>
+      str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const separatorRegex =
+      typeof separator === 'string'
+        ? new RegExp(escapeRegExpForTruncate(separator))
+        : separator;
     const match = result.match(separatorRegex);
-    if (match && match.index !== undefined) {
+    if (match?.index !== undefined) {
       result = result.slice(0, match.index);
     }
   }
 
   return result + omission;
 }
-

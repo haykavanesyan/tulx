@@ -10,7 +10,9 @@
  * ```
  */
 export function shuffle<T>(collection: readonly T[] | Record<string, T>): T[] {
-  const items = Array.isArray(collection) ? [...collection] : Object.values(collection);
+  const items = Array.isArray(collection)
+    ? [...collection]
+    : Object.values(collection);
   const result = [...items];
 
   for (let i = result.length - 1; i > 0; i--) {
@@ -20,4 +22,3 @@ export function shuffle<T>(collection: readonly T[] | Record<string, T>): T[] {
 
   return result;
 }
-

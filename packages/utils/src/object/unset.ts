@@ -24,7 +24,11 @@ export function unset(
   let current: Record<string, unknown> = object;
   for (let i = 0; i < pathArray.length - 1; i++) {
     const key = String(pathArray[i]);
-    if (!(key in current) || typeof current[key] !== 'object' || current[key] === null) {
+    if (
+      !(key in current) ||
+      typeof current[key] !== 'object' ||
+      current[key] === null
+    ) {
       return false;
     }
     current = current[key] as Record<string, unknown>;
@@ -74,4 +78,3 @@ function parsePath(path: string): string[] {
 
   return keys;
 }
-

@@ -85,11 +85,15 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
     return undefined;
   }
 
-  function debounced(this: unknown, ...args: Parameters<T>): ReturnType<T> | undefined {
+  function debounced(
+    this: unknown,
+    ...args: Parameters<T>
+  ): ReturnType<T> | undefined {
     const time = Date.now();
     const isInvoking = shouldInvoke(time);
 
     lastArgs = args;
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     lastThis = this;
     lastCallTime = time;
 

@@ -16,7 +16,11 @@
  */
 export function reject<T>(
   collection: readonly T[] | Record<string, T>,
-  predicate: (value: T, index: number | string, collection: readonly T[] | Record<string, T>) => boolean
+  predicate: (
+    value: T,
+    index: number | string,
+    collection: readonly T[] | Record<string, T>
+  ) => boolean
 ): T[] {
   const result: T[] = [];
 
@@ -39,4 +43,3 @@ export function reject<T>(
 
   return result;
 }
-

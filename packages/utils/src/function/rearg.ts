@@ -20,4 +20,3 @@ export function rearg<T extends (...args: unknown[]) => unknown>(
     return func.apply(this, rearrangedArgs) as ReturnType<T>;
   };
 }
-

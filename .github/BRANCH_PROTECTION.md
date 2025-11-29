@@ -93,4 +93,3 @@ gh api repos/:owner/:repo/branches/main/protection \
 
 - [GitHub Documentation: About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
 - [GitHub Documentation: Requiring status checks](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule#require-status-checks-before-merging)
-

@@ -16,7 +16,11 @@
  */
 export function map<T, TResult>(
   collection: readonly T[] | Record<string, T>,
-  iteratee: (value: T, index: number | string, collection: readonly T[] | Record<string, T>) => TResult
+  iteratee: (
+    value: T,
+    index: number | string,
+    collection: readonly T[] | Record<string, T>
+  ) => TResult
 ): TResult[] {
   const result: TResult[] = [];
 
@@ -35,4 +39,3 @@ export function map<T, TResult>(
 
   return result;
 }
-

@@ -35,4 +35,3 @@ export function intersection<T>(...arrays: readonly T[][]): T[] {
 
   return result;
 }
-

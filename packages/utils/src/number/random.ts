@@ -42,4 +42,3 @@ export function random(
 
   return Math.floor(Math.random() * (upperValue - lowerValue + 1)) + lowerValue;
 }
-

@@ -21,7 +21,7 @@ export function curry<T extends (...args: unknown[]) => unknown>(
     if (args.length >= arity) {
       return func.apply(this, args);
     }
-    return (...nextArgs: unknown[]) => curried.apply(this, [...args, ...nextArgs]);
+    return (...nextArgs: unknown[]) =>
+      curried.apply(this, [...args, ...nextArgs]);
   };
 }
-

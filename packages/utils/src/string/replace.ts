@@ -18,4 +18,3 @@ export function replace(
 ): string {
   return string.replace(pattern, replacement as string);
 }
-

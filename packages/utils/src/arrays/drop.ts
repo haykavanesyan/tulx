@@ -16,4 +16,3 @@
 export function drop<T>(array: readonly T[], n: number = 1): T[] {
   return array.slice(n);
 }
-

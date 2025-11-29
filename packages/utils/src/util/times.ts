@@ -18,4 +18,3 @@ export function times<T>(n: number, iteratee: (index: number) => T): T[] {
   }
   return result;
 }
-

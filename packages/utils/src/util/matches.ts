@@ -27,4 +27,3 @@ export function matches<T extends Record<string, unknown>>(
     return true;
   };
 }
-

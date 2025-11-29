@@ -17,4 +17,3 @@ export function negate<T extends (...args: unknown[]) => boolean>(
     return !predicate.apply(this, args);
   };
 }
-

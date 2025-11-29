@@ -24,4 +24,3 @@ export function union<T>(...arrays: readonly T[][]): T[] {
 
   return result;
 }
-
