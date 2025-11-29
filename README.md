@@ -1,4 +1,4 @@
-# Utilify
+# Utilkit
 
 Utility library with documentation website - Monorepo powered by Turborepo and pnpm.
 

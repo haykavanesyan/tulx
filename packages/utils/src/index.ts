@@ -1,5 +1,5 @@
 /**
- * Utilify - Utility Function Library
+ * Utilkit - Utility Function Library
  * @packageDocumentation
  */
 

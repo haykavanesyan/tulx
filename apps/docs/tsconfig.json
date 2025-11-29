@@ -15,10 +15,10 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@utilify/utils": ["../../packages/utils/src"],
-      "@utilify/utils/*": ["../../packages/utils/src/*"],
-      "@utilify/config": ["../../packages/config"],
-      "@utilify/config/*": ["../../packages/config/*"]
+      "@utilkit/utils": ["../../packages/utils/src"],
+      "@utilkit/utils/*": ["../../packages/utils/src/*"],
+      "@utilkit/config": ["../../packages/config"],
+      "@utilkit/config/*": ["../../packages/config/*"]
     },
     "noEmit": true
   },

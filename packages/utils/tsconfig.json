@@ -7,7 +7,7 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
-      "@utilify/config/*": ["../config/*"]
+      "@utilkit/config/*": ["../config/*"]
     }
   },
   "include": ["src/**/*", "vitest.d.ts"],

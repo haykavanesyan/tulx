@@ -1,6 +1,6 @@
 {
-  "name": "utilify",
-  "version": "0.1.0",
+  "name": "utilkit",
+  "version": "0.0.1",
   "description": "Utility function library",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
-    "@utilify/config": "workspace:*",
+    "@utilkit/config": "workspace:*",
     "@vitest/ui": "^2.0.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
