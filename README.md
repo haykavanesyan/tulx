@@ -46,6 +46,40 @@ pnpm test
 pnpm type-check
 ```
 
+## Versioning
+
+Этот проект использует [Changesets](https://github.com/changesets/changesets) для управления версиями и автоматического создания changelog.
+
+### Создание changeset
+
+При внесении изменений, требующих обновления версии:
+
+```bash
+pnpm changeset
+```
+
+Выберите пакеты и тип изменения (major/minor/patch), затем опишите изменения.
+
+### Обновление версий
+
+После создания changesets обновите версии:
+
+```bash
+pnpm version
+```
+
+Эта команда обновит версии пакетов, создаст changelog и обновит зависимости.
+
+### Проверка статуса
+
+Проверьте незавершенные changesets:
+
+```bash
+pnpm changeset:status
+```
+
+Подробнее см. [.changeset/README.md](.changeset/README.md)
+
 ## Tech Stack
 
 - **Monorepo**: Turborepo
