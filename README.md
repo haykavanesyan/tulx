@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](https://www.typescriptlang.org/)
 
-*Zero dependencies • Tree-shakeable • Fully typed • Well documented*
+_Zero dependencies • Tree-shakeable • Fully typed • Well documented_
 
 </div>
 
@@ -43,24 +43,31 @@ yarn add utilkit
 Utilkit provides utility functions organized into logical categories:
 
 ### Arrays
+
 Manipulation, transformation, and querying of arrays.
 
 ### Collections
+
 Iteration, filtering, and transformation of collections.
 
 ### Objects
+
 Object manipulation, property access, and merging.
 
 ### Strings
+
 String transformation, formatting, and parsing.
 
 ### Functions
+
 Function composition, debouncing, throttling, and more.
 
 ### Numbers & Math
+
 Mathematical operations and aggregations.
 
 ### Language Utilities
+
 Type checking, type conversion, and equality checks.
 
 ## 🌳 Tree-Shaking
@@ -85,30 +92,30 @@ Utilkit is written in TypeScript and provides excellent type inference. All func
 
 ### vs Lodash
 
-| Feature | Utilkit | Lodash |
-|---------|---------|--------|
-| Bundle Size | Smaller (tree-shakeable) | Larger |
-| Dependencies | Zero | Has dependencies |
-| TypeScript | Modern, strict mode | Good, but legacy patterns |
-| Code Style | Clean, modern | Some legacy patterns |
+| Feature      | Utilkit                  | Lodash                    |
+| ------------ | ------------------------ | ------------------------- |
+| Bundle Size  | Smaller (tree-shakeable) | Larger                    |
+| Dependencies | Zero                     | Has dependencies          |
+| TypeScript   | Modern, strict mode      | Good, but legacy patterns |
+| Code Style   | Clean, modern            | Some legacy patterns      |
 
 ### vs Ramda
 
-| Feature | Utilkit | Ramda |
-|---------|---------|-------|
-| API Style | Familiar (Lodash-like) | Functional, curried by default |
-| Performance | Optimized | Good |
-| Coverage | 300+ functions | Comprehensive |
-| Learning Curve | Easy | Steeper |
+| Feature        | Utilkit                | Ramda                          |
+| -------------- | ---------------------- | ------------------------------ |
+| API Style      | Familiar (Lodash-like) | Functional, curried by default |
+| Performance    | Optimized              | Good                           |
+| Coverage       | 300+ functions         | Comprehensive                  |
+| Learning Curve | Easy                   | Steeper                        |
 
 ### vs Native JavaScript
 
-| Feature | Utilkit | Native JS |
-|---------|---------|-----------|
-| Consistency | Same API across functions | Varies |
-| Edge Cases | Handled properly | May need manual handling |
-| Type Safety | Full TypeScript support | Limited |
-| Documentation | Every function documented | MDN docs |
+| Feature       | Utilkit                   | Native JS                |
+| ------------- | ------------------------- | ------------------------ |
+| Consistency   | Same API across functions | Varies                   |
+| Edge Cases    | Handled properly          | May need manual handling |
+| Type Safety   | Full TypeScript support   | Limited                  |
+| Documentation | Every function documented | MDN docs                 |
 
 ## 🌐 Browser Support
 

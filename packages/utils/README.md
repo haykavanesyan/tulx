@@ -110,4 +110,3 @@ MIT © [Your Name]
 ---
 
 For detailed documentation and examples, visit [documentation website](#) (coming soon).
-
