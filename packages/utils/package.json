@@ -22,9 +22,12 @@
     "dev": "tsup --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "pretest": "pnpm build",
     "test": "vitest",
+    "pretest:run": "pnpm build",
     "test:run": "vitest run",
     "test:ui": "vitest --ui",
+    "pretest:coverage": "pnpm build",
     "test:coverage": "vitest run --coverage",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist"
