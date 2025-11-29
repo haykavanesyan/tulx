@@ -15,6 +15,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
     "type-check": "turbo run type-check",
     "check": "pnpm format:check && pnpm type-check && pnpm lint",
+    "check:all": "pnpm format:check && pnpm type-check && pnpm lint && pnpm test:run",
     "fix": "pnpm format && pnpm lint:fix",
     "fix:all": "pnpm fix && pnpm type-check",
     "changeset": "changeset",
