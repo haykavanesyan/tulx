@@ -7,5 +7,5 @@
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@utilkit/docs", "@utilkit/config", "utilkit"]
+  "ignore": ["@utilify/docs", "@utilify/config", "utilify"]
 }

@@ -1,11 +1,11 @@
 /**
- * Reverts the _ variable to its previous value and returns a reference to the utilkit object.
+ * Reverts the _ variable to its previous value and returns a reference to the utilify object.
  *
- * @returns Returns the utilkit object.
+ * @returns Returns the utilify object.
  *
  * @example
  * ```ts
- * const utilkit = noConflict();
+ * const utilify = noConflict();
  * ```
  */
 export function noConflict(): typeof globalThis {

@@ -15,10 +15,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@utilkit/utils": ["./packages/utils/src"],
-      "@utilkit/utils/*": ["./packages/utils/src/*"],
-      "@utilkit/config": ["./packages/config"],
-      "@utilkit/config/*": ["./packages/config/*"]
+      "@utilify/utils": ["./packages/utils/src"],
+      "@utilify/utils/*": ["./packages/utils/src/*"],
+      "@utilify/config": ["./packages/config"],
+      "@utilify/config/*": ["./packages/config/*"]
     }
   },
   "files": [],

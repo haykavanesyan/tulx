@@ -30,7 +30,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@utilkit/config': resolve(__dirname, '../config'),
+      '@utilify/config': resolve(__dirname, '../config'),
     },
   },
 });

@@ -1,13 +1,13 @@
-# Utilkit
+# Utilify
 
 > A modern, type-safe utility library for JavaScript and TypeScript with zero dependencies.
 
-[![npm version](https://img.shields.io/npm/v/utilkit)](https://www.npmjs.com/package/utilkit)
+[![npm version](https://img.shields.io/npm/v/@utilify/utils)](https://www.npmjs.com/package/@utilify/utils)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Why Utilkit?
+## Why Utilify?
 
-**Utilkit** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. Unlike other utility libraries, Utilkit is built from the ground up with type safety, performance, and developer experience in mind.
+**Utilify** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. Unlike other utility libraries, Utilify is built from the ground up with type safety, performance, and developer experience in mind.
 
 ### Key Advantages
 
@@ -23,16 +23,16 @@
 ## Installation
 
 ```bash
-npm install utilkit
+npm install @utilify/utils
 # or
-pnpm add utilkit
+pnpm add @utilify/utils
 # or
-yarn add utilkit
+yarn add @utilify/utils
 ```
 
 ## Categories
 
-Utilkit provides 300+ utility functions organized into logical categories:
+Utilify provides 300+ utility functions organized into logical categories:
 
 - **Arrays** - Manipulation, transformation, and querying of arrays
 - **Collections** - Iteration, filtering, and transformation of collections
@@ -47,28 +47,28 @@ Utilkit provides 300+ utility functions organized into logical categories:
 
 ## Tree-Shaking
 
-Utilkit is fully tree-shakeable. Import only the functions you need:
+Utilify is fully tree-shakeable. Import only the functions you need:
 
 ```typescript
 // ✅ Good - only imports what you need
-import { chunk, debounce } from 'utilkit';
+import { chunk, debounce } from '@utilify/utils';
 
 // ❌ Avoid - imports entire library
-import * as utilkit from 'utilkit';
+import * as utilify from '@utilify/utils';
 ```
 
 Modern bundlers like Webpack, Rollup, and Vite will automatically remove unused code.
 
 ## TypeScript Support
 
-Utilkit is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
+Utilify is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
 
 ## Comparison with Other Libraries
 
 ### vs Lodash
 
 - **Smaller Bundle Size** - Tree-shakeable ES modules mean you only bundle what you use
-- **Zero Dependencies** - Lodash has dependencies, Utilkit has none
+- **Zero Dependencies** - Lodash has dependencies, Utilify has none
 - **Better TypeScript** - Modern TypeScript with strict mode and better type inference
 - **Modern Code** - Clean, readable code without legacy patterns
 
@@ -87,7 +87,7 @@ Utilkit is written in TypeScript and provides excellent type inference. All func
 
 ## Philosophy
 
-Utilkit follows these core principles:
+Utilify follows these core principles:
 
 1. **Pure Functions** - No side effects, predictable behavior
 2. **Type Safety First** - Full TypeScript support with strict mode
@@ -97,7 +97,7 @@ Utilkit follows these core principles:
 
 ## Browser Support
 
-Utilkit supports all modern browsers that support ES2015+. For older browsers, use a transpiler like Babel.
+Utilify supports all modern browsers that support ES2015+. For older browsers, use a transpiler like Babel.
 
 ## Contributing
 

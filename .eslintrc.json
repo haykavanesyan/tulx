@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["@utilkit/config/eslint/base"],
+  "extends": ["@utilify/config/eslint/base"],
   "parserOptions": {
     "project": false
   },

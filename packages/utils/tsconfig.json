@@ -8,7 +8,7 @@
     "rootDir": "./src",
     "composite": true,
     "paths": {
-      "@utilkit/config/*": ["../config/*"]
+      "@utilify/config/*": ["../config/*"]
     }
   },
   "include": ["src/**/*", "vitest.d.ts"],

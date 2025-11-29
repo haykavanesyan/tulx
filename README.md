@@ -1,10 +1,10 @@
 <div align="center">
 
-# 🛠️ Utilkit
+# 🛠️ Utilify
 
 **A modern, type-safe utility library for JavaScript and TypeScript**
 
-[![npm version](https://img.shields.io/npm/v/utilkit)](https://www.npmjs.com/package/utilkit)
+[![npm version](https://img.shields.io/npm/v/@utilify/utils)](https://www.npmjs.com/package/@utilify/utils)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](https://www.typescriptlang.org/)
 
@@ -16,9 +16,9 @@ _Zero dependencies • Tree-shakeable • Fully typed • Well documented_
 
 ## 📖 About
 
-**Utilkit** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. With 300+ utility functions, it provides everything you need for working with arrays, objects, strings, functions, and more.
+**Utilify** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. With 300+ utility functions, it provides everything you need for working with arrays, objects, strings, functions, and more.
 
-### ✨ Why Utilkit?
+### ✨ Why Utilify?
 
 - 🚀 **Zero Dependencies** - No external dependencies means smaller bundle sizes and faster installs
 - 📦 **Tree-Shakeable** - Import only what you need with ES modules support
@@ -31,16 +31,16 @@ _Zero dependencies • Tree-shakeable • Fully typed • Well documented_
 ## 📦 Installation
 
 ```bash
-npm install utilkit
+npm install @utilify/utils
 # or
-pnpm add utilkit
+pnpm add @utilify/utils
 # or
-yarn add utilkit
+yarn add @utilify/utils
 ```
 
 ## 📚 Categories
 
-Utilkit provides utility functions organized into logical categories:
+Utilify provides utility functions organized into logical categories:
 
 ### Arrays
 
@@ -72,27 +72,27 @@ Type checking, type conversion, and equality checks.
 
 ## 🌳 Tree-Shaking
 
-Utilkit is fully tree-shakeable. Import only the functions you need:
+Utilify is fully tree-shakeable. Import only the functions you need:
 
 ```typescript
 // ✅ Good - only imports what you need
-import { chunk, debounce } from 'utilkit';
+import { chunk, debounce } from '@utilify/utils';
 
 // ❌ Avoid - imports entire library
-import * as utilkit from 'utilkit';
+import * as utilify from '@utilify/utils';
 ```
 
 Modern bundlers like Webpack, Rollup, and Vite will automatically remove unused code.
 
 ## 🔒 TypeScript Support
 
-Utilkit is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
+Utilify is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
 
 ## 📊 Comparison
 
 ### vs Lodash
 
-| Feature      | Utilkit                  | Lodash                    |
+| Feature      | Utilify                  | Lodash                    |
 | ------------ | ------------------------ | ------------------------- |
 | Bundle Size  | Smaller (tree-shakeable) | Larger                    |
 | Dependencies | Zero                     | Has dependencies          |
@@ -101,7 +101,7 @@ Utilkit is written in TypeScript and provides excellent type inference. All func
 
 ### vs Ramda
 
-| Feature        | Utilkit                | Ramda                          |
+| Feature        | Utilify                | Ramda                          |
 | -------------- | ---------------------- | ------------------------------ |
 | API Style      | Familiar (Lodash-like) | Functional, curried by default |
 | Performance    | Optimized              | Good                           |
@@ -110,7 +110,7 @@ Utilkit is written in TypeScript and provides excellent type inference. All func
 
 ### vs Native JavaScript
 
-| Feature       | Utilkit                   | Native JS                |
+| Feature       | Utilify                   | Native JS                |
 | ------------- | ------------------------- | ------------------------ |
 | Consistency   | Same API across functions | Varies                   |
 | Edge Cases    | Handled properly          | May need manual handling |
@@ -119,7 +119,7 @@ Utilkit is written in TypeScript and provides excellent type inference. All func
 
 ## 🌐 Browser Support
 
-Utilkit supports all modern browsers that support ES2015+. For older browsers, use a transpiler like Babel.
+Utilify supports all modern browsers that support ES2015+. For older browsers, use a transpiler like Babel.
 
 ## 📖 Documentation
 
@@ -127,14 +127,14 @@ For detailed documentation, examples, and interactive playground, visit our [doc
 
 ## 📄 License
 
-MIT © Utilkit Contributors
+MIT © Utilify Contributors
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the Utilkit team**
+**Made with ❤️ by the Utilify team**
 
-[Documentation](#) • [npm Package](https://www.npmjs.com/package/utilkit) • [GitHub](https://github.com/your-username/utilify)
+[Documentation](#) • [npm Package](https://www.npmjs.com/package/@utilify/utils) • [GitHub](https://github.com/your-username/utilify)
 
 </div>
