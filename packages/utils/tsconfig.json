@@ -6,6 +6,7 @@
     "declarationMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
+    "composite": true,
     "paths": {
       "@utilkit/config/*": ["../config/*"]
     }
