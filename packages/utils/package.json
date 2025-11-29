@@ -4,16 +4,18 @@
   "private": true,
   "description": "Utility function library",
   "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "eslint .",
     "test": "vitest",
     "test:run": "vitest run",
@@ -23,18 +25,18 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "@utilify/config": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
+    "@utilify/config": "workspace:*",
+    "@vitest/ui": "^2.0.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-unicorn": "^52.0.0",
+    "tsup": "^8.5.1",
     "typescript": "^5.3.3",
     "typescript-eslint": "^7.0.0",
-    "vitest": "^2.0.0",
-    "@vitest/ui": "^2.0.0"
+    "vitest": "^2.0.0"
   }
 }
-
