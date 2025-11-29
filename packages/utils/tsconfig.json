@@ -6,7 +6,6 @@
     "declarationMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "composite": true,
     "paths": {
       "@utilify/config/*": ["../config/*"]
     }

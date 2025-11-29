@@ -6,6 +6,7 @@ export default defineConfig({
   dts: {
     resolve: true,
   },
+  tsconfig: './tsconfig.json',
   splitting: false,
   sourcemap: true,
   clean: true,

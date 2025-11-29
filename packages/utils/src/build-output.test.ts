@@ -24,7 +24,7 @@ const utilifyCJS = require(resolve(__dirname, '../dist/index.js'));
 function testFunction<T extends (...args: unknown[]) => unknown>(
   fnName: string,
   fn: T,
-  testFn: (fn: T) => void,
+  testFn: (fn: T) => void
 ): void {
   it(`should export and work: ${fnName}`, () => {
     expect(fn).toBeDefined();
@@ -74,15 +74,11 @@ describe('Build Output - CJS', () => {
     });
 
     testFunction('filter', utilifyCJS.filter, (filter) => {
-      expect(filter([1, 2, 3, 4], (n: number) => n % 2 === 0)).toEqual([
-        2, 4,
-      ]);
+      expect(filter([1, 2, 3, 4], (n: number) => n % 2 === 0)).toEqual([2, 4]);
     });
 
     testFunction('reduce', utilifyCJS.reduce, (reduce) => {
-      expect(
-        reduce([1, 2, 3], (sum: number, n: number) => sum + n, 0),
-      ).toBe(6);
+      expect(reduce([1, 2, 3], (sum: number, n: number) => sum + n, 0)).toBe(6);
     });
 
     testFunction('find', utilifyCJS.find, (find) => {
