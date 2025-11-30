@@ -1,11 +1,11 @@
 {
-  "name": "@tulx",
+  "name": "@tulx/utils",
   "version": "0.0.1",
   "description": "Utility function library",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/haykavanesyan/tulx.git",
+    "url": "git+https://github.com/haykavanesyan/tulx.git",
     "directory": "packages/utils"
   },
   "keywords": [

@@ -4,7 +4,7 @@
 
 **A modern, type-safe utility library for JavaScript and TypeScript**
 
-[![npm version](https://img.shields.io/npm/v/@tulx)](https://www.npmjs.com/package/@tulx)
+[![npm version](https://img.shields.io/npm/v/@tulx/utils)](https://www.npmjs.com/package/@tulx/utils)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](https://www.typescriptlang.org/)
 
@@ -31,11 +31,11 @@ _Zero dependencies • Tree-shakeable • Fully typed • Well documented_
 ## 📦 Installation
 
 ```bash
-npm install @tulx
+npm install @tulx/utils
 # or
-pnpm add @tulx
+pnpm add @tulx/utils
 # or
-yarn add @tulx
+yarn add @tulx/utils
 ```
 
 ## 📚 Categories
@@ -76,10 +76,10 @@ Tulx is fully tree-shakeable. Import only the functions you need:
 
 ```typescript
 // ✅ Good - only imports what you need
-import { chunk, debounce } from '@tulx';
+import { chunk, debounce } from '@tulx/utils';
 
 // ❌ Avoid - imports entire library
-import * as tulx from '@tulx';
+import * as tulx from '@tulx/utils';
 ```
 
 Modern bundlers like Webpack, Rollup, and Vite will automatically remove unused code.
@@ -135,6 +135,6 @@ MIT © Tulx Contributors
 
 **Made with ❤️ by the Tulx team**
 
-[Documentation](#) • [npm Package](https://www.npmjs.com/package/@tulx) • [GitHub](https://github.com/your-username/tulx)
+[Documentation](#) • [npm Package](https://www.npmjs.com/package/@tulx/utils) • [GitHub](https://github.com/haykavanesyan/tulx)
 
 </div>
