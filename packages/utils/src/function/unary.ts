@@ -9,7 +9,8 @@
  * map(['6', '8', '10'], unary(parseInt)); // [6, 8, 10]
  * ```
  */
-export function unary<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function unary<T extends (...args: any[]) => any>(
   func: T
 ): (arg: unknown) => ReturnType<T> {
   return function (this: unknown, arg: unknown): ReturnType<T> {

@@ -11,7 +11,8 @@
  * initialize(); // Nothing happens
  * ```
  */
-export function once<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function once<T extends (...args: any[]) => any>(
   func: T
 ): (...args: Parameters<T>) => ReturnType<T> {
   let called = false;

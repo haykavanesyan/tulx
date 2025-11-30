@@ -14,7 +14,8 @@
  * sayHelloTo('fred'); // 'hello fred'
  * ```
  */
-export function partial<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function partial<T extends (...args: any[]) => any>(
   func: T,
   ...partials: readonly unknown[]
 ): (...args: unknown[]) => ReturnType<T> {

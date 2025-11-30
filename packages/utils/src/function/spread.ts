@@ -11,7 +11,8 @@
  * say(['fred', 'hello']); // 'fred says hello'
  * ```
  */
-export function spread<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function spread<T extends (...args: any[]) => any>(
   func: T,
   start: number = 0
 ): (args: readonly unknown[]) => ReturnType<T> {

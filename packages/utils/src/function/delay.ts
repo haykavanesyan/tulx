@@ -11,7 +11,8 @@
  * delay((text: string) => console.log(text), 1000, 'later'); // Logs 'later' after one second.
  * ```
  */
-export function delay<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function delay<T extends (...args: any[]) => any>(
   func: T,
   wait: number,
   ...args: Parameters<T>

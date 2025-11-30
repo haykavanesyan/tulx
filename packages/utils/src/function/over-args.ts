@@ -17,7 +17,8 @@
  * func(9, 3); // [81, 6]
  * ```
  */
-export function overArgs<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function overArgs<T extends (...args: any[]) => any>(
   func: T,
   transforms: readonly ((arg: unknown) => unknown)[]
 ): (...args: unknown[]) => ReturnType<T> {

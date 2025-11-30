@@ -13,7 +13,8 @@
  * curried('c', 'b')('a'); // ['a', 'b', 'c']
  * ```
  */
-export function curryRight<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function curryRight<T extends (...args: any[]) => any>(
   func: T,
   arity: number = func.length
 ): (...args: unknown[]) => unknown {

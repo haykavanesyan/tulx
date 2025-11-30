@@ -13,7 +13,8 @@
  * // Logs 'done saving!' after the two async saves have completed.
  * ```
  */
-export function after<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function after<T extends (...args: any[]) => any>(
   n: number,
   func: T
 ): (...args: Parameters<T>) => ReturnType<T> | undefined {

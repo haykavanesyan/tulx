@@ -14,7 +14,8 @@
  * greetFred('hi'); // 'hi fred'
  * ```
  */
-export function partialRight<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function partialRight<T extends (...args: any[]) => any>(
   func: T,
   ...partials: readonly unknown[]
 ): (...args: unknown[]) => ReturnType<T> {

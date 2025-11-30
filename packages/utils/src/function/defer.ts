@@ -10,7 +10,8 @@
  * defer((text: string) => console.log(text), 'deferred'); // Logs 'deferred' after one millisecond.
  * ```
  */
-export function defer<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function defer<T extends (...args: any[]) => any>(
   func: T,
   ...args: Parameters<T>
 ): ReturnType<typeof setTimeout> {

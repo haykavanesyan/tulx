@@ -10,7 +10,8 @@
  * flipped('a', 'b', 'c', 'd'); // ['d', 'c', 'b', 'a']
  * ```
  */
-export function flip<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function flip<T extends (...args: any[]) => any>(
   func: T
 ): (...args: Parameters<T>) => ReturnType<T> {
   return function (this: unknown, ...args: Parameters<T>): ReturnType<T> {

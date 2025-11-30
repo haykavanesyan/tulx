@@ -11,7 +11,8 @@
  * // Allows adding up to 4 contacts to the list.
  * ```
  */
-export function before<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function before<T extends (...args: any[]) => any>(
   n: number,
   func: T
 ): (...args: Parameters<T>) => ReturnType<T> | undefined {

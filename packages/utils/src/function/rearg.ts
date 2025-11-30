@@ -11,7 +11,8 @@
  * rearged('b', 'c', 'a'); // ['a', 'b', 'c']
  * ```
  */
-export function rearg<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function rearg<T extends (...args: any[]) => any>(
   func: T,
   indexes: readonly number[]
 ): (...args: unknown[]) => ReturnType<T> {

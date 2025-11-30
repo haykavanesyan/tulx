@@ -14,7 +14,8 @@
  * values(other); // [3, 4]
  * ```
  */
-export function memoize<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function memoize<T extends (...args: any[]) => any>(
   func: T,
   resolver?: (...args: Parameters<T>) => string
 ): T & { cache: Map<string, ReturnType<T>> } {

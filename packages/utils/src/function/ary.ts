@@ -10,7 +10,8 @@
  * map(['6', '8', '10'], ary(parseInt, 1)); // [6, 8, 10]
  * ```
  */
-export function ary<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function ary<T extends (...args: any[]) => any>(
   func: T,
   n: number
 ): (...args: Parameters<T>) => ReturnType<T> {

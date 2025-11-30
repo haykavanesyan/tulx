@@ -11,7 +11,8 @@
  * say('hello', 'fred', 'barney', 'pebbles'); // 'hello fred, barney, pebbles'
  * ```
  */
-export function rest<T extends (...args: unknown[]) => unknown>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function rest<T extends (...args: any[]) => any>(
   func: T,
   start: number = func.length - 1
 ): (...args: unknown[]) => ReturnType<T> {
