@@ -143,6 +143,10 @@ For detailed documentation, examples, and interactive playground, visit our [doc
 
 ## 📄 License
 
+This project is licensed under the MIT License.
+
+See the [LICENSE](LICENSE) file for the full license text.
+
 MIT © Tulx Contributors
 
 ---

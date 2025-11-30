@@ -121,7 +121,11 @@ Contributions are welcome! Please read our contributing guidelines before submit
 
 ## License
 
-MIT © [Your Name]
+This project is licensed under the MIT License.
+
+See the [LICENSE](../../LICENSE) file for the full license text.
+
+MIT © Tulx Contributors
 
 ---
 
