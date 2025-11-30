@@ -15,10 +15,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@utilify/utils": ["./packages/utils/src"],
-      "@utilify/utils/*": ["./packages/utils/src/*"],
-      "@utilify/config": ["./packages/config"],
-      "@utilify/config/*": ["./packages/config/*"]
+      "@tulx": ["./packages/utils/src"],
+      "@tulx/*": ["./packages/utils/src/*"],
+      "@tulx/config": ["./packages/config"],
+      "@tulx/config/*": ["./packages/config/*"]
     }
   },
   "files": [],

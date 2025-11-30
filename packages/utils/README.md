@@ -1,13 +1,13 @@
-# Utilify
+# Tulx
 
 > A modern, type-safe utility library for JavaScript and TypeScript with zero dependencies.
 
-[![npm version](https://img.shields.io/npm/v/@utilify/utils)](https://www.npmjs.com/package/@utilify/utils)
+[![npm version](https://img.shields.io/npm/v/@tulx)](https://www.npmjs.com/package/@tulx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Why Utilify?
+## Why Tulx?
 
-**Utilify** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. Unlike other utility libraries, Utilify is built from the ground up with type safety, performance, and developer experience in mind.
+**Tulx** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. Unlike other utility libraries, Tulx is built from the ground up with type safety, performance, and developer experience in mind.
 
 ### Key Advantages
 
@@ -23,16 +23,16 @@
 ## Installation
 
 ```bash
-npm install @utilify/utils
+npm install @tulx
 # or
-pnpm add @utilify/utils
+pnpm add @tulx
 # or
-yarn add @utilify/utils
+yarn add @tulx
 ```
 
 ## Categories
 
-Utilify provides 300+ utility functions organized into logical categories:
+Tulx provides 300+ utility functions organized into logical categories:
 
 - **Arrays** - Manipulation, transformation, and querying of arrays
 - **Collections** - Iteration, filtering, and transformation of collections
@@ -47,28 +47,28 @@ Utilify provides 300+ utility functions organized into logical categories:
 
 ## Tree-Shaking
 
-Utilify is fully tree-shakeable. Import only the functions you need:
+Tulx is fully tree-shakeable. Import only the functions you need:
 
 ```typescript
 // ✅ Good - only imports what you need
-import { chunk, debounce } from '@utilify/utils';
+import { chunk, debounce } from '@tulx';
 
 // ❌ Avoid - imports entire library
-import * as utilify from '@utilify/utils';
+import * as tulx from '@tulx';
 ```
 
 Modern bundlers like Webpack, Rollup, and Vite will automatically remove unused code.
 
 ## TypeScript Support
 
-Utilify is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
+Tulx is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
 
 ## Comparison with Other Libraries
 
 ### vs Lodash
 
 - **Smaller Bundle Size** - Tree-shakeable ES modules mean you only bundle what you use
-- **Zero Dependencies** - Lodash has dependencies, Utilify has none
+- **Zero Dependencies** - Lodash has dependencies, Tulx has none
 - **Better TypeScript** - Modern TypeScript with strict mode and better type inference
 - **Modern Code** - Clean, readable code without legacy patterns
 
@@ -87,7 +87,7 @@ Utilify is written in TypeScript and provides excellent type inference. All func
 
 ## Philosophy
 
-Utilify follows these core principles:
+Tulx follows these core principles:
 
 1. **Pure Functions** - No side effects, predictable behavior
 2. **Type Safety First** - Full TypeScript support with strict mode
@@ -97,7 +97,7 @@ Utilify follows these core principles:
 
 ## Browser Support
 
-Utilify supports all modern browsers that support ES2015+. For older browsers, use a transpiler like Babel.
+Tulx supports all modern browsers that support ES2015+. For older browsers, use a transpiler like Babel.
 
 ## Contributing
 

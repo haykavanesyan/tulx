@@ -1,11 +1,11 @@
 /**
- * Reverts the _ variable to its previous value and returns a reference to the utilify object.
+ * Reverts the _ variable to its previous value and returns a reference to the tulx object.
  *
- * @returns Returns the utilify object.
+ * @returns Returns the tulx object.
  *
  * @example
  * ```ts
- * const utilify = noConflict();
+ * const tulx = noConflict();
  * ```
  */
 export function noConflict(): typeof globalThis {

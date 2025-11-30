@@ -1,12 +1,29 @@
 {
-  "name": "@utilify/utils",
+  "name": "@tulx",
   "version": "0.0.1",
   "description": "Utility function library",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haykavanesyan/tulx.git",
+    "directory": "packages/utils"
+  },
+  "keywords": [
+    "utility",
+    "utils",
+    "lodash",
+    "helpers",
+    "typescript",
+    "esm",
+    "tree-shakeable",
+    "zero-dependencies"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "exports": {
     ".": {
@@ -38,7 +55,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
-    "@utilify/config": "workspace:*",
+    "@tulx/config": "workspace:*",
     "@vitest/ui": "^2.0.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",

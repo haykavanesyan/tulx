@@ -30,7 +30,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@utilify/config': resolve(__dirname, '../config'),
+      '@tulx/config': resolve(__dirname, '../config'),
     },
   },
 });

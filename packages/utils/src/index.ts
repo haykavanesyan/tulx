@@ -1,5 +1,5 @@
 /**
- * Utilify - Utility Function Library
+ * Tulx - Utility Function Library
  * @packageDocumentation
  */
 

@@ -1,10 +1,10 @@
 <div align="center">
 
-# 🛠️ Utilify
+# 🛠️ Tulx
 
 **A modern, type-safe utility library for JavaScript and TypeScript**
 
-[![npm version](https://img.shields.io/npm/v/@utilify/utils)](https://www.npmjs.com/package/@utilify/utils)
+[![npm version](https://img.shields.io/npm/v/@tulx)](https://www.npmjs.com/package/@tulx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](https://www.typescriptlang.org/)
 
@@ -16,9 +16,9 @@ _Zero dependencies • Tree-shakeable • Fully typed • Well documented_
 
 ## 📖 About
 
-**Utilify** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. With 300+ utility functions, it provides everything you need for working with arrays, objects, strings, functions, and more.
+**Tulx** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. With 300+ utility functions, it provides everything you need for working with arrays, objects, strings, functions, and more.
 
-### ✨ Why Utilify?
+### ✨ Why Tulx?
 
 - 🚀 **Zero Dependencies** - No external dependencies means smaller bundle sizes and faster installs
 - 📦 **Tree-Shakeable** - Import only what you need with ES modules support
@@ -31,16 +31,16 @@ _Zero dependencies • Tree-shakeable • Fully typed • Well documented_
 ## 📦 Installation
 
 ```bash
-npm install @utilify/utils
+npm install @tulx
 # or
-pnpm add @utilify/utils
+pnpm add @tulx
 # or
-yarn add @utilify/utils
+yarn add @tulx
 ```
 
 ## 📚 Categories
 
-Utilify provides utility functions organized into logical categories:
+Tulx provides utility functions organized into logical categories:
 
 ### Arrays
 
@@ -72,27 +72,27 @@ Type checking, type conversion, and equality checks.
 
 ## 🌳 Tree-Shaking
 
-Utilify is fully tree-shakeable. Import only the functions you need:
+Tulx is fully tree-shakeable. Import only the functions you need:
 
 ```typescript
 // ✅ Good - only imports what you need
-import { chunk, debounce } from '@utilify/utils';
+import { chunk, debounce } from '@tulx';
 
 // ❌ Avoid - imports entire library
-import * as utilify from '@utilify/utils';
+import * as tulx from '@tulx';
 ```
 
 Modern bundlers like Webpack, Rollup, and Vite will automatically remove unused code.
 
 ## 🔒 TypeScript Support
 
-Utilify is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
+Tulx is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
 
 ## 📊 Comparison
 
 ### vs Lodash
 
-| Feature      | Utilify                  | Lodash                    |
+| Feature      | Tulx                      | Lodash                    |
 | ------------ | ------------------------ | ------------------------- |
 | Bundle Size  | Smaller (tree-shakeable) | Larger                    |
 | Dependencies | Zero                     | Has dependencies          |
@@ -101,7 +101,7 @@ Utilify is written in TypeScript and provides excellent type inference. All func
 
 ### vs Ramda
 
-| Feature        | Utilify                | Ramda                          |
+| Feature        | Tulx                      | Ramda                          |
 | -------------- | ---------------------- | ------------------------------ |
 | API Style      | Familiar (Lodash-like) | Functional, curried by default |
 | Performance    | Optimized              | Good                           |
@@ -110,7 +110,7 @@ Utilify is written in TypeScript and provides excellent type inference. All func
 
 ### vs Native JavaScript
 
-| Feature       | Utilify                   | Native JS                |
+| Feature       | Tulx                         | Native JS                |
 | ------------- | ------------------------- | ------------------------ |
 | Consistency   | Same API across functions | Varies                   |
 | Edge Cases    | Handled properly          | May need manual handling |
@@ -119,7 +119,7 @@ Utilify is written in TypeScript and provides excellent type inference. All func
 
 ## 🌐 Browser Support
 
-Utilify supports all modern browsers that support ES2015+. For older browsers, use a transpiler like Babel.
+Tulx supports all modern browsers that support ES2015+. For older browsers, use a transpiler like Babel.
 
 ## 📖 Documentation
 
@@ -127,14 +127,14 @@ For detailed documentation, examples, and interactive playground, visit our [doc
 
 ## 📄 License
 
-MIT © Utilify Contributors
+MIT © Tulx Contributors
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the Utilify team**
+**Made with ❤️ by the Tulx team**
 
-[Documentation](#) • [npm Package](https://www.npmjs.com/package/@utilify/utils) • [GitHub](https://github.com/your-username/utilify)
+[Documentation](#) • [npm Package](https://www.npmjs.com/package/@tulx) • [GitHub](https://github.com/your-username/tulx)
 
 </div>
