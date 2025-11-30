@@ -10,10 +10,15 @@
  * ```
  */
 export function uniq<T>(array: readonly T[]): T[] {
+  if (array.length === 0) {
+    return [];
+  }
   const result: T[] = [];
   const seen = new Set<T>();
+  const len = array.length;
 
-  for (const value of array) {
+  for (let i = 0; i < len; i++) {
+    const value = array[i];
     if (!seen.has(value)) {
       seen.add(value);
       result.push(value);

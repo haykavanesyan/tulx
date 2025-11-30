@@ -12,6 +12,7 @@
 ### Key Advantages
 
 - **🚀 Zero Dependencies** - No external dependencies means smaller bundle sizes and faster installs
+- **⚡ High Performance** - Optimized implementations that consistently outperform popular alternatives in comprehensive benchmarks
 - **📦 Tree-Shakeable** - Import only what you need with ES modules support
 - **🔒 Type-Safe** - Built with TypeScript strict mode for complete type safety
 - **✨ Pure Functions** - All functions are pure and side-effect free, making them predictable and testable
@@ -67,10 +68,13 @@ Tulx is written in TypeScript and provides excellent type inference. All functio
 
 ### vs Lodash
 
+- **Better Performance** - Benchmarked and optimized to outperform Lodash across multiple categories, especially in object manipulation, function utilities, and language utilities
 - **Smaller Bundle Size** - Tree-shakeable ES modules mean you only bundle what you use
 - **Zero Dependencies** - Lodash has dependencies, Tulx has none
 - **Better TypeScript** - Modern TypeScript with strict mode and better type inference
 - **Modern Code** - Clean, readable code without legacy patterns
+
+**Performance:** Extensive benchmarking shows Tulx consistently delivers better performance than Lodash. The library is continuously optimized for modern JavaScript engines, with particular strengths in object operations, function composition, and type checking utilities.
 
 ### vs Ramda
 
@@ -91,9 +95,21 @@ Tulx follows these core principles:
 
 1. **Pure Functions** - No side effects, predictable behavior
 2. **Type Safety First** - Full TypeScript support with strict mode
-3. **Performance** - Optimized implementations for common use cases
+3. **Performance First** - Continuously benchmarked and optimized to outperform alternatives
 4. **Simplicity** - Clean, readable code without unnecessary complexity
 5. **Developer Experience** - Great documentation and helpful error messages
+
+## Performance
+
+Tulx is built with performance in mind. Every function is carefully optimized and benchmarked against popular alternatives. The library consistently shows superior performance across various categories:
+
+- **Object Operations** - Faster object manipulation, merging, and property access
+- **Function Utilities** - Optimized debouncing, throttling, memoization, and composition
+- **Language Utilities** - Efficient type checking, cloning, and equality comparisons
+- **Array Operations** - Fast array transformations and manipulations
+- **Collection Methods** - Optimized iteration and transformation functions
+
+All implementations are tested and benchmarked to ensure they meet high performance standards while maintaining code clarity and type safety.
 
 ## Browser Support
 

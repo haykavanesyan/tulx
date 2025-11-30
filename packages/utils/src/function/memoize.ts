@@ -20,7 +20,24 @@ export function memoize<T extends (...args: any[]) => any>(
   resolver?: (...args: Parameters<T>) => string
 ): T & { cache: Map<string, ReturnType<T>> } {
   const cache = new Map<string, ReturnType<T>>();
-  const getKey = resolver ?? ((...args: Parameters<T>) => JSON.stringify(args));
+  const getKey =
+    resolver ??
+    ((...args: Parameters<T>) => {
+      // Optimize for single primitive argument
+      if (args.length === 1) {
+        const arg = args[0];
+        if (
+          typeof arg === 'string' ||
+          typeof arg === 'number' ||
+          typeof arg === 'boolean' ||
+          arg === null ||
+          arg === undefined
+        ) {
+          return String(arg);
+        }
+      }
+      return JSON.stringify(args);
+    });
 
   const memoized = function (
     this: unknown,

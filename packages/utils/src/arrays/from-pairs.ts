@@ -13,8 +13,16 @@ export function fromPairs<T>(
   pairs: readonly [string | number, T][]
 ): Record<string, T> {
   const result: Record<string, T> = {};
-  for (const [key, value] of pairs) {
-    result[String(key)] = value;
+  const len = pairs.length;
+  for (let i = 0; i < len; i++) {
+    const pair = pairs[i];
+    const key = pair[0];
+    // Optimize: avoid String() call for string keys
+    if (typeof key === 'string') {
+      result[key] = pair[1];
+    } else {
+      result[String(key)] = pair[1];
+    }
   }
   return result;
 }

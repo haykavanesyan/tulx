@@ -22,13 +22,24 @@ export function countBy<T>(
       : (item: T) => String(iteratee(item));
 
   const result: Record<string, number> = {};
-  const items = Array.isArray(collection)
-    ? collection
-    : Object.values(collection);
 
-  for (const item of items) {
-    const key = getValue(item);
-    result[key] = (result[key] || 0) + 1;
+  if (Array.isArray(collection)) {
+    const len = collection.length;
+    for (let i = 0; i < len; i++) {
+      const item = collection[i];
+      const key = getValue(item);
+      const count = result[key];
+      result[key] = count ? count + 1 : 1;
+    }
+  } else {
+    const items = Object.values(collection);
+    const len = items.length;
+    for (let i = 0; i < len; i++) {
+      const item = items[i];
+      const key = getValue(item);
+      const count = result[key];
+      result[key] = count ? count + 1 : 1;
+    }
   }
 
   return result;

@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-blue.svg)](https://www.typescriptlang.org/)
 
-_Zero dependencies • Tree-shakeable • Fully typed • Well documented_
+_Zero dependencies • High performance • Tree-shakeable • Fully typed • Well documented_
 
 </div>
 
@@ -21,6 +21,7 @@ _Zero dependencies • Tree-shakeable • Fully typed • Well documented_
 ### ✨ Why Tulx?
 
 - 🚀 **Zero Dependencies** - No external dependencies means smaller bundle sizes and faster installs
+- ⚡ **High Performance** - Optimized implementations that outperform popular alternatives in benchmarks
 - 📦 **Tree-Shakeable** - Import only what you need with ES modules support
 - 🔒 **Type-Safe** - Built with TypeScript strict mode for complete type safety
 - ✨ **Pure Functions** - All functions are pure and side-effect free
@@ -88,16 +89,31 @@ Modern bundlers like Webpack, Rollup, and Vite will automatically remove unused 
 
 Tulx is written in TypeScript and provides excellent type inference. All functions are fully typed with TypeScript strict mode, ensuring complete type safety and excellent IDE support.
 
+## ⚡ Performance
+
+Tulx is built with performance as a core priority. Every function is carefully optimized and benchmarked against popular alternatives. The library consistently demonstrates superior performance across various categories:
+
+- **Object Operations** - Faster object manipulation, merging, and property access
+- **Function Utilities** - Optimized debouncing, throttling, memoization, and composition
+- **Language Utilities** - Efficient type checking, cloning, and equality comparisons
+- **Array Operations** - Fast array transformations and manipulations
+- **Collection Methods** - Optimized iteration and transformation functions
+
+All implementations are continuously tested and benchmarked to ensure they meet high performance standards while maintaining code clarity and type safety.
+
 ## 📊 Comparison
 
 ### vs Lodash
 
 | Feature      | Tulx                      | Lodash                    |
 | ------------ | ------------------------ | ------------------------- |
+| Performance  | Faster in most cases     | Well optimized            |
 | Bundle Size  | Smaller (tree-shakeable) | Larger                    |
 | Dependencies | Zero                     | Has dependencies          |
 | TypeScript   | Modern, strict mode      | Good, but legacy patterns |
 | Code Style   | Clean, modern            | Some legacy patterns      |
+
+**Performance Note:** Tulx has been benchmarked against Lodash and shows superior performance across many categories, particularly in object manipulation, function utilities, and language utilities. The implementations are optimized for modern JavaScript engines.
 
 ### vs Ramda
 

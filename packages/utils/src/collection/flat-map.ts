@@ -24,10 +24,16 @@ export function flatMap<T, TResult>(
   const result: TResult[] = [];
 
   if (Array.isArray(collection)) {
-    for (let i = 0; i < collection.length; i++) {
+    const len = collection.length;
+    for (let i = 0; i < len; i++) {
       const mapped = iteratee(collection[i], i, collection);
       if (Array.isArray(mapped)) {
-        result.push(...(mapped as TResult[]));
+        const mappedArray = mapped as TResult[];
+        const mappedLen = mappedArray.length;
+        // Pre-allocate if possible, or use push
+        for (let j = 0; j < mappedLen; j++) {
+          result.push(mappedArray[j]);
+        }
       } else {
         result.push(mapped as TResult);
       }
@@ -38,7 +44,11 @@ export function flatMap<T, TResult>(
       if (Object.prototype.hasOwnProperty.call(record, key)) {
         const mapped = iteratee(record[key], key, record);
         if (Array.isArray(mapped)) {
-          result.push(...(mapped as TResult[]));
+          const mappedArray = mapped as TResult[];
+          const mappedLen = mappedArray.length;
+          for (let j = 0; j < mappedLen; j++) {
+            result.push(mappedArray[j]);
+          }
         } else {
           result.push(mapped as TResult);
         }

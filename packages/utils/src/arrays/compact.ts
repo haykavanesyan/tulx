@@ -11,13 +11,21 @@
  * ```
  */
 export function compact<T>(array: readonly T[]): Array<NonNullable<T>> {
-  return array.filter(
-    (item): item is NonNullable<T> =>
-      item !== false &&
-      item !== null &&
-      item !== 0 &&
-      item !== '' &&
-      item !== undefined &&
-      !Number.isNaN(item)
-  );
+  const result: Array<NonNullable<T>> = [];
+  const len = array.length;
+  for (let i = 0; i < len; i++) {
+    const item = array[i];
+    // Optimized order: most common cases first
+    if (item === null || item === undefined || item === false) {
+      continue;
+    }
+    if (item === 0 || item === '') {
+      continue;
+    }
+    if (Number.isNaN(item)) {
+      continue;
+    }
+    result.push(item as NonNullable<T>);
+  }
+  return result;
 }

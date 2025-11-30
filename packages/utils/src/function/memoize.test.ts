@@ -33,7 +33,8 @@ describe('memoize', () => {
   it('should expose cache', () => {
     const memoized = memoize((x: number) => x * 2);
     memoized(5);
-    expect(memoized.cache.has(JSON.stringify([5]))).toBe(true);
+    // For single primitive argument, key is optimized to String(arg) instead of JSON.stringify([arg])
+    expect(memoized.cache.has('5')).toBe(true);
   });
 
   it('should handle different arguments', () => {

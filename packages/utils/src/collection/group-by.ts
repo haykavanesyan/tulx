@@ -16,22 +16,44 @@ export function groupBy<T>(
   collection: readonly T[] | Record<string, T>,
   iteratee: ((value: T) => string | number) | string
 ): Record<string, T[]> {
-  const getValue =
+  const getValue: (item: T) => string =
     typeof iteratee === 'string'
-      ? (item: T) => String((item as Record<string, unknown>)[iteratee])
-      : (item: T) => String(iteratee(item));
+      ? (item: T) => {
+          const val = (item as Record<string, unknown>)[iteratee];
+          return val == null ? '' : String(val);
+        }
+      : (item: T) => {
+          const val = iteratee(item);
+          return val == null ? '' : String(val);
+        };
 
   const result: Record<string, T[]> = {};
-  const items = Array.isArray(collection)
-    ? collection
-    : Object.values(collection);
 
-  for (const item of items) {
-    const key = getValue(item);
-    if (!result[key]) {
-      result[key] = [];
+  if (Array.isArray(collection)) {
+    const len = collection.length;
+    for (let i = 0; i < len; i++) {
+      const item = collection[i];
+      const key = getValue(item);
+      const group = result[key];
+      if (group) {
+        group.push(item);
+      } else {
+        result[key] = [item];
+      }
     }
-    result[key].push(item);
+  } else {
+    const items = Object.values(collection);
+    const len = items.length;
+    for (let i = 0; i < len; i++) {
+      const item = items[i];
+      const key = getValue(item);
+      const group = result[key];
+      if (group) {
+        group.push(item);
+      } else {
+        result[key] = [item];
+      }
+    }
   }
 
   return result;
