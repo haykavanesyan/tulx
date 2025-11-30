@@ -1,6 +1,6 @@
 /* eslint-env node */
 module.exports = {
-  extends: ['./node_modules/@utilify/config/eslint/base-type-checked.js'],
+  extends: ['./node_modules/@tulx/config/eslint/base-type-checked.js'],
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.eslint.json', './tsconfig.json'],
