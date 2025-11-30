@@ -7,5 +7,5 @@
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@tulx/docs", "@tulx/config"]
+  "ignore": ["@tulx/docs"]
 }
