@@ -31,8 +31,7 @@ const config = {
     'react/react-in-jsx-scope': 'off', // Not needed in Next.js
     'react/prop-types': 'off', // Using TypeScript for prop validation
     'react/display-name': 'off',
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
+    // react-hooks rules are included via next/core-web-vitals
 
     // Next.js specific
     '@next/next/no-html-link-for-pages': 'error',
