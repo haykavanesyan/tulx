@@ -6,6 +6,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## 📚 Documentation & Live Coding
+
+- **[Documentation Website](https://tulx-docs.vercel.app/)** - Browse all functions with detailed documentation, examples, and usage guides
+- **[Live Playground](https://tulx-docs.vercel.app/playground)** - Test utility functions directly in your browser with our interactive code editor
+
 ## Why Tulx?
 
 **Tulx** is a comprehensive utility library designed for modern JavaScript and TypeScript projects. Unlike other utility libraries, Tulx is built from the ground up with type safety, performance, and developer experience in mind.
