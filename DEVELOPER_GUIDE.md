@@ -173,117 +173,179 @@ pnpm check:all
 
 ## Versioning
 
-The project uses [Semantic Versioning](https://semver.org/) (SemVer):
+The project uses [Changesets](https://github.com/changesets/changesets) for version management and [Semantic Versioning](https://semver.org/) (SemVer):
 
 - **MAJOR** (x.0.0) - Incompatible API changes
 - **MINOR** (0.x.0) - New functionality with backward compatibility
 - **PATCH** (0.0.x) - Bug fixes with backward compatibility
 
+### Creating a Changeset
+
+When you make changes that should be released, create a changeset:
+
+```bash
+pnpm changeset
+```
+
+This will:
+1. Ask which packages should be released
+2. Ask what kind of change (major, minor, or patch)
+3. Ask for a summary of the changes
+4. Create a changeset file in `.changeset/` directory
+
 ### Version Update Process
 
-1. **Determine the type of change**:
-   - **PATCH** (0.0.x): Bug fixes, type improvements, documentation fixes
-   - **MINOR** (0.x.0): Adding new functions, new utilities
-   - **MAJOR** (x.0.0): Removing functions, changing signatures of existing functions
-
-2. **Update version in package.json**:
-
+1. **Create changeset** after making changes:
    ```bash
-   # Open packages/utils/package.json
-   # Change the "version" field
+   pnpm changeset
    ```
 
-3. **Create CHANGELOG entry** (optional):
-   - Document changes in CHANGELOG.md or README.md
+2. **Update versions** (when ready to release):
+   ```bash
+   pnpm version
+   ```
+   This command will:
+   - Read all changesets
+   - Update package versions
+   - Update CHANGELOG.md files
+   - Remove used changeset files
+   - Update lockfile
+
+3. **Commit the changes**:
+   ```bash
+   git add .
+   git commit -m "chore: release v0.0.X"
+   ```
 
 ### Versioning Examples
 
-- **0.0.1 → 0.0.2**: Type fixes in functions (PATCH)
-- **0.0.2 → 0.1.0**: Adding new function category (MINOR)
-- **0.1.0 → 1.0.0**: Removing deprecated functions (MAJOR)
+- **PATCH** (0.0.x): Bug fixes, type improvements, documentation fixes, README updates
+- **MINOR** (0.x.0): Adding new functions, new utilities, new features
+- **MAJOR** (x.0.0): Removing functions, changing function signatures, breaking API changes
 
 ## Publishing Packages
 
-### Pre-Publishing Preparation
+### Complete Publishing Workflow
 
-1. **Ensure all tests pass**:
+The project uses Changesets for automated version management and publishing. Follow these steps:
 
-   ```bash
-   pnpm test:run
-   ```
+#### Step 1: Create Changeset
 
-2. **Check linter**:
-
-   ```bash
-   pnpm lint
-   ```
-
-3. **Check types**:
-
-   ```bash
-   pnpm type-check
-   ```
-
-4. **Build project**:
-
-   ```bash
-   pnpm build
-   ```
-
-5. **Verify version is updated**:
-   ```bash
-   cat packages/utils/package.json | grep version
-   ```
-
-### Publishing to npm
-
-1. **Login to npm** (if not already logged in):
-
-   ```bash
-   npm login
-   ```
-
-2. **Navigate to package directory**:
-
-   ```bash
-   cd packages/utils
-   ```
-
-3. **Publish package**:
-
-   ```bash
-   npm publish
-   ```
-
-   Or with a tag (for pre-release versions):
-
-   ```bash
-   npm publish --tag beta
-   npm publish --tag alpha
-   ```
-
-4. **Verify publication**:
-   ```bash
-   npm view @tulx/utils version
-   ```
-
-### Publishing Automation
-
-For automation, you can use a script:
+After making changes, create a changeset:
 
 ```bash
-# From project root
-cd packages/utils && npm publish && cd ../..
+pnpm changeset
 ```
 
-Or add a script to root package.json:
+Follow the prompts to select:
+- Package(s) to release (`@tulx/utils`)
+- Type of change (patch, minor, or major)
+- Summary of changes
 
-```json
-{
-  "scripts": {
-    "publish:utils": "cd packages/utils && npm publish && cd ../.."
-  }
-}
+#### Step 2: Update Versions
+
+When ready to release, update versions:
+
+```bash
+pnpm version
+```
+
+This will:
+- Read all changesets
+- Update package versions automatically
+- Update CHANGELOG.md files
+- Remove used changeset files
+- Update lockfile
+
+#### Step 3: Build and Test
+
+Ensure everything is ready:
+
+```bash
+pnpm release
+```
+
+This runs:
+- `pnpm build` - Builds all packages
+- `pnpm test:run` - Runs all tests
+
+Or use the full check:
+
+```bash
+pnpm check:all
+```
+
+#### Step 4: Publish to npm
+
+**Option A: Using helper script (recommended)**
+
+```bash
+pnpm publish:utils
+```
+
+**Option B: Manual publish**
+
+```bash
+cd packages/utils
+npm publish --access public
+cd ../..
+```
+
+**Option C: Full automated workflow**
+
+```bash
+pnpm publish:full
+```
+
+This runs:
+- `pnpm publish:prepare` (version + release)
+- `pnpm publish:utils` (publish to npm)
+
+#### Step 5: Verify Publication
+
+```bash
+npm view @tulx/utils version
+```
+
+#### Step 6: Commit and Push
+
+```bash
+git add .
+git commit -m "chore: release v0.0.X"
+git push
+```
+
+### Available Publishing Scripts
+
+- `pnpm changeset` - Create a new changeset
+- `pnpm changeset:status` - Check status of changesets
+- `pnpm changeset:version` - Update versions from changesets
+- `pnpm version` - Update versions and install dependencies
+- `pnpm publish:check` - Check if there are pending changesets
+- `pnpm publish:prepare` - Update versions, build, and test
+- `pnpm publish:utils` - Publish @tulx/utils to npm
+- `pnpm publish:full` - Complete workflow: prepare + publish
+
+### Pre-Publishing Checklist
+
+- [ ] All changes have changesets (`pnpm changeset:status`)
+- [ ] All tests pass (`pnpm test:run`)
+- [ ] Linter has no errors (`pnpm lint`)
+- [ ] Types checked (`pnpm type-check`)
+- [ ] Project builds successfully (`pnpm build`)
+- [ ] Versions updated (`pnpm version`)
+- [ ] Changes committed
+- [ ] Logged in to npm (`npm whoami`)
+
+### Publishing Pre-release Versions
+
+For beta or alpha releases:
+
+```bash
+cd packages/utils
+npm publish --access public --tag beta
+# or
+npm publish --access public --tag alpha
 ```
 
 ## Testing
@@ -409,16 +471,28 @@ git commit -m "fix(function): replace unknown[] with any[] in type constraints"
 3. **Before publishing**:
 
    ```bash
+   # Create changeset for your changes
+   pnpm changeset
+
    # Ensure all checks pass
    pnpm check:all
-
-   # Update version
-   # Commit version changes
-   git add packages/utils/package.json
-   git commit -m "chore(utils): bump version to 0.0.2"
    ```
 
-4. **Publish package** (see "Publishing Packages" section)
+4. **When ready to release**:
+
+   ```bash
+   # Update versions from changesets
+   pnpm version
+
+   # Build and test
+   pnpm release
+
+   # Commit version changes
+   git add .
+   git commit -m "chore: release v0.0.X"
+   ```
+
+5. **Publish package** (see "Publishing Packages" section)
 
 5. **Create a tag** (optional):
 
@@ -434,14 +508,14 @@ git commit -m "fix(function): replace unknown[] with any[] in type constraints"
 
 ## Pre-Publishing Checklist
 
+- [ ] Changeset created for all changes (`pnpm changeset`)
 - [ ] All tests pass (`pnpm test:run`)
 - [ ] Linter has no errors (`pnpm lint`)
 - [ ] Types checked (`pnpm type-check`)
 - [ ] Project builds successfully (`pnpm build`)
-- [ ] Version updated in `package.json`
+- [ ] Versions updated (`pnpm version`)
 - [ ] Changes committed
-- [ ] CHANGELOG updated (if used)
-- [ ] README is up to date (if there were API changes)
+- [ ] Logged in to npm (`npm whoami`)
 
 ## Useful Commands
 

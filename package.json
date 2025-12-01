@@ -22,7 +22,11 @@
     "changeset:version": "changeset version",
     "changeset:status": "changeset status",
     "version": "pnpm changeset:version && pnpm install",
-    "release": "pnpm build && pnpm test:run"
+    "release": "pnpm build && pnpm test:run",
+    "publish:utils": "cd packages/utils && npm publish --access public && cd ../..",
+    "publish:check": "pnpm changeset:status",
+    "publish:prepare": "pnpm version && pnpm release",
+    "publish:full": "pnpm publish:prepare && pnpm publish:utils"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
