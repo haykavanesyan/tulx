@@ -1,0 +1,11 @@
+[build]
+  base = "apps/docs"
+  command = "pnpm install && turbo run build --filter=@tulx/docs"
+  publish = "apps/docs/.next"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
