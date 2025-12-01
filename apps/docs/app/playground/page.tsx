@@ -2,7 +2,7 @@
 
 import * as tulxUtils from '@tulx/utils';
 import { useSearchParams } from 'next/navigation';
-import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import { Suspense, useState, useEffect, useCallback, useRef, useMemo } from 'react';
 
 import type { FunctionMetadata } from '@/lib/functions';
 import { DEFAULT_PLAYGROUND_CODE, SEARCH_DEBOUNCE_MS } from '@/lib/constants';
@@ -21,7 +21,7 @@ import { SearchBar } from '@/components/playground/search-bar';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 
-export default function PlaygroundPage() {
+function PlaygroundContent() {
   const searchParams = useSearchParams();
   const functionName = searchParams.get('function');
 
@@ -188,5 +188,26 @@ export default function PlaygroundPage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function PlaygroundPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1 container mx-auto py-8 px-4">
+          <div className="mb-6">
+            <h1 className="text-4xl font-bold mb-2">Live Playground</h1>
+            <p className="text-muted-foreground mb-4">
+              Test utility functions in real-time. Select a function, modify the code, and see the results instantly.
+            </p>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    }>
+      <PlaygroundContent />
+    </Suspense>
   );
 }
