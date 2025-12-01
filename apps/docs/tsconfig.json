@@ -15,6 +15,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
+      "@tulx/utils": ["../../packages/utils/src"],
       "@tulx": ["../../packages/utils/src"],
       "@tulx/*": ["../../packages/utils/src/*"],
       "@tulx/config": ["../../packages/config"],
@@ -22,7 +23,13 @@
     },
     "noEmit": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mdx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"],
   "references": [
     {

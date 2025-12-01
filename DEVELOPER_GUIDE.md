@@ -1,99 +1,100 @@
-# Руководство для разработчиков
+# Developer Guide
 
-Этот документ содержит инструкции для разработчиков по работе с проектом Utilify, включая процесс разработки, версионирование и публикацию пакетов.
+This document contains instructions for developers working on the Utilify project, including the development process, versioning, and package publishing.
 
-## Содержание
+## Table of Contents
 
-- [Структура проекта](#структура-проекта)
-- [Настройка окружения](#настройка-окружения)
-- [Процесс разработки](#процесс-разработки)
-- [Версионирование](#версионирование)
-- [Публикация пакетов](#публикация-пакетов)
-- [Тестирование](#тестирование)
-- [Стиль кода](#стиль-кода)
-- [Git workflow](#git-workflow)
+- [Project Structure](#project-structure)
+- [Environment Setup](#environment-setup)
+- [Development Process](#development-process)
+- [Versioning](#versioning)
+- [Publishing Packages](#publishing-packages)
+- [Testing](#testing)
+- [Code Style](#code-style)
+- [Git Workflow](#git-workflow)
 
-## Структура проекта
+## Project Structure
 
-Проект использует монорепозиторий (monorepo) структуру:
+The project uses a monorepo structure:
 
 ```
 Utilify/
 ├── apps/
-│   └── docs/              # Next.js документация сайт
+│   └── docs/              # Next.js documentation site
 ├── packages/
-│   ├── config/            # Общие конфигурации (ESLint, TypeScript)
-│   └── utils/             # Основная библиотека утилит
+│   ├── config/            # Shared configurations (ESLint, TypeScript)
+│   └── utils/             # Main utility library
 ├── package.json           # Root package.json
-└── pnpm-workspace.yaml    # Конфигурация pnpm workspace
+└── pnpm-workspace.yaml    # pnpm workspace configuration
 ```
 
-### Пакеты
+### Packages
 
-- **@tulx/utils** - Основная библиотека утилит (публикуется в npm)
-- **@tulx/config** - Внутренние конфигурации (не публикуется)
-- **apps/docs** - Документация сайт (не публикуется)
+- **@tulx/utils** - Main utility library (published to npm)
+- **@tulx/config** - Internal configurations (not published)
+- **apps/docs** - Documentation site (not published)
 
-## Настройка окружения
+## Environment Setup
 
-### Требования
+### Requirements
 
 - Node.js >= 18.0.0
 - pnpm >= 9.0.0
 
-### Установка
+### Installation
 
 ```bash
-# Клонировать репозиторий
+# Clone the repository
 git clone <repository-url>
 cd Utilify
 
-# Установить зависимости
+# Install dependencies
 pnpm install
 ```
 
-## Процесс разработки
+## Development Process
 
-### Создание новой утилиты
+### Creating a New Utility
 
-1. **Определите категорию** утилиты:
-   - `arrays/` - функции для работы с массивами
-   - `strings/` - функции для работы со строками
-   - `objects/` - функции для работы с объектами
-   - `numbers/` - функции для работы с числами
-   - `function/` - функции высшего порядка
-   - `math/` - математические функции
-   - `date/` - функции для работы с датами
-   - `util/` - вспомогательные утилиты
-   - `lang/` - функции проверки типов
-   - `collection/` - функции для коллекций
-   - `seq/` - функции для последовательностей
+1. **Determine the category** of the utility:
+   - `arrays/` - functions for working with arrays
+   - `strings/` - functions for working with strings
+   - `objects/` - functions for working with objects
+   - `numbers/` - functions for working with numbers
+   - `function/` - higher-order functions
+   - `math/` - mathematical functions
+   - `date/` - functions for working with dates
+   - `util/` - helper utilities
+   - `lang/` - type checking functions
+   - `collection/` - functions for collections
+   - `seq/` - functions for sequences
 
-2. **Создайте файлы**:
+2. **Create files**:
+
    ```bash
-   # Пример: создание функции chunk
+   # Example: creating chunk function
    touch packages/utils/src/arrays/chunk.ts
    touch packages/utils/src/arrays/chunk.test.ts
    ```
 
-3. **Реализуйте функцию**:
-   - Функция должна быть чистой (pure function)
-   - Полная типизация TypeScript
-   - JSDoc комментарии с описанием, параметрами, возвращаемым значением и примерами
-   - Следуйте правилам из `.cursor/rules/`
+3. **Implement the function**:
+   - Function must be pure (pure function)
+   - Full TypeScript typing
+   - JSDoc comments with description, parameters, return value, and examples
+   - Follow rules from `.cursor/rules/`
 
-4. **Напишите тесты**:
-   - Минимум 90% покрытия кода
-   - Тестируйте edge cases (null, undefined, пустые массивы и т.д.)
-   - Используйте Vitest
+4. **Write tests**:
+   - Minimum 90% code coverage
+   - Test edge cases (null, undefined, empty arrays, etc.)
+   - Use Vitest
 
-5. **Экспортируйте функцию**:
-   - Добавьте экспорт в `packages/utils/src/index.ts`
-   - Следуйте структуре категорий
+5. **Export the function**:
+   - Add export to `packages/utils/src/index.ts`
+   - Follow category structure
 
-### Пример создания функции
+### Example Function Creation
 
-```typescript
+````typescript
 // packages/utils/src/arrays/chunk.ts
 /**
  * Creates an array of elements split into groups the length of size.
@@ -118,7 +119,7 @@ export function chunk<T>(array: readonly T[], size: number = 1): T[][] {
   }
   return result;
 }
-```
+````
 
 ```typescript
 // packages/utils/src/arrays/chunk.test.ts
@@ -127,7 +128,10 @@ import { chunk } from './chunk';
 
 describe('chunk', () => {
   it('should split array into chunks of specified size', () => {
-    expect(chunk(['a', 'b', 'c', 'd'], 2)).toEqual([['a', 'b'], ['c', 'd']]);
+    expect(chunk(['a', 'b', 'c', 'd'], 2)).toEqual([
+      ['a', 'b'],
+      ['c', 'd'],
+    ]);
   });
 
   it('should handle remainder elements', () => {
@@ -145,125 +149,134 @@ describe('chunk', () => {
 });
 ```
 
-### Локальная разработка
+### Local Development
 
 ```bash
-# Запустить тесты в watch режиме
+# Run tests in watch mode
 pnpm test
 
-# Запустить линтер
+# Run linter
 pnpm lint
 
-# Исправить ошибки линтера автоматически
+# Fix linter errors automatically
 pnpm lint:fix
 
-# Проверить типы
+# Check types
 pnpm type-check
 
-# Собрать проект
+# Build project
 pnpm build
 
-# Запустить все проверки
+# Run all checks
 pnpm check:all
 ```
 
-## Версионирование
+## Versioning
 
-Проект использует [Semantic Versioning](https://semver.org/) (SemVer):
+The project uses [Semantic Versioning](https://semver.org/) (SemVer):
 
-- **MAJOR** (x.0.0) - Несовместимые изменения API
-- **MINOR** (0.x.0) - Новая функциональность с обратной совместимостью
-- **PATCH** (0.0.x) - Исправления багов с обратной совместимостью
+- **MAJOR** (x.0.0) - Incompatible API changes
+- **MINOR** (0.x.0) - New functionality with backward compatibility
+- **PATCH** (0.0.x) - Bug fixes with backward compatibility
 
-### Процесс обновления версии
+### Version Update Process
 
-1. **Определите тип изменения**:
-   - **PATCH** (0.0.x): Исправление багов, улучшение типизации, исправление документации
-   - **MINOR** (0.x.0): Добавление новых функций, новые утилиты
-   - **MAJOR** (x.0.0): Удаление функций, изменение сигнатур существующих функций
+1. **Determine the type of change**:
+   - **PATCH** (0.0.x): Bug fixes, type improvements, documentation fixes
+   - **MINOR** (0.x.0): Adding new functions, new utilities
+   - **MAJOR** (x.0.0): Removing functions, changing signatures of existing functions
 
-2. **Обновите версию в package.json**:
+2. **Update version in package.json**:
+
    ```bash
-   # Откройте packages/utils/package.json
-   # Измените поле "version"
+   # Open packages/utils/package.json
+   # Change the "version" field
    ```
 
-3. **Создайте CHANGELOG запись** (опционально):
-   - Документируйте изменения в CHANGELOG.md или README.md
+3. **Create CHANGELOG entry** (optional):
+   - Document changes in CHANGELOG.md or README.md
 
-### Примеры версионирования
+### Versioning Examples
 
-- **0.0.1 → 0.0.2**: Исправление типизации в функциях (PATCH)
-- **0.0.2 → 0.1.0**: Добавление новой категории функций (MINOR)
-- **0.1.0 → 1.0.0**: Удаление устаревших функций (MAJOR)
+- **0.0.1 → 0.0.2**: Type fixes in functions (PATCH)
+- **0.0.2 → 0.1.0**: Adding new function category (MINOR)
+- **0.1.0 → 1.0.0**: Removing deprecated functions (MAJOR)
 
-## Публикация пакетов
+## Publishing Packages
 
-### Подготовка к публикации
+### Pre-Publishing Preparation
 
-1. **Убедитесь, что все тесты проходят**:
+1. **Ensure all tests pass**:
+
    ```bash
    pnpm test:run
    ```
 
-2. **Проверьте линтер**:
+2. **Check linter**:
+
    ```bash
    pnpm lint
    ```
 
-3. **Проверьте типы**:
+3. **Check types**:
+
    ```bash
    pnpm type-check
    ```
 
-4. **Соберите проект**:
+4. **Build project**:
+
    ```bash
    pnpm build
    ```
 
-5. **Проверьте, что версия обновлена**:
+5. **Verify version is updated**:
    ```bash
    cat packages/utils/package.json | grep version
    ```
 
-### Публикация в npm
+### Publishing to npm
 
-1. **Войдите в npm** (если еще не вошли):
+1. **Login to npm** (if not already logged in):
+
    ```bash
    npm login
    ```
 
-2. **Перейдите в директорию пакета**:
+2. **Navigate to package directory**:
+
    ```bash
    cd packages/utils
    ```
 
-3. **Опубликуйте пакет**:
+3. **Publish package**:
+
    ```bash
    npm publish
    ```
 
-   Или с тегом (для pre-release версий):
+   Or with a tag (for pre-release versions):
+
    ```bash
    npm publish --tag beta
    npm publish --tag alpha
    ```
 
-4. **Проверьте публикацию**:
+4. **Verify publication**:
    ```bash
    npm view @tulx/utils version
    ```
 
-### Автоматизация публикации
+### Publishing Automation
 
-Для автоматизации можно использовать скрипт:
+For automation, you can use a script:
 
 ```bash
-# Из корня проекта
+# From project root
 cd packages/utils && npm publish && cd ../..
 ```
 
-Или добавить скрипт в root package.json:
+Or add a script to root package.json:
 
 ```json
 {
@@ -273,75 +286,75 @@ cd packages/utils && npm publish && cd ../..
 }
 ```
 
-## Тестирование
+## Testing
 
-### Запуск тестов
+### Running Tests
 
 ```bash
-# Все тесты в watch режиме
+# All tests in watch mode
 pnpm test
 
-# Все тесты один раз
+# All tests once
 pnpm test:run
 
-# Конкретный тест файл
+# Specific test file
 pnpm test -- chunk.test.ts
 
-# С покрытием
+# With coverage
 pnpm test:coverage
 
-# UI режим
+# UI mode
 pnpm test:ui
 ```
 
-### Требования к тестам
+### Test Requirements
 
-- **Покрытие**: Минимум 90%
-- **Edge cases**: Обязательно тестируйте:
-  - `null` и `undefined`
-  - Пустые массивы/объекты
-  - Граничные значения
-  - Невалидные входные данные
+- **Coverage**: Minimum 90%
+- **Edge cases**: Must test:
+  - `null` and `undefined`
+  - Empty arrays/objects
+  - Boundary values
+  - Invalid input data
 
-- **Названия тестов**: Используйте описательные названия:
+- **Test names**: Use descriptive names:
   ```typescript
   it('should return empty array when size is less than 1', () => {
     // ...
   });
   ```
 
-## Стиль кода
+## Code Style
 
 ### TypeScript
 
-- Строгий режим (`strict: true`) всегда включен
-- Избегайте `any`, используйте `unknown` для небезопасных входных данных
-- Все функции должны быть полностью типизированы
-- Используйте JSDoc для всех публичных функций
+- Strict mode (`strict: true`) always enabled
+- Avoid `any`, use `unknown` for unsafe input data
+- All functions must be fully typed
+- Use JSDoc for all public functions
 
-### Функции
+### Functions
 
-- Чистые функции (pure functions) везде, где возможно
-- Одна функция = одна ответственность
-- Максимум 30-50 строк на функцию
-- Именованные экспорты (не default exports)
+- Pure functions (pure functions) wherever possible
+- One function = one responsibility
+- Maximum 30-50 lines per function
+- Named exports (not default exports)
 
-### Импорты
+### Imports
 
-- В Next.js: абсолютные импорты (`@/components/...`)
-- В утилитах: относительные импорты
-- Группируйте импорты: внешние → внутренние
+- In Next.js: absolute imports (`@/components/...`)
+- In utilities: relative imports
+- Group imports: external → internal
 
-### Ошибки
+### Errors
 
-- Выбрасывайте реальные объекты Error
-- Предоставляйте полезные сообщения об ошибках
+- Throw real Error objects
+- Provide helpful error messages
 
-## Git workflow
+## Git Workflow
 
-### Структура коммитов
+### Commit Structure
 
-Используйте [Conventional Commits](https://www.conventionalcommits.org/):
+Use [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
 <type>(<scope>): <subject>
@@ -351,137 +364,140 @@ pnpm test:ui
 <footer>
 ```
 
-### Типы коммитов
+### Commit Types
 
-- `feat`: Новая функция или утилита
-- `fix`: Исправление бага
-- `docs`: Изменения в документации
-- `refactor`: Рефакторинг кода
-- `test`: Добавление или изменение тестов
-- `chore`: Изменения в сборке, конфигурации и т.д.
-- `style`: Изменения форматирования (не влияют на код)
-- `perf`: Улучшение производительности
+- `feat`: New feature or utility
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `refactor`: Code refactoring
+- `test`: Adding or changing tests
+- `chore`: Build, configuration changes, etc.
+- `style`: Formatting changes (don't affect code)
+- `perf`: Performance improvements
 
-### Примеры коммитов
+### Commit Examples
 
 ```bash
-# Новая функция
+# New function
 git commit -m "feat(arrays): add chunk function"
 
-# Исправление бага
+# Bug fix
 git commit -m "fix(function): correct type constraints for function utilities"
 
-# Обновление версии и публикация
+# Version update and publish
 git commit -m "chore(utils): bump version to 0.0.2 and publish"
 
-# Исправление типизации
+# Type fix
 git commit -m "fix(function): replace unknown[] with any[] in type constraints"
 ```
 
-### Процесс работы с Git
+### Git Workflow Process
 
-1. **Создайте ветку** (если работаете в команде):
+1. **Create a branch** (if working in a team):
+
    ```bash
    git checkout -b feat/new-utility
    ```
 
-2. **Внесите изменения** и закоммитьте:
+2. **Make changes** and commit:
+
    ```bash
    git add .
    git commit -m "feat(arrays): add new utility function"
    ```
 
-3. **Перед публикацией**:
+3. **Before publishing**:
+
    ```bash
-   # Убедитесь, что все проверки проходят
+   # Ensure all checks pass
    pnpm check:all
-   
-   # Обновите версию
-   # Закоммитьте изменения версии
+
+   # Update version
+   # Commit version changes
    git add packages/utils/package.json
    git commit -m "chore(utils): bump version to 0.0.2"
    ```
 
-4. **Опубликуйте пакет** (см. раздел "Публикация пакетов")
+4. **Publish package** (see "Publishing Packages" section)
 
-5. **Создайте тег** (опционально):
+5. **Create a tag** (optional):
+
    ```bash
    git tag v0.0.2
    git push origin v0.0.2
    ```
 
-6. **Запушьте изменения**:
+6. **Push changes**:
    ```bash
    git push origin main
    ```
 
-## Чеклист перед публикацией
+## Pre-Publishing Checklist
 
-- [ ] Все тесты проходят (`pnpm test:run`)
-- [ ] Линтер не выдает ошибок (`pnpm lint`)
-- [ ] Типы проверены (`pnpm type-check`)
-- [ ] Проект успешно собирается (`pnpm build`)
-- [ ] Версия обновлена в `package.json`
-- [ ] Изменения закоммичены
-- [ ] CHANGELOG обновлен (если используется)
-- [ ] README актуален (если были изменения API)
+- [ ] All tests pass (`pnpm test:run`)
+- [ ] Linter has no errors (`pnpm lint`)
+- [ ] Types checked (`pnpm type-check`)
+- [ ] Project builds successfully (`pnpm build`)
+- [ ] Version updated in `package.json`
+- [ ] Changes committed
+- [ ] CHANGELOG updated (if used)
+- [ ] README is up to date (if there were API changes)
 
-## Полезные команды
+## Useful Commands
 
 ```bash
-# Полная проверка проекта
+# Full project check
 pnpm check:all
 
-# Исправить все автоматически
+# Fix everything automatically
 pnpm fix:all
 
-# Очистить все build артефакты
+# Clean all build artifacts
 pnpm clean
 
-# Форматировать код
+# Format code
 pnpm format
 
-# Проверить форматирование
+# Check formatting
 pnpm format:check
 
-# Собрать все пакеты
+# Build all packages
 pnpm build
 
-# Запустить документацию локально
+# Run documentation locally
 cd apps/docs && pnpm dev
 ```
 
-## Решение проблем
+## Troubleshooting
 
-### Ошибки типизации
+### Type Errors
 
-Если возникают ошибки типизации при работе с функциями:
+If type errors occur when working with functions:
 
-1. Проверьте, что используете правильные типы
-2. Для функций высшего порядка может потребоваться `any[]` вместо `unknown[]`
-3. Используйте `// eslint-disable-next-line @typescript-eslint/no-explicit-any` с комментарием, объясняющим необходимость
+1. Check that you're using the correct types
+2. For higher-order functions, `any[]` may be required instead of `unknown[]`
+3. Use `// eslint-disable-next-line @typescript-eslint/no-explicit-any` with a comment explaining the necessity
 
-### Ошибки сборки
+### Build Errors
 
 ```bash
-# Очистите и пересоберите
+# Clean and rebuild
 pnpm clean
 pnpm build
 ```
 
-### Проблемы с зависимостями
+### Dependency Issues
 
 ```bash
-# Переустановите зависимости
+# Reinstall dependencies
 rm -rf node_modules pnpm-lock.yaml
 pnpm install
 ```
 
-## Контакты и поддержка
+## Contact and Support
 
-Для вопросов и предложений создавайте issues в репозитории проекта.
+For questions and suggestions, create issues in the project repository.
 
 ---
 
-**Последнее обновление**: 2024
-
+**Last updated**: 2024

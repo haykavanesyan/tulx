@@ -10,17 +10,26 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h1>
     ),
     h2: ({ children, ...props }: { children?: React.ReactNode }) => (
-      <h2 className="text-3xl font-semibold text-foreground mb-4 mt-6" {...props}>
+      <h2
+        className="text-3xl font-semibold text-foreground mb-4 mt-6"
+        {...props}
+      >
         {children}
       </h2>
     ),
     h3: ({ children, ...props }: { children?: React.ReactNode }) => (
-      <h3 className="text-2xl font-semibold text-foreground mb-3 mt-5" {...props}>
+      <h3
+        className="text-2xl font-semibold text-foreground mb-3 mt-5"
+        {...props}
+      >
         {children}
       </h3>
     ),
     h4: ({ children, ...props }: { children?: React.ReactNode }) => (
-      <h4 className="text-xl font-semibold text-foreground mb-2 mt-4" {...props}>
+      <h4
+        className="text-xl font-semibold text-foreground mb-2 mt-4"
+        {...props}
+      >
         {children}
       </h4>
     ),
@@ -30,12 +39,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </p>
     ),
     ul: ({ children, ...props }: { children?: React.ReactNode }) => (
-      <ul className="list-disc list-inside mb-4 space-y-2 text-foreground" {...props}>
+      <ul
+        className="list-disc list-inside mb-4 space-y-2 text-foreground"
+        {...props}
+      >
         {children}
       </ul>
     ),
     ol: ({ children, ...props }: { children?: React.ReactNode }) => (
-      <ol className="list-decimal list-inside mb-4 space-y-2 text-foreground" {...props}>
+      <ol
+        className="list-decimal list-inside mb-4 space-y-2 text-foreground"
+        {...props}
+      >
         {children}
       </ol>
     ),
@@ -52,7 +67,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </blockquote>
     ),
-    code: ({ children, ...props }: { children?: React.ReactNode; className?: string }) => {
+    code: ({
+      children,
+      ...props
+    }: {
+      children?: React.ReactNode;
+      className?: string;
+    }) => {
       const isInline = !props.className;
       return isInline ? (
         <code
@@ -66,27 +87,22 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       );
     },
     pre: ({ children, ...props }: { children?: React.ReactNode }) => (
-      <pre
-        className="bg-muted p-4 rounded-lg overflow-x-auto mb-4"
-        {...props}
-      >
+      <pre className="bg-muted p-4 rounded-lg overflow-x-auto mb-4" {...props}>
         {children}
       </pre>
     ),
     a: ({ children, ...props }: { children?: React.ReactNode }) => (
-      <a
-        className="text-primary hover:underline"
-        {...props}
-      >
+      <a className="text-primary hover:underline" {...props}>
         {children}
       </a>
     ),
-    hr: ({ ...props }) => (
-      <hr className="my-8 border-border" {...props} />
-    ),
+    hr: ({ ...props }) => <hr className="my-8 border-border" {...props} />,
     table: ({ children, ...props }: { children?: React.ReactNode }) => (
       <div className="overflow-x-auto my-4">
-        <table className="min-w-full border-collapse border border-border" {...props}>
+        <table
+          className="min-w-full border-collapse border border-border"
+          {...props}
+        >
           {children}
         </table>
       </div>
@@ -97,9 +113,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </thead>
     ),
     tbody: ({ children, ...props }: { children?: React.ReactNode }) => (
-      <tbody {...props}>
-        {children}
-      </tbody>
+      <tbody {...props}>{children}</tbody>
     ),
     tr: ({ children, ...props }: { children?: React.ReactNode }) => (
       <tr className="border-b border-border" {...props}>
@@ -107,7 +121,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </tr>
     ),
     th: ({ children, ...props }: { children?: React.ReactNode }) => (
-      <th className="border border-border px-4 py-2 text-left font-semibold text-foreground" {...props}>
+      <th
+        className="border border-border px-4 py-2 text-left font-semibold text-foreground"
+        {...props}
+      >
         {children}
       </th>
     ),
@@ -119,4 +136,3 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
   };
 }
-

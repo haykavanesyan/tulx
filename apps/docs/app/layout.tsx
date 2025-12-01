@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
+
+import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Tulx - Utility Library Documentation',
-  description: 'Documentation for Tulx utility library',
+  description:
+    'Modern JavaScript/TypeScript utility functions library with live playground',
 };
 
 export default function RootLayout({
@@ -12,8 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

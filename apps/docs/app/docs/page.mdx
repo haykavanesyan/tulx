@@ -1,52 +1,310 @@
-# Documentation Example
+# Tulx Documentation
 
-This is an example MDX page demonstrating how to write documentation.
+**Tulx** is a modern, type-safe utility library for JavaScript and TypeScript with over 300 functions. The library is built from scratch with performance, type safety, and developer experience in mind.
 
-## Features
+## About the Library
 
-MDX allows you to:
+Tulx provides a comprehensive set of utilities for working with arrays, objects, strings, functions, and more. All functions are pure (pure functions), have no side effects, and are fully typed using TypeScript strict mode.
 
-- Write **markdown** with full support for JSX
-- Use React components directly in your documentation
-- Create interactive documentation
+### Key Benefits
 
-## Code Examples
+- **🚀 Zero Dependencies** — zero dependencies mean smaller bundle size and fast installation
+- **⚡ High Performance** — optimized implementations that outperform popular alternatives in benchmarks
+- **📦 Tree-shakeable** — import only what you need with ES module support
+- **🔒 Type Safety** — full TypeScript strict mode support
+- **✨ Pure Functions** — all functions are pure and have no side effects
+- **📚 Great Documentation** — every function includes JSDoc with examples
+- **🎯 Modern Build** — ESM and CommonJS support
+- **🧪 Full Testing** — comprehensive test coverage with Vitest
 
-Here's an example of inline code: `const example = 'Hello World'`
+## Installation
 
-And here's a code block:
+Install the library via npm, pnpm, or yarn:
 
-```typescript
-function greet(name: string) {
-  return `Hello, ${name}!`;
-}
-
-console.log(greet('World'));
+```bash
+npm install @tulx/utils
+# or
+pnpm add @tulx/utils
+# or
+yarn add @tulx/utils
 ```
 
-## Lists
+## Quick Start
 
-- First item
-- Second item
-- Third item
+After installation, you can import and use functions:
 
-1. Ordered item one
-2. Ordered item two
-3. Ordered item three
+```typescript
+import { chunk, debounce, merge } from '@tulx/utils';
 
-## Links and More
+// Split array into chunks
+const chunks = chunk([1, 2, 3, 4, 5], 2);
+// [[1, 2], [3, 4], [5]]
 
-Visit [Next.js documentation](https://nextjs.org/docs) for more information.
+// Create a debounced function
+const debouncedSearch = debounce((query: string) => {
+  console.log('Searching for:', query);
+}, 300);
 
-> This is a blockquote example.
+// Merge objects
+const merged = merge({ a: 1 }, { b: 2 });
+// { a: 1, b: 2 }
+```
+
+## Function Categories
+
+Tulx provides over 300 utilities organized by category:
+
+### Arrays
+
+Functions for manipulation, transformation, and querying arrays. Includes element operations, filtering, sorting, and more.
+
+**Example functions:** `chunk`, `compact`, `difference`, `flatten`, `intersection`, `union`, `unique`, `zip` and more.
+
+### Collection
+
+Iteration, filtering, and transformation of collections. Functions for working with data collections, including map, filter, reduce, and their variations.
+
+**Example functions:** `map`, `filter`, `reduce`, `find`, `some`, `every`, `groupBy`, `keyBy`, `partition` and more.
+
+### Object
+
+Object manipulation, property access, and merging. Functions for working with objects, including deep copying, merging, and accessing nested properties.
+
+**Example functions:** `merge`, `pick`, `omit`, `get`, `set`, `has`, `keys`, `values`, `cloneDeep` and more.
+
+### String
+
+String transformation, formatting, and parsing. Utilities for working with strings, including case conversion, trimming, replacement, and more.
+
+**Example functions:** `camelCase`, `kebabCase`, `snakeCase`, `capitalize`, `truncate`, `pad`, `trim` and more.
+
+### Function
+
+Function composition, debouncing, throttling, and other utilities for working with functions. Functions for creating and managing higher-order functions.
+
+**Example functions:** `debounce`, `throttle`, `memoize`, `compose`, `pipe`, `once`, `after`, `before` and more.
+
+### Number
+
+Utilities for working with numbers, including range checks, rounding, and random number generation.
+
+**Example functions:** `clamp`, `inRange`, `random` and more.
+
+### Math
+
+Mathematical operations and aggregations. Functions for calculations, including sums, averages, maximums, and minimums.
+
+**Example functions:** `add`, `subtract`, `multiply`, `divide`, `sum`, `mean`, `max`, `min`, `round`, `ceil`, `floor` and more.
+
+### Date
+
+Utilities for working with dates and times.
+
+**Example functions:** `now` and more.
+
+### Lang
+
+Type checking, type conversion, and equality checking. Functions for determining data types and working with various value types.
+
+**Example functions:** `isArray`, `isObject`, `isString`, `isNumber`, `isFunction`, `isEmpty`, `isEqual`, `toNumber`, `toString` and more.
+
+### Util
+
+General utilities for various tasks. Helper functions for everyday development tasks.
+
+**Example functions:** `noop`, `identity`, `constant`, `times`, `range` and more.
+
+### Seq
+
+Utilities for working with sequences.
+
+## Tree-Shaking
+
+Tulx fully supports tree-shaking. Import only the functions you need:
+
+```typescript
+// ✅ Correct — only imports what you need
+import { chunk, debounce } from '@tulx/utils';
+
+// ❌ Avoid — imports the entire library
+import * as tulx from '@tulx/utils';
+```
+
+Modern bundlers like Webpack, Rollup, and Vite will automatically remove unused code.
+
+## TypeScript Support
+
+Tulx is written in TypeScript and provides excellent type inference. All functions are fully typed using TypeScript strict mode, ensuring complete type safety and excellent IDE support.
+
+```typescript
+import { merge } from '@tulx/utils';
+
+// TypeScript automatically infers types
+const result = merge({ name: 'John' }, { age: 30 });
+// result has type { name: string; age: number }
+```
+
+## Interactive Playground
+
+Use our [interactive playground](/playground) to test functions directly in your browser before installing. The playground allows you to:
+
+- Import and test any function from the library
+- See execution results in real-time
+- Experiment with different parameters
+- Explore usage examples
+
+## Browse Functions
+
+On the [Functions](/functions) page you can:
+
+- Browse all available functions
+- Filter functions by category
+- Search functions by name or description
+- Navigate to detailed documentation for each function
+
+## Performance
+
+Tulx is designed with performance in mind. Each function is carefully optimized and performance-tested against popular alternatives. The library demonstrates superior performance across various categories:
+
+- **Object Operations** — fast manipulation, merging, and property access
+- **Function Utilities** — optimized debouncing, throttling, memoization, and composition
+- **Language Utilities** — efficient type checking, cloning, and equality comparison
+- **Array Operations** — fast transformations and manipulations
+- **Collection Methods** — optimized iteration and transformation functions
+
+## Comparison with Other Libraries
+
+### vs Lodash
+
+| Feature | Tulx | Lodash |
+|------------|------|--------|
+| Performance | Faster in most cases | Well optimized |
+| Bundle Size | Smaller (tree-shakeable) | Larger |
+| Dependencies | None | Has dependencies |
+| TypeScript | Modern, strict mode | Good, but outdated patterns |
+| Code Style | Clean, modern | Some outdated patterns |
+
+### vs Ramda
+
+| Feature | Tulx | Ramda |
+|------------|------|-------|
+| API Style | Familiar (Lodash-like) | Functional, curried by default |
+| Performance | Optimized | Good |
+| Coverage | 300+ functions | Comprehensive |
+| Learning Curve | Easy | Steeper |
+
+### vs Native JavaScript
+
+| Feature | Tulx | Native JS |
+|------------|------|-------------|
+| Consistency | Same API for all functions | Varies |
+| Edge Cases | Properly handled | May require manual handling |
+| Type Safety | Full TypeScript support | Limited |
+| Documentation | Every function documented | MDN documentation |
+
+## Browser Support
+
+Tulx supports all modern browsers that support ES2015+. For older browsers, use a transpiler such as Babel.
+
+## Philosophy
+
+Tulx follows these core principles:
+
+1. **Pure Functions** — no side effects, predictable behavior
+2. **Type Safety First** — full TypeScript support with strict mode
+3. **Performance First** — constantly tested and optimized to outperform alternatives
+4. **Simplicity** — clean, readable code without unnecessary complexity
+5. **Developer Experience** — excellent documentation and helpful error messages
+
+## Usage Examples
+
+### Working with Arrays
+
+```typescript
+import { chunk, compact, unique } from '@tulx/utils';
+
+// Split array into chunks
+const chunks = chunk([1, 2, 3, 4, 5, 6], 2);
+// [[1, 2], [3, 4], [5, 6]]
+
+// Remove falsy values
+const cleaned = compact([0, 1, false, 2, '', 3]);
+// [1, 2, 3]
+
+// Get unique values
+const uniqueValues = unique([1, 2, 2, 3, 3, 3]);
+// [1, 2, 3]
+```
+
+### Working with Objects
+
+```typescript
+import { merge, pick, omit } from '@tulx/utils';
+
+// Merge objects
+const merged = merge({ a: 1 }, { b: 2 }, { c: 3 });
+// { a: 1, b: 2, c: 3 }
+
+// Pick specific properties
+const picked = pick({ a: 1, b: 2, c: 3 }, ['a', 'c']);
+// { a: 1, c: 3 }
+
+// Omit properties
+const omitted = omit({ a: 1, b: 2, c: 3 }, ['b']);
+// { a: 1, c: 3 }
+```
+
+### Working with Functions
+
+```typescript
+import { debounce, throttle, memoize } from '@tulx/utils';
+
+// Debounce function
+const debouncedSearch = debounce((query: string) => {
+  console.log('Searching:', query);
+}, 300);
+
+// Throttle function
+const throttledScroll = throttle(() => {
+  console.log('Scrolling');
+}, 100);
+
+// Memoization
+const expensiveCalculation = memoize((n: number) => {
+  // Expensive calculations
+  return n * n;
+});
+```
+
+### Working with Strings
+
+```typescript
+import { camelCase, kebabCase, capitalize } from '@tulx/utils';
+
+// Convert to camelCase
+const camel = camelCase('hello world');
+// 'helloWorld'
+
+// Convert to kebab-case
+const kebab = kebabCase('Hello World');
+// 'hello-world'
+
+// Capitalize first letter
+const capitalized = capitalize('hello');
+// 'Hello'
+```
+
+## Useful Links
+
+- [All Functions](/functions) — browse all available functions
+- [Playground](/playground) — interactive testing environment
+- [GitHub](https://github.com/haykavanesyan/tulx) — source code on GitHub
+- [npm Package](https://www.npmjs.com/package/@tulx/utils) — package on npm
+
+## License
+
+This project is licensed under the MIT License.
 
 ---
 
-## Tables
-
-| Feature | Status |
-|---------|--------|
-| MDX Support | ✅ |
-| TypeScript | ✅ |
-| Tailwind CSS | ✅ |
-
+**Made with ❤️ by the Tulx team**

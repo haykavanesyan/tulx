@@ -1,14 +1,21 @@
-export default function Home() {
+import { CategoriesSection } from '@/components/home/categories-section';
+import { CTASection } from '@/components/home/cta-section';
+import { FeaturesSection } from '@/components/home/features-section';
+import { HeroSection } from '@/components/home/hero-section';
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+
+export default async function Home() {
   return (
-    <main className="min-h-screen bg-background py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-foreground mb-4">
-          Tulx Documentation
-        </h1>
-        <p className="text-lg text-muted-foreground">
-          Welcome to the Tulx utility library documentation.
-        </p>
-      </div>
-    </main>
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-1">
+        <HeroSection />
+        <FeaturesSection />
+        <CategoriesSection />
+        <CTASection />
+      </main>
+      <Footer />
+    </div>
   );
 }

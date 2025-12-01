@@ -105,7 +105,7 @@ All implementations are continuously tested and benchmarked to ensure they meet 
 
 ### vs Lodash
 
-| Feature      | Tulx                      | Lodash                    |
+| Feature      | Tulx                     | Lodash                    |
 | ------------ | ------------------------ | ------------------------- |
 | Performance  | Faster in most cases     | Well optimized            |
 | Bundle Size  | Smaller (tree-shakeable) | Larger                    |
@@ -117,7 +117,7 @@ All implementations are continuously tested and benchmarked to ensure they meet 
 
 ### vs Ramda
 
-| Feature        | Tulx                      | Ramda                          |
+| Feature        | Tulx                   | Ramda                          |
 | -------------- | ---------------------- | ------------------------------ |
 | API Style      | Familiar (Lodash-like) | Functional, curried by default |
 | Performance    | Optimized              | Good                           |
@@ -126,7 +126,7 @@ All implementations are continuously tested and benchmarked to ensure they meet 
 
 ### vs Native JavaScript
 
-| Feature       | Tulx                         | Native JS                |
+| Feature       | Tulx                      | Native JS                |
 | ------------- | ------------------------- | ------------------------ |
 | Consistency   | Same API across functions | Varies                   |
 | Edge Cases    | Handled properly          | May need manual handling |
