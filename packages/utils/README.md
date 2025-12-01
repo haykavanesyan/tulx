@@ -3,6 +3,7 @@
 > A modern, type-safe utility library for JavaScript and TypeScript with zero dependencies.
 
 [![npm version](https://img.shields.io/npm/v/@tulx/utils)](https://www.npmjs.com/package/@tulx/utils)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Why Tulx?
@@ -129,4 +130,4 @@ MIT © Tulx Contributors
 
 ---
 
-For detailed documentation and examples, visit [documentation website](#) (coming soon).
+For detailed documentation and examples, visit [documentation website](https://tulx-docs.vercel.app/)
