@@ -15,11 +15,11 @@
     "typescript"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "pnpm exec tsc -p tsconfig.build.json",
     "prelint": "pnpm build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "type-check": "tsc --noEmit",
+    "type-check": "pnpm exec tsc --noEmit",
     "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
