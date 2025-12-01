@@ -2,7 +2,6 @@
   "buildCommand": "pnpm turbo run build --filter=@tulx/docs",
   "outputDirectory": "apps/docs/.next",
   "installCommand": "pnpm install --frozen-lockfile",
-  "framework": "nextjs",
-  "rootDirectory": "."
+  "framework": "nextjs"
 }
 
