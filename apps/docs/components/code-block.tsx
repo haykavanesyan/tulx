@@ -5,9 +5,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-import { COPY_SUCCESS_TIMEOUT_MS } from '@/lib/constants';
-
 import { Button } from '@/components/ui/button';
+import { COPY_SUCCESS_TIMEOUT_MS } from '@/lib/constants';
 
 type CodeBlockProps = {
   code: string;

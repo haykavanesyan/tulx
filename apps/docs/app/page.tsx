@@ -1,9 +1,9 @@
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
 import { CategoriesSection } from '@/components/home/categories-section';
 import { CTASection } from '@/components/home/cta-section';
 import { FeaturesSection } from '@/components/home/features-section';
 import { HeroSection } from '@/components/home/hero-section';
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
 
 export default async function Home() {
   return (

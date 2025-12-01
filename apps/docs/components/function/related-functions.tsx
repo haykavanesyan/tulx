@@ -1,13 +1,13 @@
 import Link from 'next/link';
 
-import type { FunctionMetadata } from '@/lib/functions';
-
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+
+import type { FunctionMetadata } from '@/lib/functions';
 
 type RelatedFunctionsProps = {
   functions: FunctionMetadata[];

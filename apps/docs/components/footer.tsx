@@ -1,5 +1,6 @@
 import { Github, Heart } from 'lucide-react';
 import Link from 'next/link';
+
 import { Separator } from './ui/separator';
 
 export function Footer() {

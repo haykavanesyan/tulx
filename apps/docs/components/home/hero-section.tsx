@@ -1,14 +1,13 @@
 import { ArrowRight, Code2, Sparkles, Terminal } from 'lucide-react';
 import Link from 'next/link';
 
+import { Button } from '@/components/ui/button';
 import {
   HERO_BADGE_TEXT,
   HERO_DESCRIPTION,
   HERO_TITLE,
   INSTALL_COMMAND,
 } from '@/lib/constants';
-
-import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
   return (

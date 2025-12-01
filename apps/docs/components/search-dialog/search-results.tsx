@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import type { FunctionMetadata } from '@/lib/functions';
-
 import { Badge } from '@/components/ui/badge';
+
+import type { FunctionMetadata } from '@/lib/functions';
 
 type SearchResultsProps = {
   results: FunctionMetadata[];

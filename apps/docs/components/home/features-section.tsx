@@ -1,11 +1,10 @@
-import { FEATURES } from '@/lib/constants';
-
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { FEATURES } from '@/lib/constants';
 
 export function FeaturesSection() {
   return (

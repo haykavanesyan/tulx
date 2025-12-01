@@ -112,6 +112,7 @@ const config = {
     'build',
     '*.config.js',
     '*.config.ts',
+    'next-env.d.ts',
   ],
 };
 

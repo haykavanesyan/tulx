@@ -11,7 +11,13 @@ import {
   useMemo,
 } from 'react';
 
-import type { FunctionMetadata } from '@/lib/functions';
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { CodeEditor } from '@/components/playground/code-editor';
+import { OutputPanel } from '@/components/playground/output-panel';
+import { PlaygroundActions } from '@/components/playground/playground-actions';
+import { QuickExamples } from '@/components/playground/quick-examples';
+import { SearchBar } from '@/components/playground/search-bar';
 import { DEFAULT_PLAYGROUND_CODE, SEARCH_DEBOUNCE_MS } from '@/lib/constants';
 import {
   createExampleCode,
@@ -20,13 +26,7 @@ import {
   transformImports,
 } from '@/lib/utils/playground';
 
-import { CodeEditor } from '@/components/playground/code-editor';
-import { OutputPanel } from '@/components/playground/output-panel';
-import { PlaygroundActions } from '@/components/playground/playground-actions';
-import { QuickExamples } from '@/components/playground/quick-examples';
-import { SearchBar } from '@/components/playground/search-bar';
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
+import type { FunctionMetadata } from '@/lib/functions';
 
 function PlaygroundContent() {
   const searchParams = useSearchParams();

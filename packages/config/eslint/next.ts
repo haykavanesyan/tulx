@@ -17,7 +17,6 @@ const config = {
     ...(baseConfig.extends?.filter((e: string) => !e.includes('import')) ?? []),
     'next/core-web-vitals',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
     'prettier',
   ],
   plugins: [
@@ -25,7 +24,6 @@ const config = {
       (p: string) => p !== 'react' && p !== 'react-hooks'
     ) ?? []),
     'react',
-    'react-hooks',
   ],
   rules: {
     ...baseConfig.rules,

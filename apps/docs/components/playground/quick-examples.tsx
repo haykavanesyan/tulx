@@ -1,9 +1,9 @@
 'use client';
 
-import type { FunctionMetadata } from '@/lib/functions';
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+import type { FunctionMetadata } from '@/lib/functions';
 
 type QuickExamplesProps = {
   functions: FunctionMetadata[];

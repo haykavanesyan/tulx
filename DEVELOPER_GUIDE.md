@@ -188,6 +188,7 @@ pnpm changeset
 ```
 
 This will:
+
 1. Ask which packages should be released
 2. Ask what kind of change (major, minor, or patch)
 3. Ask for a summary of the changes
@@ -196,14 +197,17 @@ This will:
 ### Version Update Process
 
 1. **Create changeset** after making changes:
+
    ```bash
    pnpm changeset
    ```
 
 2. **Update versions** (when ready to release):
+
    ```bash
    pnpm version
    ```
+
    This command will:
    - Read all changesets
    - Update package versions
@@ -238,6 +242,7 @@ pnpm changeset
 ```
 
 Follow the prompts to select:
+
 - Package(s) to release (`@tulx/utils`)
 - Type of change (patch, minor, or major)
 - Summary of changes
@@ -251,6 +256,7 @@ pnpm version
 ```
 
 This will:
+
 - Read all changesets
 - Update package versions automatically
 - Update CHANGELOG.md files
@@ -266,6 +272,7 @@ pnpm release
 ```
 
 This runs:
+
 - `pnpm build` - Builds all packages
 - `pnpm test:run` - Runs all tests
 
@@ -298,6 +305,7 @@ pnpm publish:full
 ```
 
 This runs:
+
 - `pnpm publish:prepare` (version + release)
 - `pnpm publish:utils` (publish to npm)
 
@@ -494,14 +502,14 @@ git commit -m "fix(function): replace unknown[] with any[] in type constraints"
 
 5. **Publish package** (see "Publishing Packages" section)
 
-5. **Create a tag** (optional):
+6. **Create a tag** (optional):
 
    ```bash
    git tag v0.0.2
    git push origin v0.0.2
    ```
 
-6. **Push changes**:
+7. **Push changes**:
    ```bash
    git push origin main
    ```

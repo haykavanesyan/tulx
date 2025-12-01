@@ -3,10 +3,6 @@
 import { Search } from 'lucide-react';
 import { useState, useEffect, useCallback } from 'react';
 
-import type { FunctionMetadata } from '@/lib/functions';
-import { SEARCH_DEBOUNCE_MS } from '@/lib/constants';
-
-import { SearchResults } from './search-dialog/search-results';
 import {
   Dialog,
   DialogContent,
@@ -14,6 +10,11 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
+import { SEARCH_DEBOUNCE_MS } from '@/lib/constants';
+
+import { SearchResults } from './search-dialog/search-results';
+
+import type { FunctionMetadata } from '@/lib/functions';
 
 type SearchDialogProps = {
   open: boolean;

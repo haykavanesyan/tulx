@@ -3,10 +3,10 @@
 import { Search } from 'lucide-react';
 import { useRef, useEffect } from 'react';
 
-import type { FunctionMetadata } from '@/lib/functions';
-
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
+
+import type { FunctionMetadata } from '@/lib/functions';
 
 type SearchBarProps = {
   searchQuery: string;

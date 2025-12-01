@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
 
 import { CodeBlock } from '@/components/code-block';
+import { Footer } from '@/components/footer';
 import { FunctionActions } from '@/components/function/function-actions';
 import { FunctionHeader } from '@/components/function/function-header';
 import { RelatedFunctions } from '@/components/function/related-functions';
-import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { getFunction, getFunctions } from '@/lib/functions';
 import {

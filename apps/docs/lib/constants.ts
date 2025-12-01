@@ -14,9 +14,9 @@ import {
   Wrench,
   Zap,
 } from 'lucide-react';
-import type { ComponentType } from 'react';
 
 import type { FunctionCategory } from './functions';
+import type { ComponentType } from 'react';
 
 export const CATEGORY_ICONS: Record<
   FunctionCategory,

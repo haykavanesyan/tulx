@@ -20,25 +20,30 @@ This guide explains how to version and publish the `@tulx/utils` package using C
 ### Publishing a Release
 
 1. **Check pending changesets**:
+
    ```bash
    pnpm publish:check
    ```
 
 2. **Update versions**:
+
    ```bash
    pnpm version
    ```
+
    This automatically:
    - Updates package versions based on changesets
    - Updates CHANGELOG.md
    - Removes used changeset files
 
 3. **Build and test**:
+
    ```bash
    pnpm release
    ```
 
 4. **Publish to npm**:
+
    ```bash
    pnpm publish:utils
    ```
@@ -59,6 +64,7 @@ pnpm publish:full
 ```
 
 This runs:
+
 - `pnpm version` - Update versions from changesets
 - `pnpm release` - Build and test
 - `pnpm publish:utils` - Publish to npm
@@ -68,6 +74,7 @@ This runs:
 ### What is a Changeset?
 
 A changeset is a file that describes:
+
 - Which package(s) should be released
 - What type of change (patch, minor, or major)
 - A summary of the changes
@@ -79,6 +86,7 @@ pnpm changeset
 ```
 
 You'll be prompted to:
+
 1. Select packages to release (usually `@tulx/utils`)
 2. Choose change type:
    - **patch** - Bug fixes, documentation, type improvements
@@ -92,7 +100,7 @@ Changesets are stored in `.changeset/` directory as markdown files:
 
 ```markdown
 ---
-"@tulx/utils": patch
+'@tulx/utils': patch
 ---
 
 Update README with TypeScript badge and documentation link
@@ -103,6 +111,7 @@ Update README with TypeScript badge and documentation link
 ### Patch (0.0.x)
 
 Use for:
+
 - Bug fixes
 - Type improvements
 - Documentation updates
@@ -110,6 +119,7 @@ Use for:
 - Performance improvements (non-breaking)
 
 Example:
+
 ```bash
 pnpm changeset
 # Select: patch
@@ -119,12 +129,14 @@ pnpm changeset
 ### Minor (0.x.0)
 
 Use for:
+
 - Adding new functions
 - Adding new features
 - New utility categories
 - Backward-compatible API additions
 
 Example:
+
 ```bash
 pnpm changeset
 # Select: minor
@@ -134,12 +146,14 @@ pnpm changeset
 ### Major (x.0.0)
 
 Use for:
+
 - Removing functions
 - Changing function signatures
 - Breaking API changes
 - Removing features
 
 Example:
+
 ```bash
 pnpm changeset
 # Select: major
@@ -178,6 +192,7 @@ pnpm changeset
 ### Example: Adding a New Function
 
 1. **Create the function**:
+
    ```bash
    # Create files
    touch packages/utils/src/arrays/my-function.ts
@@ -193,6 +208,7 @@ pnpm changeset
    - Add export to `packages/utils/src/index.ts`
 
 4. **Create changeset**:
+
    ```bash
    pnpm changeset
    # Select: @tulx/utils
@@ -201,22 +217,24 @@ pnpm changeset
    ```
 
 5. **Commit changes**:
+
    ```bash
    git add .
    git commit -m "feat(arrays): add myFunction utility"
    ```
 
 6. **When ready to release**:
+
    ```bash
    # Update versions
    pnpm version
-   
+
    # Build and test
    pnpm release
-   
+
    # Publish
    pnpm publish:utils
-   
+
    # Commit and push
    git add .
    git commit -m "chore: release v0.1.0"
@@ -228,12 +246,14 @@ pnpm changeset
 ### No Changesets Found
 
 If you see "no changesets were found":
+
 - Make sure you created a changeset with `pnpm changeset`
 - Check `.changeset/` directory for changeset files
 
 ### Version Already Exists
 
 If npm says the version already exists:
+
 - Check current version: `npm view @tulx/utils version`
 - Make sure you ran `pnpm version` to update the version
 - Verify `packages/utils/package.json` has the new version
@@ -241,6 +261,7 @@ If npm says the version already exists:
 ### Build Fails Before Publish
 
 The `prepublishOnly` script automatically runs build and tests before publishing. If it fails:
+
 - Fix build errors
 - Fix test failures
 - Then try publishing again
@@ -253,6 +274,7 @@ npm login
 ```
 
 Verify login:
+
 ```bash
 npm whoami
 ```
@@ -293,4 +315,3 @@ Changesets configuration is in `.changeset/config.json`:
 
 - [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) - Full development guide
 - [Changesets Documentation](https://github.com/changesets/changesets) - Official Changesets docs
-
