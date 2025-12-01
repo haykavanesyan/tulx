@@ -90,3 +90,21 @@ console.log(result);
 export const SEARCH_DEBOUNCE_MS = 300;
 
 export const COPY_SUCCESS_TIMEOUT_MS = 2000;
+
+export const CRYPTO_ADDRESSES = [
+  {
+    name: 'USDT (TRC20)',
+    symbol: 'USDT',
+    address: 'TCeVmgzfYsh2P3SEGsZR9nW8kRD3xVv5Sf',
+  },
+  {
+    name: 'Bitcoin (BTC)',
+    symbol: 'BTC',
+    address: '1is2PCLNTqRPYbf8E2jYAgcMABSb1PCgD',
+  },
+  {
+    name: 'Ethereum (ERC20)',
+    symbol: 'ETH',
+    address: '0x2b71736ed24ae2fdb447aef2e5d7ecabb5e3b7c4',
+  },
+] as const;

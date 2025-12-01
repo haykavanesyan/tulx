@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { DonationButton } from '@/components/donation-button';
 import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
+          <DonationButton />
         </ThemeProvider>
       </body>
     </html>
