@@ -51,12 +51,11 @@ function parseJSDoc(content: string): JSDocInfo {
     }
   }
 
-  // Clean up example - remove ts/js tags and extract first meaningful line
+  // Clean up example - remove ts/js tags and extract all code lines
   const cleanedExample = example
     .split('\n')
     .map((l) => l.trim())
     .filter((l) => l && !l.startsWith('```') && !l.match(/^```ts?$/))
-    .slice(0, 3)
     .join('\n');
 
   return {

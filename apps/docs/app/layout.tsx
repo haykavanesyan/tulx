@@ -1,7 +1,7 @@
+import type { Metadata } from 'next';
+
 import { DonationButton } from '@/components/donation-button';
 import { ThemeProvider } from '@/components/theme-provider';
-
-import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {

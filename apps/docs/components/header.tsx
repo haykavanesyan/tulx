@@ -3,14 +3,13 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, useCallback } from 'react';
 
-import { SearchDialog } from '@/components/search-dialog';
-
 import { HeaderActions } from './header/header-actions';
 import { Logo } from './header/logo';
 import { MobileMenu } from './header/mobile-menu';
 import { Navigation } from './header/navigation';
 
-import type { FunctionMetadata } from '@/lib/functions';
+import { SearchDialog } from '@/components/search-dialog';
+import { type FunctionMetadata } from '@/lib/functions';
 
 export function Header() {
   const router = useRouter();
