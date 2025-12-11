@@ -8,7 +8,7 @@
  *
  * @example
  * ```ts
- * function vowels(string: string) {
+ * function vowels(string) {
  *   return string.match(/[aeiou]/g);
  * }
  * mixin({}, { 'vowels': vowels });
