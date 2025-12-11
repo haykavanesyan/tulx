@@ -11,6 +11,8 @@ import {
   useMemo,
 } from 'react';
 
+import type { FunctionMetadata } from '@/lib/functions';
+
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { CodeEditor } from '@/components/playground/code-editor';
@@ -26,8 +28,6 @@ import {
   transformImports,
 } from '@/lib/utils/playground';
 
-import type { FunctionMetadata } from '@/lib/functions';
-
 function PlaygroundContent() {
   const searchParams = useSearchParams();
   const functionName = searchParams.get('function');
@@ -42,38 +42,40 @@ function PlaygroundContent() {
   const [isSearching, setIsSearching] = useState(false);
 
   const initialCodeRef = useRef<string>(DEFAULT_PLAYGROUND_CODE);
+  const codeRef = useRef<string>(DEFAULT_PLAYGROUND_CODE);
 
-  const runCode = useCallback(
-    (codeToRun?: string) => {
-      const codeToExecute = codeToRun ?? code;
-      setIsRunning(true);
-      setOutput([]);
-      setError(null);
+  useEffect(() => {
+    codeRef.current = code;
+  }, [code]);
 
-      setTimeout(() => {
-        try {
-          const logs: string[] = [];
-          const consoleMock = {
-            log: (...args: unknown[]) => {
-              logs.push(formatConsoleOutput(args));
-            },
-          };
+  const runCode = useCallback((codeToRun?: string) => {
+    const codeToExecute = codeToRun ?? codeRef.current;
+    setIsRunning(true);
+    setOutput([]);
+    setError(null);
 
-          const transformedCode = transformImports(codeToExecute);
-          const sandboxCode = createSandboxCode(transformedCode);
-          const executeCode = new Function('tulxUtils', 'console', sandboxCode);
-          executeCode(tulxUtils, consoleMock);
+    setTimeout(() => {
+      try {
+        const logs: string[] = [];
+        const consoleMock = {
+          log: (...args: unknown[]) => {
+            logs.push(formatConsoleOutput(args));
+          },
+        };
 
-          setOutput(logs);
-          setIsRunning(false);
-        } catch (err) {
-          setError(err instanceof Error ? err.message : 'Unknown error');
-          setIsRunning(false);
-        }
-      }, 100);
-    },
-    [code]
-  );
+        const transformedCode = transformImports(codeToExecute);
+        const sandboxCode = createSandboxCode(transformedCode);
+        const executeCode = new Function('tulxUtils', 'console', sandboxCode);
+        executeCode(tulxUtils, consoleMock);
+
+        setOutput(logs);
+        setIsRunning(false);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Unknown error');
+        setIsRunning(false);
+      }
+    }, 100);
+  }, []);
 
   const resetCode = useCallback(() => {
     setCode(initialCodeRef.current);
@@ -85,6 +87,7 @@ function PlaygroundContent() {
     const exampleCode = createExampleCode(fn);
     setCode(exampleCode);
     initialCodeRef.current = exampleCode;
+    codeRef.current = exampleCode;
     setSearchQuery('');
     setSearchResults([]);
   }, []);
@@ -122,6 +125,7 @@ function PlaygroundContent() {
         const exampleCode = createExampleCode(fn);
         setCode(exampleCode);
         initialCodeRef.current = exampleCode;
+        codeRef.current = exampleCode;
         runCode(exampleCode);
       }
     }
