@@ -41,6 +41,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Setup main branch for changeset
+        run: |
+          git fetch origin main || true
+          if ! git rev-parse --verify main >/dev/null 2>&1; then
+            git branch main origin/main || true
+          fi
+
       - name: Check for changeset
         run: |
           if [ -z "$(git diff --name-only origin/main...HEAD | grep -E '\.changeset/.*\.md$')" ]; then
@@ -53,4 +60,6 @@ jobs:
 
       - name: Validate changeset format
         run: pnpm changeset:status
+        env:
+          CHANGESET_BASE: origin/main
 
