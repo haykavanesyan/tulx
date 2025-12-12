@@ -11,8 +11,6 @@ import {
   useMemo,
 } from 'react';
 
-import type { FunctionMetadata } from '@/lib/functions';
-
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { CodeEditor } from '@/components/playground/code-editor';
@@ -27,6 +25,8 @@ import {
   formatConsoleOutput,
   transformImports,
 } from '@/lib/utils/playground';
+
+import type { FunctionMetadata } from '@/lib/functions';
 
 function PlaygroundContent() {
   const searchParams = useSearchParams();
